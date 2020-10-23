@@ -1,0 +1,22 @@
+html {
+    overflow-y:scroll;
+}
+
+.row {
+  display: flex;
+}
+.column {
+  float: left;
+}
+.left {
+  width: 288px;
+}
+.right {
+  width: 50%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
