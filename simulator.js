@@ -181,6 +181,8 @@ function runSim() {
   console.log(critFinal)
   console.log(DPS)
   console.log(avgNonCrit)
+  console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1))
+  console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)))
 } //Function
 
 function formatNumber(num, places) {
