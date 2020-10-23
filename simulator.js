@@ -18,7 +18,7 @@ function runSim() {
   for (var i=30+0.5; i<=45; i=i+0.5)
     timeVec[timeVec.length] = i;
   var threatTime = 0;
-  
+  console.log(timeVec)
   var hakkarBuff = false;
   var onyxiaBuff = false;
   var songflower = false;
@@ -56,7 +56,7 @@ function runSim() {
     else if (q==6) {
       mp5 = mp5 - 3;}
     
-    var intel = Math.round((Int/(1.05^gnome)+raid*47)*(1.1^raid)*(1.05^gnome)*(1.15^hakkarBuff));
+    var intel = Math.round((int/(1.05^gnome)+raid*47)*(1.1^raid)*(1.05^gnome)*(1.15^hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8)*1.2;
     var shadowMultiplier = 1.15 * 1.1 * 1.15; //DS, CoS, Weaving
