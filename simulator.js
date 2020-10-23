@@ -14,9 +14,9 @@ function runSim() {
   var raid = false;
   var gnome = false;
   
-  var timeVec = 30;//math.range("30:0.5:45",true);
-  for (var i=30+0.5; i<=45; i=i+0.5)
-    timeVec[timeVec.length] = i;
+  var timeVec = Math.range("30:0.5:45",true);
+  /*for (var i=30+0.5; i<=45; i=i+0.5)
+    timeVec[timeVec.length] = i;*/
   var threatTime = 0;
   
   var hakkarBuff = false;
@@ -56,7 +56,7 @@ function runSim() {
     else if (q==6) {
       mp5 = mp5 - 3;}
     
-    var intel = math.round((Int/(1.05^gnome)+raid*47)*(1.1^raid)*(1.05^gnome)*(1.15^hakkarBuff));
+    var intel = Math.round((Int/(1.05^gnome)+raid*47)*(1.1^raid)*(1.05^gnome)*(1.15^hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8)*1.2;
     var shadowMultiplier = 1.15 * 1.1 * 1.15; //DS, CoS, Weaving
@@ -147,22 +147,22 @@ function runSim() {
     } //Loop with timeVec
     
     if (q==1) {
-      var SPDPS = math.sum(DPS)/DPS.length;
+      var SPDPS = Math.sum(DPS)/DPS.length;
       var SPVec = DPS;}
     else if (q==2) {
-      var intDPS = math.sum(DPS)/DPS.length;
+      var intDPS = Math.sum(DPS)/DPS.length;
       var intVec = DPS;}
     else if (q==3) {
-      var critDPS = math.sum(DPS)/DPS.length;
+      var critDPS = Math.sum(DPS)/DPS.length;
       var critVec = DPS;}
     else if (q==4) {
-      var hitDPS = math.sum(DPS)/DPS.length;
+      var hitDPS = Math.sum(DPS)/DPS.length;
       var hitVec = DPS;}
     else if (q==5) {
-      var mp5DPS = math.sum(DPS)/DPS.length;
+      var mp5DPS = Math.sum(DPS)/DPS.length;
       var mp5Vec = DPS;}
     else if (q==6) {
-      var baseDPS = math.sum(DPS)/DPS.length;
+      var baseDPS = Math.sum(DPS)/DPS.length;
       var baseVec = DPS;}
   } //Loop with q
   var SPVal   = (SPDPS-baseDPS);
@@ -170,7 +170,7 @@ function runSim() {
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
   
-  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + math.sum(DPS)/DPS.length + " dps<br>";
+  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + Math.sum(DPS)/DPS.length + " dps<br>";
   output += "Stat Weights:<br>Crit = " + critVal/SPVal + " SP<br>Hit = " + hitVal/SPVal + " SP";
   
   document.getElementById("page").innerHTML = output;
