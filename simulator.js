@@ -14,9 +14,9 @@ function runSim() {
   var raid = false;
   var gnome = false;
   
-  var timeVec = math.range("30:0.5:45",true);
-  /*for (var i=30.5; i<=45; i=i+0.5)
-    timeVec[timeVec.length] = i;*/
+  var timeVec[0] = 30;//math.range("30:0.5:45",true);
+  for (var i=30.5; i<=45; i=i+0.5)
+    timeVec[timeVec.length] = i;
   var threatTime = 0;
   console.log(timeVec[0] + timeVec[timeVec.length-1])
   var hakkarBuff = false;
