@@ -5,49 +5,67 @@
     <title>Warlock Simulator</title>
     <script src="/WarlockSim/simulator.js"></script>
     <script type="text/javascript">
+      function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+      openPage('main', this, '#838383')
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
   <body style="background-color:#888888;">
-    <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
-    <div class="row">
-      <div class="column left">
-        <div style=background-color:#666666>
-          <div>Settings</div>
-          <input type="number" id="spellPower">         <label style=color:#C79C6E>Spell Power</label><br>
-          <input type="number" id="spellCrit">          <label style=color:#C79C6E>Spell Crit</label><br>
-          <input type="number" id="spellHit">           <label style=color:#C79C6E>Spell Hit</label><br>
-          <input type="number" id="intellect">          <label style=color:#C79C6E>Intellect</label><br>
-          <input type="number" id="mp5">                <label style=color:#C79C6E>Mana Per 5</label><br>
-          <br>
-          
-          <p>Debuffs</p>
-          <input type="checkbox" id="curseShadow">      <label style=color:#C79C6E>Curse of Shadow</label><br>
-          <input type="checkbox" id="shadowWeaving">    <label style=color:#C79C6E>Shadow Weaving</label><br>
-          <br>
-          <input type="checkbox" id="curseElements">    <label style=color:#C79C6E>Curse of the Elements</label><br>
-          <input type="checkbox" id="Scorch">           <label style=color:#C79C6E>Scorch</label><br>
-          <br>
-          
-          <p>Spec</p>
-          <select id="spec">
-            <option value="DSRuin">DS/Ruin</option>
-            <option value="SMRuin">SM/Ruin</option>
-            <option value="DSES">DS/ES</option>
-            <option value="SMDS">SM/DS</option>
-          </select><br>
-          <br>
-          
-          <p>Consumables</p>
-          <input type="checkbox" id="supremeFlask">     <label style=color:#C79C6E>Flask of Supreme Power</label><br>
-          <input type="checkbox" id="arcaneElixir">     <label style=color:#C79C6E>Greater Arcane Elixir</label><br>
-          <input type="checkbox" id="shadowElixir">     <label style=color:#C79C6E>Elixir of Shadow Power</label><br>
-          <input type="checkbox" id="fireElixir">       <label style=color:#C79C6E>Elixir of Fire Power</label><br>
+    <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Settings</button>
+    
+    <div id="main" class="tabcontent">
+      <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
+      <div class="row">
+        <div class="column left">
+          <div style=background-color:#666666>
+            <div>Settings</div>
+            <input type="number" id="spellPower">         <label style=color:#C79C6E>Spell Power</label><br>
+            <input type="number" id="spellCrit">          <label style=color:#C79C6E>Spell Crit</label><br>
+            <input type="number" id="spellHit">           <label style=color:#C79C6E>Spell Hit</label><br>
+            <input type="number" id="intellect">          <label style=color:#C79C6E>Intellect</label><br>
+            <input type="number" id="mp5">                <label style=color:#C79C6E>Mana Per 5</label><br>
+            <br>
 
+            <p>Debuffs</p>
+            <input type="checkbox" id="curseShadow">      <label style=color:#C79C6E>Curse of Shadow</label><br>
+            <input type="checkbox" id="shadowWeaving">    <label style=color:#C79C6E>Shadow Weaving</label><br>
+            <br>
+            <input type="checkbox" id="curseElements">    <label style=color:#C79C6E>Curse of the Elements</label><br>
+            <input type="checkbox" id="Scorch">           <label style=color:#C79C6E>Scorch</label><br>
+            <br>
+
+            <p>Spec</p>
+            <select id="spec">
+              <option value="DSRuin">DS/Ruin</option>
+              <option value="SMRuin">SM/Ruin</option>
+              <option value="DSES">DS/ES</option>
+              <option value="SMDS">SM/DS</option>
+            </select><br>
+            <br>
+
+            <p>Consumables</p>
+            <input type="checkbox" id="supremeFlask">     <label style=color:#C79C6E>Flask of Supreme Power</label><br>
+            <input type="checkbox" id="arcaneElixir">     <label style=color:#C79C6E>Greater Arcane Elixir</label><br>
+            <input type="checkbox" id="shadowElixir">     <label style=color:#C79C6E>Elixir of Shadow Power</label><br>
+            <input type="checkbox" id="fireElixir">       <label style=color:#C79C6E>Elixir of Fire Power</label><br>
+
+          </div>
         </div>
-      </div>
-      <div class="column right">
-        <p id="page"></p>
+        <div class="column right">
+          <p id="page"></p>
+        </div>
       </div>
     </div>
   </body>
