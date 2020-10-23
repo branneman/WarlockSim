@@ -177,6 +177,7 @@ function runSim() {
   document.getElementById("page").innerHTML = output;
   
   console.log(manaLeft)
+  console.log(intel)
   console.log(critFinal)
   console.log(DPS)
 } //Function
