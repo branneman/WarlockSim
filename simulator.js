@@ -179,13 +179,8 @@ function runSim() {
   document.getElementById("page").innerHTML = output;
   document.getElementById("finalStats").innerHTML = "<table><tr><th colspan='2'>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + 100-miss + "%</td></tr></table>";
   
-  console.log(manaLeft)
-  console.log(intel)
   console.log(critFinal)
-  console.log(DPS)
   console.log(avgNonCrit)
-  console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1))
-  console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)))
   console.log(shadowVuln)
 } //Function
 
