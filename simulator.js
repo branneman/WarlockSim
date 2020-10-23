@@ -171,8 +171,8 @@ function runSim() {
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
   
-  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + math.sum(DPS)/DPS.length + " dps<br>";
-  output += "Stat Weights:<br>Crit = " + critVal/SPVal + " SP<br>Hit = " + hitVal/SPVal + " SP";
+  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>";
+  output += "Stat Weights:<br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit = " + formatNumber(hitVal/SPVal,2) + " SP";
   
   document.getElementById("page").innerHTML = output;
   
@@ -182,3 +182,7 @@ function runSim() {
   console.log(DPS)
   console.log(avgNonCrit)
 } //Function
+
+function formatNumber(num, places) {
+  return +(Math.round(num + "e+" + places)  + "e-" + places);
+}
