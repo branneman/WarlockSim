@@ -1,6 +1,78 @@
 html {
     overflow-y:scroll;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 2px;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+tr:nth-child(even) { background-color: #dddddd; }
+tr:nth-child(odd) { background-color: #dddddd; }
+.loader {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 9px;
+  height: 9px;
+  display:none;
+  -webkit-animation: spin 1.5s linear infinite; /* Safari */
+  animation: spin 1.5s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+/* Style tab links */
+.tablink {
+  background-color: #666;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 20px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 50px 20px;
+  height: 100%;
+}
+
+#DebuffAnalyser {background-color: #888888;}
+#DebuffsUsed {background-color: #888888;}
+#ISBStacks {background-color: #888888;}
 
 .row {
   display: flex;
