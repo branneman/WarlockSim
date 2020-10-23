@@ -122,7 +122,7 @@ function runSim() {
           time = time + GCD;}
         
         else if (sbTime <= timeLeft) {
-          damage += (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1);
+          damage += (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1); console.log("SBolt " + damage)
           if (SBC == 0)
             damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2));
           else if (SBC == 1)
@@ -136,7 +136,7 @@ function runSim() {
           SBC++;}
         
         else if (sbTime > timeLeft) {
-          damage += (avgBurn*critFinal*2 + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1);
+          damage += (avgBurn*critFinal*2 + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1); console.log("SBurn " + damage)
           mana -= 365;
           time += GCD*2;
           burn = true;
