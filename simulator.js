@@ -182,7 +182,6 @@ function runSim() {
   console.log(critFinal)
   console.log(avgNonCrit)
   console.log(shadowVuln)
-  console.log(test)
 } //Function
 
 function formatNumber(num, places) {
