@@ -14,12 +14,12 @@ function runSim() {
   var raid = false;
   var gnome = false;
   
-  var timeVec = new Array;//math.range("30:0.5:45",true);
+  var timeVec = new Array;
   timeVec[0] = 30;
   for (var i=30.5; i<=120; i=i+0.5)
     timeVec[timeVec.length] = i;
   var threatTime = 0;
-  console.log(timeVec[0] + timeVec[timeVec.length-1])
+
   var hakkarBuff = false;
   var onyxiaBuff = false;
   var songflower = false;
