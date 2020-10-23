@@ -1,6 +1,6 @@
 function runSim() {
   
-  var SP = 642;
+  var SP = document.getElementById("spellPower").value;
   var crit = 8;
   var hit = 9;
   var int = 282;
