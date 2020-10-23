@@ -183,6 +183,7 @@ function runSim() {
   console.log(avgNonCrit)
   console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1))
   console.log((avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)))
+  console.log(shadowVuln)
 } //Function
 
 function formatNumber(num, places) {
