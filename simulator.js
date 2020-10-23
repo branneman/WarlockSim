@@ -177,7 +177,7 @@ function runSim() {
   output += "Stat Weights:<br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
   
   document.getElementById("page").innerHTML = output;
-  var test = "<table><tr><th colspan='2'>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + 100-miss + "%</td></tr></table>";
+  var test = "<table><tr><th colspan='2'>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + Number(100-miss) + "%</td></tr></table>";
   document.getElementById("finalStats").innerHTML = test;
   
   console.log(critFinal)
