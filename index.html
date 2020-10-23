@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="pageStyle.css">
   </head>
   <body style="background-color:#888888;">
+    <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
+    <div class="row">
+      <div class="column left">
+        <div style=background-color:#666666>
+          <p>Settings</p>
+          <input type="number" id="spellPower">         <label style=color:#C79C6E>Spell Power</label><br>
+          <input type="number" id="spellCrit">          <label style=color:#C79C6E>Spell Crit</label><br>
+          <input type="number" id="spellHit">           <label style=color:#C79C6E>Spell Hit</label><br>
+          <input type="number" id="intellect">          <label style=color:#C79C6E>Intellect</label><br>
+          <input type="number" id="mp5">                <label style=color:#C79C6E>Mana Per 5</label><br>
+          
+          <p>Debuffs</p>
+          <input type="checkbox" id="curseShadow">      <label style=color:#C79C6E>Curse of Shadow</label><br>
+          <input type="checkbox" id="shadowWeaving">    <label style=color:#C79C6E>Shadow Weaving</label><br>
+          
+          <div>Spec</div>
+          <select id="spec">
+            <option value="DSRuin">DS/Ruin</option>
+            <option value="SMRuin">SM/Ruin</option>
+            <option value="DSES">DS/ES</option>
+            <option value="SMDS">SM/DS</option>
+          </select>
+          <br /><br />
 
+        </div>
+      </div>
+      <div class="column right">
+        <p id="page2"></p>
+      </div>
+    </div>
   </body>
 </html>
