@@ -180,4 +180,5 @@ function runSim() {
   console.log(intel)
   console.log(critFinal)
   console.log(DPS)
+  console.log(avgNonCrit)
 } //Function
