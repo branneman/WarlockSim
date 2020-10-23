@@ -5,6 +5,12 @@
     <title>Warlock Simulator</title>
     <script src="/WarlockSim/simulator.js"></script>
     <script type="text/javascript">
+      function startCode() {
+        document.getElementById("page").innerHTML = "";
+        //document.getElementsByClassName("loader")[0].style.display = "inline-block";
+        setTimeout(function(){ runSim(); }, 10);
+      }
+      
       function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -29,6 +35,7 @@
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
       <div class="row">
         <div class="column left">
+          <button id="myButton" type="button" onclick="startCode();">Run Sim</button>
           <div style=background-color:#666666>
             <div>Settings</div>
             <input type="number" id="spellPower">         <label style=color:#C79C6E>Spell Power</label><br>
