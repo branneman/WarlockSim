@@ -70,7 +70,7 @@ function runSim() {
     var critChance = (1.7 + crit + 5 + (intel/60.6) + 10*onyxiaBuff + 5*songflower + 3*diremaulBuff);
     var critFinal = (1.7 + crit + 5 + (intel/60.6) + 10*onyxiaBuff + 5*songflower + 3*diremaulBuff) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
-    var shadowVuln = 1 - (1 - critChance/100)^(4/(1-miss/100));
+    var shadowVuln = 1 - Math.pow(1 - critChance/100, 4/(1-miss/100));
     
     var DPS = new Array;
     var lifeTaps = new Array;
@@ -128,9 +128,9 @@ function runSim() {
           else if (SBC == 1)
             damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * (1-critFinal/100);
           else if (SBC == 2)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * (1-critFinal/100)^2;
+            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,2);
           else if (SBC == 3)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * (1-critFinal/100)^3;
+            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,3);
           mana -= sbCost;
           time += sbTime;
           SBC++;}
