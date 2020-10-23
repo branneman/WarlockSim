@@ -92,3 +92,6 @@ body, html {
   display: table;
   clear: both;
 }
+input[type=number]{
+    width: 80px;
+}
