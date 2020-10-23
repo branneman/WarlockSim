@@ -57,7 +57,7 @@ function runSim() {
     else if (q==6) {
       mp5 = mp5 - 3;}
     
-    var intel = Math.round((int/(1.05^gnome)+raid*47)*(1.1^raid)*(1.05^gnome)*(1.15^hakkarBuff));
+    var intel = Math.round((int/(1.05^gnome)+raid*47)*(1 + 0.1*raid)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8)*1.2;
     var shadowMultiplier = 1.15 * 1.1 * 1.15; //DS, CoS, Weaving
@@ -175,4 +175,8 @@ function runSim() {
   output += "Stat Weights:<br>Crit = " + critVal/SPVal + " SP<br>Hit = " + hitVal/SPVal + " SP";
   
   document.getElementById("page").innerHTML = output;
+  
+  console.log(manaLeft)
+  console.log(critFinal)
+  console.log(DPS)
 } //Function
