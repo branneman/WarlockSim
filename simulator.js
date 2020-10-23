@@ -187,5 +187,5 @@ function runSim() {
 } //Function
 
 function formatNumber(num, places) {
-  return (Math.round(num + "e+" + places)  + "e-" + places);
+  return +(Math.round(num + "e+" + places)  + "e-" + places);
 }
