@@ -18,7 +18,7 @@ function runSim() {
   /*for (var i=30.5; i<=45; i=i+0.5)
     timeVec[timeVec.length] = i;*/
   var threatTime = 0;
-  console.log(timeVec)
+  console.log(timeVec[0] + timeVec[timeVec.length-1])
   var hakkarBuff = false;
   var onyxiaBuff = false;
   var songflower = false;
