@@ -26,14 +26,14 @@
         elmnt.style.backgroundColor = color;
       }
       setTimeout(function(){ document.getElementById("defaultOpen").click(); }, 20);
-      document.getElementById("main").addEventListener("input", runSim());
+      //ocument.getElementById("main").addEventListener("input", runSim());
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
   <body style="background-color:#555555;">
     <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Settings</button>
     
-    <div id="main" class="tabcontent">
+    <div id="main" class="tabcontent" name="main" oninput="runSim();" onchange="runSim();">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
       <div class="row">
         <div class="column left">
