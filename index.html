@@ -26,6 +26,7 @@
         elmnt.style.backgroundColor = color;
       }
       setTimeout(function(){ document.getElementById("defaultOpen").click(); }, 20);
+      setTimeout(function(){ document.addEventListener("input", runSim()); }, 20);
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
