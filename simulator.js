@@ -1,6 +1,6 @@
 function runSim() {
   
-  var SP = document.getElementById("spellPower").value;
+  var SP = document.getElementById("spellPower").value; console.log(SP)
   var crit = 8;
   var hit = 9;
   var int = 282;
