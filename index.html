@@ -26,7 +26,7 @@
         elmnt.style.backgroundColor = color;
       }
       setTimeout(function(){ document.getElementById("defaultOpen").click(); }, 20);
-      setTimeout(function(){ document.addEventListener("input", runSim()); }, 20);
+      //setTimeout(function(){ document.addEventListener("input", runSim()); }, 20);
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
@@ -37,7 +37,7 @@
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
       <div class="row">
         <div class="column left">
-          <button id="myButton" type="button" onclick="startCode();">Run Sim</button><br>
+          <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
           <h3>Settings</h3>
           <div>Gear Stats</div>
           <input type="number" id="spellPower" value="642">   <label style=color:#9482C9>Spell Power</label><br>
