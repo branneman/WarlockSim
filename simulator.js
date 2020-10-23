@@ -111,13 +111,13 @@ function runSim() {
         
         else if (agony == false && agonyDuration <= timeLeft) {
           agony = true; agonyUse++;
-          damage = damage + (1044*1.06);
+          //damage = damage + (1044*1.06);
           mana = mana - agonyCost;
           time = time + GCD;}
         
         else if (corruption == false && corruptionDuration <= timeLeft) {
           corruption = true; agonyUse++;
-          damage = damage + 888;
+          //damage = damage + 888;
           mana = mana - corruptionCost;
           time = time + GCD;}
         
