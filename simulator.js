@@ -14,9 +14,9 @@ function runSim() {
   var raid = false;
   var gnome = false;
   
-  var timeVec[0] = 30;//Math.range("30:0.5:45",true);
-  for (var i=30.5; i<=45; i=i+0.5)
-    timeVec[timeVec.length] = i;
+  var timeVec = math.range("30:0.5:45",true);
+  /*for (var i=30.5; i<=45; i=i+0.5)
+    timeVec[timeVec.length] = i;*/
   var threatTime = 0;
   console.log(timeVec)
   var hakkarBuff = false;
@@ -147,22 +147,22 @@ function runSim() {
     } //Loop with timeVec
     
     if (q==1) {
-      var SPDPS = Math.sum(DPS)/DPS.length;
-      var SPVec = DPS;}
+      var SPDPS   = math.sum(DPS)/DPS.length;
+      var SPVec   = DPS;}
     else if (q==2) {
-      var intDPS = Math.sum(DPS)/DPS.length;
-      var intVec = DPS;}
+      var intDPS  = math.sum(DPS)/DPS.length;
+      var intVec  = DPS;}
     else if (q==3) {
-      var critDPS = Math.sum(DPS)/DPS.length;
+      var critDPS = math.sum(DPS)/DPS.length;
       var critVec = DPS;}
     else if (q==4) {
-      var hitDPS = Math.sum(DPS)/DPS.length;
-      var hitVec = DPS;}
+      var hitDPS  = math.sum(DPS)/DPS.length;
+      var hitVec  = DPS;}
     else if (q==5) {
-      var mp5DPS = Math.sum(DPS)/DPS.length;
-      var mp5Vec = DPS;}
+      var mp5DPS  = math.sum(DPS)/DPS.length;
+      var mp5Vec  = DPS;}
     else if (q==6) {
-      var baseDPS = Math.sum(DPS)/DPS.length;
+      var baseDPS = math.sum(DPS)/DPS.length;
       var baseVec = DPS;}
   } //Loop with q
   var SPVal   = (SPDPS-baseDPS);
@@ -170,7 +170,7 @@ function runSim() {
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
   
-  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + Math.sum(DPS)/DPS.length + " dps<br>";
+  var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + math.sum(DPS)/DPS.length + " dps<br>";
   output += "Stat Weights:<br>Crit = " + critVal/SPVal + " SP<br>Hit = " + hitVal/SPVal + " SP";
   
   document.getElementById("page").innerHTML = output;
