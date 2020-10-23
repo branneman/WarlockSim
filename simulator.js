@@ -1,10 +1,10 @@
 function runSim() {
   
-  var SP = Number(document.getElementById("spellPower").value); console.log(SP+SP); console.log(SP*2)
-  var crit = 8;
-  var hit = 9;
-  var int = 282;
-  var mp5 = 0;
+  var SP = Number(document.getElementById("spellPower").value);
+  var crit = Number(document.getElementById("spellCrit").value);
+  var hit = Number(document.getElementById("spellHit").value);
+  var int = Number(document.getElementById("intellect").value);
+  var mp5 = Number(document.getElementById("mp5").value);
   
   var useAgony = false;
   var useCorruption = false;
@@ -20,13 +20,14 @@ function runSim() {
     timeVec[timeVec.length] = i;
   var threatTime = 0;
 
-  var hakkarBuff = false;
-  var onyxiaBuff = false;
-  var songflower = false;
-  var diremaulBuff = false;
+  var hakkarBuff = document.getElementById("hakkarBuff").checked;
+  var onyxiaBuff = document.getElementById("onyxiaBuff").checked;
+  var songflower = document.getElementById("songflower").checked;
+  var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
   var manaExtra = 0;
-  var SP = SP + 0;
+  SP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked;
+  crit = crit + 1*document.getElementById("brilliantOil").checked;
   
   var sbCost = 380; 
   var sbTime = 2.5;
@@ -38,6 +39,8 @@ function runSim() {
   var agonyDuration = 24;
   var agony = false;
   
+  var shadowMultiplier = 1.15 * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked); //DS, CoS, Weaving
+  var fireMultiplier = 1.15 * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked); //DS, CoE, Scorch
   
   for (var q=1; q<=6; q++) {
     if (q==1) {
@@ -60,7 +63,6 @@ function runSim() {
     var intel = Math.round((int/(1 + 0.05*gnome)+raid*47)*(1 + 0.1*raid)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8)*1.2;
-    var shadowMultiplier = 1.15 * 1.1 * 1.15; //DS, CoS, Weaving
     var avgNonCrit = (510.5+(SP*3/3.5)) * shadowMultiplier;
     var avgBurn = (488+(SP*1.5/3.5)) * shadowMultiplier;
     if (hit <= 16)
@@ -172,9 +174,10 @@ function runSim() {
   var hitVal  = (hitDPS-baseDPS);
   
   var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>";
-  output += "Stat Weights:<br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit  = " + formatNumber(hitVal/SPVal,2) + " SP";
+  output += "Stat Weights:<br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
   
   document.getElementById("page").innerHTML = output;
+  document.getElementById("finalStats").innerHTML = "<table><tr><th colspan='2'>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + 100-miss + "%</td></tr></table>";
   
   console.log(manaLeft)
   console.log(intel)
