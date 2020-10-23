@@ -18,14 +18,14 @@
         document.getElementById(pageName).style.display = "block";
         elmnt.style.backgroundColor = color;
       }
-      
+      setTimeout(function(){ document.getElementById("defaultOpen").click(); }, 20);
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
   <body style="background-color:#888888;">
     <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Settings</button>
     
-    <div id="main" class="tabcontent" onload="openPage('main', this, '#838383')">
+    <div id="main" class="tabcontent">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
       <div class="row">
         <div class="column left">
@@ -38,7 +38,7 @@
             <input type="number" id="mp5">                <label style=color:#C79C6E>Mana Per 5</label><br>
             <br>
 
-            <p>Debuffs</p>
+            <div>Debuffs</div>
             <input type="checkbox" id="curseShadow">      <label style=color:#C79C6E>Curse of Shadow</label><br>
             <input type="checkbox" id="shadowWeaving">    <label style=color:#C79C6E>Shadow Weaving</label><br>
             <br>
@@ -46,7 +46,7 @@
             <input type="checkbox" id="Scorch">           <label style=color:#C79C6E>Scorch</label><br>
             <br>
 
-            <p>Spec</p>
+            <div>Spec</div>
             <select id="spec">
               <option value="DSRuin">DS/Ruin</option>
               <option value="SMRuin">SM/Ruin</option>
@@ -55,7 +55,7 @@
             </select><br>
             <br>
 
-            <p>Consumables</p>
+            <div>Consumables</div>
             <input type="checkbox" id="supremeFlask">     <label style=color:#C79C6E>Flask of Supreme Power</label><br>
             <input type="checkbox" id="arcaneElixir">     <label style=color:#C79C6E>Greater Arcane Elixir</label><br>
             <input type="checkbox" id="shadowElixir">     <label style=color:#C79C6E>Elixir of Shadow Power</label><br>
