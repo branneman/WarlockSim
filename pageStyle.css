@@ -6,17 +6,18 @@ table {
   border-collapse: collapse;
 }
 td {
-  border: 1px solid #dddddd;
-  text-align: center;
+  /*border: 1px solid #dddddd;*/
+  text-align: left;
   padding: 2px;
 }
 th {
-  border: 1px solid #dddddd;
-  text-align: center;
+  /*border: 1px solid #dddddd;*/
+  text-align: left;
   padding: 8px;
 }
-tr:nth-child(even) { background-color: #dddddd; }
-tr:nth-child(odd) { background-color: #dddddd; }
+tr:nth-child(even) /*{ background-color: #dddddd; }*/
+tr:nth-child(odd) /*{ background-color: #dddddd; }*/
+
 .loader {
   border: 3px solid #f3f3f3;
   border-radius: 50%;
