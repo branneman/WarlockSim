@@ -36,41 +36,39 @@
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
       <div class="row">
         <div class="column left">
-          <button id="myButton" type="button" onclick="startCode();">Run Sim</button>
-          <div style=background-color:#666666>
-            <div>Settings</div>
-            <input type="number" id="spellPower" value="642">   <label style=color:#9482C9>Spell Power</label><br>
-            <input type="number" id="spellCrit" value="8">      <label style=color:#9482C9>Spell Crit</label><br>
-            <input type="number" id="spellHit" value="9">       <label style=color:#9482C9>Spell Hit</label><br>
-            <input type="number" id="intellect" value="282">    <label style=color:#9482C9>Intellect</label><br>
-            <input type="number" id="mp5" value="0">            <label style=color:#9482C9>Mana Per 5</label><br>
-            <br>
+          <button id="myButton" type="button" onclick="startCode();">Run Sim</button><br>
+          <div>Stats</div>
+          <input type="number" id="spellPower" value="642">   <label style=color:#9482C9>Spell Power</label><br>
+          <input type="number" id="spellCrit" value="8">      <label style=color:#9482C9>Spell Crit</label><br>
+          <input type="number" id="spellHit" value="9">       <label style=color:#9482C9>Spell Hit</label><br>
+          <input type="number" id="intellect" value="282">    <label style=color:#9482C9>Intellect</label><br>
+          <input type="number" id="mp5" value="0">            <label style=color:#9482C9>Mana Per 5</label><br>
+          <br>
 
-            <div>Debuffs</div>
-            <input type="checkbox" id="curseShadow" checked>      <label style=color:#9482C9>Curse of Shadow</label><br>
-            <input type="checkbox" id="shadowWeaving" checked>    <label style=color:#9482C9>Shadow Weaving</label><br>
-            <br>
-            <input type="checkbox" id="curseElements" checked>    <label style=color:#ce2029>Curse of the Elements</label><br>
-            <input type="checkbox" id="Scorch" checked>           <label style=color:#ce2029>Scorch</label><br>
-            <br>
+          <div>Debuffs</div>
+          <input type="checkbox" id="curseShadow" checked>      <label style=color:#9482C9>Curse of Shadow</label><br>
+          <input type="checkbox" id="shadowWeaving" checked>    <label style=color:#9482C9>Shadow Weaving</label><br>
+          <br>
+          <input type="checkbox" id="curseElements" checked>    <label style=color:#ce2029>Curse of the Elements</label><br>
+          <input type="checkbox" id="Scorch" checked>           <label style=color:#ce2029>Scorch</label><br>
+          <br>
 
-            <div>Spec</div>
-            <select id="spec">
-              <option value="DSRuin">DS/Ruin</option>
-              <option value="SMRuin">SM/Ruin</option>
-              <option value="DSES">DS/ES</option>
-              <option value="SMDS">SM/DS</option>
-            </select><br>
-            <br>
+          <div>Spec</div>
+          <select id="spec">
+            <option value="DSRuin">DS/Ruin</option>
+            <option value="SMRuin">SM/Ruin</option>
+            <option value="DSES">DS/ES</option>
+            <option value="SMDS">SM/DS</option>
+          </select><br>
+          <br>
 
-            <div>Consumables</div>
-            <input type="checkbox" id="supremeFlask" checked>     <label style=color:#9482C9>Flask of Supreme Power</label><br>
-            <input type="checkbox" id="brilliantOil" checked>     <label style=color:#9482C9>Brilliant Wizard Oil</label><br>
-            <input type="checkbox" id="arcaneElixir" checked>     <label style=color:#9482C9>Greater Arcane Elixir</label><br>
-            <input type="checkbox" id="shadowElixir" checked>     <label style=color:#9482C9>Elixir of Shadow Power</label><br>
-            <input type="checkbox" id="fireElixir" checked>       <label style=color:#ce2029>Elixir of Fire Power</label><br>
+          <div>Consumables</div>
+          <input type="checkbox" id="supremeFlask" checked>     <label style=color:#9482C9>Flask of Supreme Power</label><br>
+          <input type="checkbox" id="brilliantOil" checked>     <label style=color:#9482C9>Brilliant Wizard Oil</label><br>
+          <input type="checkbox" id="arcaneElixir" checked>     <label style=color:#9482C9>Greater Arcane Elixir</label><br>
+          <input type="checkbox" id="shadowElixir" checked>     <label style=color:#9482C9>Elixir of Shadow Power</label><br>
+          <input type="checkbox" id="fireElixir" checked>       <label style=color:#ce2029>Elixir of Fire Power</label><br>
 
-          </div>
         </div>
         <div class="column right">
           <p id="page"></p>
