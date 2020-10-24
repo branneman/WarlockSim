@@ -15,19 +15,19 @@
       
       function startChart() {
         var dpsChart = new Chart(document.getElementById('dpsChart'), {
-        type: 'line',
-        data: {
-          labels: 0,
-          datasets: [{
-            label: "DPS Graph",
-            data: 0,
-          }]
-        },
-        options: {
-          scales: {xAxes: [{ticks: {autoSkipPadding: 3}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
-          animation: {duration: 0}
-        }
-      });
+          type: 'line',
+          data: {
+            labels: 0,
+            datasets: [{
+              label: "DPS Graph",
+              data: 0,
+            }]
+          },
+          options: {
+            scales: {xAxes: [{ticks: {autoSkipPadding: 3}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
+            animation: {duration: 0}
+          }
+        });
       }
       
       function openPage(pageName,elmnt,color) {
