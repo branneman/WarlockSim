@@ -184,7 +184,7 @@ function runSim() {
     data: {
       datasets: [{
         label: "DPS Graph",
-        data: math.transpose([timeVec, DPS]),
+        data: [math.transpose([timeVec, DPS])],
       }]
     },
     options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
