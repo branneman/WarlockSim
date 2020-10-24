@@ -184,7 +184,7 @@ function runSim() {
     data: {
       labels: timeVec,
       datasets: [{
-        label: "DPS Graph",
+        //label: "DPS Graph",
         data: DPS,
         fill: false,
         backgroundColor: 'rgba(255, 0, 0, 0.4)',
@@ -195,7 +195,7 @@ function runSim() {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
       animation: {duration: 0},
       events: [],
-      title: {display: true, fontSize: 20}
+      title: {display: true, fontSize: 20, text: "DPS Graph"}
     }
   });
   
