@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="pageStyle.css">
   </head>
   <body style="background-color:#555555;">
-    <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Settings</button>
+    <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Main</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
@@ -57,7 +57,7 @@
         <div class="column left">
           <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
           <h3>Settings</h3>
-          <div>Gear Stats</div>
+          <b>Gear Stats</b>
           <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
           <label style=color:#9482C9> <input type="number" id="spellCrit" value="8">      Spell Crit</label><br>
           <label style=color:#9482C9> <input type="number" id="spellHit" value="9">       Spell Hit</label><br>
@@ -65,14 +65,14 @@
           <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
           <br>
 
-          <div>Debuffs</div>
+          <b>Debuffs</b>
           <label style=color:#9482C9> <input type="checkbox" id="curseShadow" checked>      Curse of Shadow</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="shadowWeaving" checked>    Shadow Weaving</label><br>
           <label style=color:#f20000> <input type="checkbox" id="curseElements" checked>    Curse of the Elements</label><br>
           <label style=color:#f20000> <input type="checkbox" id="Scorch" checked>           Scorch</label><br>
           <br>
 
-          <div>Spec</div>
+          <b>Spec</b>
           <select id="spec">
             <option value="DSRuin">DS/Ruin</option>
             <option value="SMRuin">SM/Ruin</option>
@@ -81,7 +81,7 @@
           </select><br>
           <br>
 
-          <div>Consumables</div>
+          <b>Consumables</b>
           <label style=color:#9482C9> <input type="checkbox" id="supremeFlask" checked>     Flask of Supreme Power</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="brilliantOil" checked>     Brilliant Wizard Oil</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="arcaneElixir" checked>     Greater Arcane Elixir</label><br>
@@ -89,7 +89,7 @@
           <label style=color:#f20000> <input type="checkbox" id="fireElixir" checked>       Elixir of Fire Power</label><br>
           <br>
           
-          <div>World Buffs</div>
+          <b>World Buffs</b>
           <label style=color:#9482C9> <input type="checkbox" id="hakkarBuff" checked>       Spirit of Zandalar</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="onyxiaBuff" checked>       Rallying Cry of the Dragonslayer</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="songflower" checked>       Songflower Serenade</label><br>
