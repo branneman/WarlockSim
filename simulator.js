@@ -190,7 +190,7 @@ function runSim() {
     },
     options: {
       scales: {yAxes: [{ticks: {beginAtZero: true} }] },
-      animation: {duration: 0} }
+      animation: {duration: 0}
     }
   });
   
