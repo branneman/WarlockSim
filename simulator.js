@@ -184,7 +184,7 @@ function runSim() {
     data: math.transpose([timeVec, DPS]),
     //options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
   });
-  dpsChart.render();
+  dpsChart.update();
   
 } //Function
 
