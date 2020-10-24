@@ -181,7 +181,12 @@ function runSim() {
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
-    data: [timeVec, DPS],
+    data: {
+      datasets: [{
+        label: "DPS Graph",
+        data: math.transpose([timeVec, DPS]),
+      }]
+    },
     options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
   });
   dpsChart.update();
