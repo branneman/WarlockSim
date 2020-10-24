@@ -187,8 +187,8 @@ function runSim() {
         label: "DPS Graph",
         data: DPS,
         fill: false,
-        backgroundColor: 'rgba(255, 0, 0, 0.5)',
-        borderColor: 'rgba(255, 0, 0, 0.3)'
+        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+        borderColor: 'rgba(255, 0, 0, 0.2)'
       }]
     },
     options: {
