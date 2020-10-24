@@ -186,7 +186,8 @@ function runSim() {
       datasets: [{
         label: "DPS Graph",
         data: DPS,
-        fill: false
+        fill: false,
+        backgroundColor: 'rgba(255, 100, 100, 0.2)'
       }]
     },
     options: {
