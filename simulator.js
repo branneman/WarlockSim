@@ -192,7 +192,8 @@ function runSim() {
     },
     options: {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1500} }] },
-      animation: {duration: 0}
+      animation: {duration: 0},
+      events: []
     }
   });
   
