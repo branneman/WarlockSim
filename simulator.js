@@ -188,10 +188,11 @@ function runSim() {
         data: DPS,
       }]
     },
-    options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
+    options: {
+      scales: {yAxes: [{ticks: {beginAtZero: true} }] },
+      animation: {duration: 0} }
+    }
   });
-  
-  console.log(dpsChart)
   
 } //Function
 
