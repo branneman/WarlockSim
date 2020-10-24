@@ -186,7 +186,8 @@ function runSim() {
   });
   
   console.log(dpsChart)
-  console.table(dpsChart)
+  console.log(math.transpose([timeVec, DPS]))
+  console.table(math.transpose([timeVec, DPS]))
   
 } //Function
 
