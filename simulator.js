@@ -181,8 +181,8 @@ function runSim() {
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
-    data: {x: timeVec, y: DPS},
-    options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
+    data: math.transpose([timeVec, DPS]),
+    //options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
   });
   
   console.log(dpsChart)
