@@ -189,7 +189,7 @@ function runSim() {
       }]
     },
     options: {
-      scales: {yAxes: [{ticks: {beginAtZero: true} }] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1500} }] },
       animation: {duration: 0}
     }
   });
