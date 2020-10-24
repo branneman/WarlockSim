@@ -179,7 +179,7 @@ function runSim() {
   document.getElementById("page").innerHTML = output;
   document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + Number(100-miss) + "%</td></tr></table>";
   
-  var dpsChart = new Chart(document.getElementById('dpsChart'), {
+  /*var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
     data: {
       labels: timeVec,
@@ -192,10 +192,26 @@ function runSim() {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1500} }] },
       animation: {duration: 0}
     }
-  });
+  });*/
   
 } //Function
 
 function formatNumber(num, places) {
   return +(Math.round(num + "e+" + places)  + "e-" + places);
+}
+
+function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
 }
