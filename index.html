@@ -43,8 +43,10 @@
         document.getElementById(pageName).style.display = "block";
         elmnt.style.backgroundColor = color;
       }
-      document.getElementById("defaultOpen").click();
-      runSim();
+      setTimeout(function(){ 
+        document.getElementById("defaultOpen").click(); 
+        runSim(); 
+      }, 10);
       Chart.defaults.global.defaultFontColor = 'black';
       //ocument.getElementById("main").addEventListener("input", runSim());
     </script> 
