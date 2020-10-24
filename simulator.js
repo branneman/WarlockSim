@@ -185,6 +185,9 @@ function runSim() {
     options: {scales: {yAxes: [{ticks: {beginAtZero: true} }] } }
   });
   
+  console.log(dpsChart)
+  console.table(dpsChart)
+  
 } //Function
 
 function formatNumber(num, places) {
