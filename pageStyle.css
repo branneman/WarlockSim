@@ -1,3 +1,6 @@
+html * {
+    font-family: Apercu Mono, monospace;
+}
 html {
     overflow-y:scroll;
 }
