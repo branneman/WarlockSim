@@ -193,6 +193,8 @@ function runSim() {
       animation: {duration: 0}
     }
   });*/
+  removeData(dpsChart)
+  addData(dpsChart, timeVec, DPS)
   
 } //Function
 
