@@ -184,7 +184,7 @@ function runSim() {
     data: {
       labels: timeVec,
       datasets: [{
-        //label: "DPS Graph",
+        label: "Current Settings",
         data: DPS,
         fill: false,
         backgroundColor: 'rgba(255, 0, 0, 0.4)',
