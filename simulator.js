@@ -16,7 +16,7 @@ function runSim() {
   
   var timeVec = new Array;
   timeVec[0] = 30;
-  for (var i=30.5; i<=120; i=i+0.5)
+  for (var i=30.5; i<=45; i=i+0.5)
     timeVec[timeVec.length] = i;
   var threatTime = 0;
 
@@ -191,7 +191,7 @@ function runSim() {
       }]
     },
     options: {
-      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1500} }] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
       animation: {duration: 0},
       events: []
     }
