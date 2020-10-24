@@ -179,6 +179,7 @@ function runSim() {
   document.getElementById("page").innerHTML = output;
   document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>" + SP + "</td></tr><tr><td>Crit Chance</td><td>" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>" + Number(100-miss) + "%</td></tr></table>";
   
+  var dpsChart = new Chart(document.getElementById('dpsChart'), {type: 'line'});
   dpsChart.destroy()
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
