@@ -174,7 +174,7 @@ function runSim() {
   var hitVal  = (hitDPS-baseDPS);
   
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
-  var statWeightOutput = "<b>Stat Weights:</b><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
+  var statWeightOutput = "<h2>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</h2>";
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
@@ -204,7 +204,7 @@ function runSim() {
   critVec = math.subtract(critVec,baseVec);
   hitVec = math.subtract(hitVec,baseVec);
   intVec = math.divide(math.subtract(intVec,baseVec),10);
-  mp5Vec = math.divide(math.subtract(mp5Vec,baseVec),3); console.log(mp5Vec); console.log(intVec)
+  mp5Vec = math.divide(math.subtract(mp5Vec,baseVec),3);
   
   var statWeightChart = new Chart(document.getElementById('statWeightChart'), {
     type: 'line',
@@ -221,7 +221,25 @@ function runSim() {
         data: math.dotDivide(hitVec,SPVec),
         fill: false,
         backgroundColor: 'rgba(255, 255, 0, 0.4)',
-        borderColor: 'rgba(255, 255, 0, 0.3)'}]
+        borderColor: 'rgba(255, 255, 0, 0.3)'},
+                 {
+        label: "Int Value",
+        data: math.dotDivide(intVec,SPVec),
+        fill: false,
+        backgroundColor: 'rgba(0, 0, 255, 0.4)',
+        borderColor: 'rgba(0, 0, 255, 0.3)'},
+                 {
+        label: "Mp5 Value",
+        data: math.dotDivide(mp5Vec,SPVec),
+        fill: false,
+        backgroundColor: 'rgba(255, 0, 255, 0.4)',
+        borderColor: 'rgba(255, 0, 255, 0.3)'},
+                 {
+        label: "DPS per SP",
+        data: SPVec,
+        fill: false,
+        backgroundColor: 'rgba(0, 255, 0, 0.4)',
+        borderColor: 'rgba(0, 255, 0, 0.3)'}]
     },
     options: {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true} }] },
