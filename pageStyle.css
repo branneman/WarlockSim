@@ -89,7 +89,7 @@ body, html {
   padding: 10px 10px;
 }
 .right {
-  width: 50%;
+  width: 50%-185px;
   padding: 10px 10px;  
 }
 /* Clear floats after the columns */
