@@ -55,6 +55,7 @@
   </head>
   <body style="background-color:#888888;">
     <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Main</button>
+    <button class="tablink" onclick="openPage('talent', this, '#838383')">Talents & Rotation</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
@@ -113,6 +114,30 @@
           <canvas id="statWeightChart" style="background-color:#999999;" width=300px height=200px></canvas>
         </div>
       </div>
-    </div>
+    </div> <!-->Main tab<-->
+    <div id="talent" class="tabcontent" name="main" oninput="runSim();">
+      <div class="row">
+        <div class="column left" style="background-color:#555555;">
+          <table>
+            <tr>
+              <th colspan='4'>Affliction</th>
+            </tr>
+            <tr>
+              <td>
+                BOX
+              </td>
+              <td>
+                BOX
+              </td>
+              <td>
+              </td>
+              <td>
+                BOX
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div> <!-->Talent tab<-->
   </body>
 </html>
