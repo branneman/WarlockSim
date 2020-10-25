@@ -176,7 +176,7 @@ function runSim() {
   //var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>";
   //var output = "Average dps: " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>Fight durations: " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds<br><br>";
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
-  var statWeightOutput += "<b>Stat Weights:</br><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
+  var statWeightOutput = "<b>Stat Weights:</br><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
