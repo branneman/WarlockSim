@@ -74,9 +74,8 @@ body, html {
   height: 100%;
 }
 
-#DebuffAnalyser {background-color: #888888;}
-#DebuffsUsed {background-color: #888888;}
-#ISBStacks {background-color: #888888;}
+#main {background-color: #888888;}
+#talent {background-color: #888888;}
 
 .row {
   display: flex;
