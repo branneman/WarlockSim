@@ -173,10 +173,8 @@ function runSim() {
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
   
-  //var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>";
-  //var output = "Average dps: " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>Fight durations: " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds<br><br>";
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
-  var statWeightOutput = "<b>Stat Weights:</br><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
+  var statWeightOutput = "<b>Stat Weights:</b><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
@@ -199,6 +197,32 @@ function runSim() {
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "DPS Graph"}
+    }
+  });
+  
+  SPVec = math.subtract(SPVec,baseVec);
+  critVec = math.subtract(critVec,baseVec);
+  hitVec = math.subtract(hitVec,baseVec);
+  intVec = math.subtract(intVec,baseVec)/10;
+  mp5Vec = math.subtract(mp5Vec,baseVec)/3; console.log(mp5Vec); console.log(intVec)
+  
+  var statWeightChart = new Chart(document.getElementById('statWeightChart'), {
+    type: 'line',
+    data: {
+      labels: timeVec,
+      datasets: [{
+        label: "Crit Value",
+        data: math.dotDivide(critVec,SPVec),
+        fill: false,
+        backgroundColor: 'rgba(255, 0, 0, 0.4)',
+        borderColor: 'rgba(255, 0, 0, 0.3)'
+      }]
+    },
+    options: {
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true} }] },
+      animation: {duration: 0},
+      events: [],
+      title: {display: true, fontSize: 20, text: "Stat Weights Graph"}
     }
   });
   
