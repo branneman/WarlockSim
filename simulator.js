@@ -203,8 +203,8 @@ function runSim() {
   SPVec = math.subtract(SPVec,baseVec);
   critVec = math.subtract(critVec,baseVec);
   hitVec = math.subtract(hitVec,baseVec);
-  intVec = math.subtract(intVec,baseVec)/10;
-  mp5Vec = math.subtract(mp5Vec,baseVec)/3; console.log(mp5Vec); console.log(intVec)
+  intVec = math.dotDivide(math.subtract(intVec,baseVec),10);
+  mp5Vec = math.divide(math.subtract(mp5Vec,baseVec),3); console.log(mp5Vec); console.log(intVec)
   
   var statWeightChart = new Chart(document.getElementById('statWeightChart'), {
     type: 'line',
