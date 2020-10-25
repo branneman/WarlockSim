@@ -221,8 +221,7 @@ function runSim() {
         data: math.dotDivide(hitVec,SPVec),
         fill: false,
         backgroundColor: 'rgba(255, 255, 0, 0.4)',
-        borderColor: 'rgba(255, 255, 0, 0.3)'},
-                 }]
+        borderColor: 'rgba(255, 255, 0, 0.3)'}]
     },
     options: {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true} }] },
