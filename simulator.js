@@ -175,10 +175,11 @@ function runSim() {
   
   //var output = "Average dps from fight duration span of " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds is " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>";
   //var output = "Average dps: " + formatNumber(math.sum(DPS)/DPS.length,2) + " dps<br>Fight durations: " + timeVec[0] + " to " + timeVec[timeVec.length-1] + " seconds<br><br>";
-  var output = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
-  output += "Stat Weights:<br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
+  var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
+  var statWeightOutput += "<b>Stat Weights:</br><br>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit &nbsp= " + formatNumber(hitVal/SPVal,2) + " SP";
 
-  document.getElementById("page").innerHTML = output;
+  document.getElementById("dps").innerHTML = dpsOutput;
+  document.getElementById("statWeights").innerHTML = statWeightOutput;
   document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr></table>";
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
