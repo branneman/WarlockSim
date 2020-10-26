@@ -32,53 +32,92 @@
       }
       
       function talentFunc(click,element) {
-        var text = element.children[1];
-        var talent = element.children[0];
-        if (talent.id == "talentAmpCurse" || talent.id == "talentSiphon" || talent.id == "talentExhaust" || talent.id == "talentDarkPact" || talent.id == "talentFelDomination" || talent.id == "talentDemonicSacrifice" || talent.id == "talentSoulLink" || talent.id == "talentShadowburn" || talent.id == "talentRuin" || talent.id == "talentConflagrate")
-          var max = 1;
-        else if (talent.id == "talentLifeTap" || talent.id == "talentDrainSoul" || talent.id == "talentGrimReach" || talent.id == "talentNightfall" || talent.id == "talentDrainMana" || talent.id == "talentHealthstone" || talent.id == "talentHealthFunnel" || talent.id == "talentMasterSummon" || talent.id == "talentFirestone" || talent.id == "talentSpellstone" || talent.id == "talentImpFirebolt" || talent.id == "talentImpLash" || talent.id == "talentIntensity" || talent.id == "talentDestructiveReach" || talent.id == "talentPyroclasm")
-          var max = 2;
-        else if (talent.id == "talentWeakness" || talent.id == "talentAgony" || talent.id == "talentImpImp" || talent.id == "talentImpVoid" || talent.id == "talentImpSuccubus")
-          var max = 3;
-        else if (talent.id == "talentImpExhaust")
-          var max = 4;
-        else
-          var max = 5;
-        
-        if (click == "left") {
-          text.innerHTML = Number(text.innerHTML) + 1;}
-        else if (click == "right") {
-          text.innerHTML = Number(text.innerHTML) - 1;}
-        
-        if (text.innerHTML > 0 && text.innerHTML < max) {
-          element.style.filter = "grayscale(0%)";
-          element.style.color = "green";
-          talent.style.border = "2px solid green";
-        }  
-        else if (text.innerHTML >= max) {
-          element.style.filter = "grayscale(0%)";
-          element.style.color = "orange";
-          talent.style.border = "2px solid orange";
-          text.innerHTML = max;
+        if (arguments.length == 0) {
+          var affTree = document.getElementById("afflictionTree").children.children;
+          var demTree = document.getElementById("demonologyTree").children.children;
+          var desTree = document.getElementById("destructionTree").children.children;
+          for (var i = 0; i<affTree.length; i++) {
+            var text = affTree[i].children[1];
+            var talent = affTree[i].children[0];
+            if (talent.id == "talentAmpCurse" || talent.id == "talentSiphon" || talent.id == "talentExhaust" || talent.id == "talentDarkPact" || talent.id == "talentFelDomination" || talent.id == "talentDemonicSacrifice" || talent.id == "talentSoulLink" || talent.id == "talentShadowburn" || talent.id == "talentRuin" || talent.id == "talentConflagrate")
+              var max = 1;
+            else if (talent.id == "talentLifeTap" || talent.id == "talentDrainSoul" || talent.id == "talentGrimReach" || talent.id == "talentNightfall" || talent.id == "talentDrainMana" || talent.id == "talentHealthstone" || talent.id == "talentHealthFunnel" || talent.id == "talentMasterSummon" || talent.id == "talentFirestone" || talent.id == "talentSpellstone" || talent.id == "talentImpFirebolt" || talent.id == "talentImpLash" || talent.id == "talentIntensity" || talent.id == "talentDestructiveReach" || talent.id == "talentPyroclasm")
+              var max = 2;
+            else if (talent.id == "talentWeakness" || talent.id == "talentAgony" || talent.id == "talentImpImp" || talent.id == "talentImpVoid" || talent.id == "talentImpSuccubus")
+              var max = 3;
+            else if (talent.id == "talentImpExhaust")
+              var max = 4;
+            else
+              var max = 5;
+            
+            if (text.innerHTML > 0 && text.innerHTML < max) {
+              element.style.filter = "grayscale(0%)";
+              element.style.color = "green";
+              talent.style.border = "2px solid green";
+            }  
+            else if (text.innerHTML >= max) {
+              element.style.filter = "grayscale(0%)";
+              element.style.color = "orange";
+              talent.style.border = "2px solid orange";
+            }
+            else if (text.innerHTML <= 0) {
+              element.style.filter = "grayscale(100%)";
+              element.style.color = "orange";
+              talent.style.border = "2px solid orange";
+            }
+          }
+          
         }
-        else if (text.innerHTML <= 0) {
-          element.style.filter = "grayscale(100%)";
-          talent.style.border = "2px solid orange";
-          text.innerHTML = 0;
+        else {
+          var text = element.children[1];
+          var talent = element.children[0];
+          if (talent.id == "talentAmpCurse" || talent.id == "talentSiphon" || talent.id == "talentExhaust" || talent.id == "talentDarkPact" || talent.id == "talentFelDomination" || talent.id == "talentDemonicSacrifice" || talent.id == "talentSoulLink" || talent.id == "talentShadowburn" || talent.id == "talentRuin" || talent.id == "talentConflagrate")
+            var max = 1;
+          else if (talent.id == "talentLifeTap" || talent.id == "talentDrainSoul" || talent.id == "talentGrimReach" || talent.id == "talentNightfall" || talent.id == "talentDrainMana" || talent.id == "talentHealthstone" || talent.id == "talentHealthFunnel" || talent.id == "talentMasterSummon" || talent.id == "talentFirestone" || talent.id == "talentSpellstone" || talent.id == "talentImpFirebolt" || talent.id == "talentImpLash" || talent.id == "talentIntensity" || talent.id == "talentDestructiveReach" || talent.id == "talentPyroclasm")
+            var max = 2;
+          else if (talent.id == "talentWeakness" || talent.id == "talentAgony" || talent.id == "talentImpImp" || talent.id == "talentImpVoid" || talent.id == "talentImpSuccubus")
+            var max = 3;
+          else if (talent.id == "talentImpExhaust")
+            var max = 4;
+          else
+            var max = 5;
+
+          if (click == "left") {
+            text.innerHTML = Number(text.innerHTML) + 1;}
+          else if (click == "right") {
+            text.innerHTML = Number(text.innerHTML) - 1;}
+
+          if (text.innerHTML > 0 && text.innerHTML < max) {
+            element.style.filter = "grayscale(0%)";
+            element.style.color = "green";
+            talent.style.border = "2px solid green";
+          }  
+          else if (text.innerHTML >= max) {
+            element.style.filter = "grayscale(0%)";
+            element.style.color = "orange";
+            talent.style.border = "2px solid orange";
+            text.innerHTML = max;
+          }
+          else if (text.innerHTML <= 0) {
+            element.style.filter = "grayscale(100%)";
+            element.style.color = "orange";
+            talent.style.border = "2px solid orange";
+            text.innerHTML = 0;
+          }
         }
       }
       
       function setTalents(spec) {
         if (spec == "DS/Ruin") {
-          console.log(document.getElementById("talentSuppression"))
-          document.getElementById("talentSuppression").children[1].innerHTML = 2;
-          document.getElementById("talentCorruption").children[1].innerHTML = 5;
-          document.getElementById("talentLifeTap").children[1].innerHTML = 2;
-          document.getElementById("talentHealthstone").children[1].innerHTML = 2;
-          document.getElementById("talentStamina").children[1].innerHTML = 5;
-          document.getElementById("talentImpImp").children[1].innerHTML = 3;
+          document.getElementById("talentSuppression").parentNode.children[1].innerHTML = 2;
+          document.getElementById("talentCorruption").parentNode.children[1].innerHTML = 5;
+          document.getElementById("talentLifeTap").parentNode.children[1].innerHTML = 2;
+          document.getElementById("talentHealthstone").parentNode.children[1].innerHTML = 2;
+          document.getElementById("talentStamina").parentNode.children[1].innerHTML = 5;
+          document.getElementById("talentImpImp").parentNode.children[1].innerHTML = 3;
         }
-      }  
+        talentFunc();
+      }
       
       function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
@@ -173,7 +212,7 @@
       <button style="width:142px;height:25px;font-size:16px" onclick="setTalents('Conflagrate')">Conflagrate</button>
       <div class="row">
         <div class="column talent" style="background-color:#555555;">
-          <table class="center">
+          <table class="center" id="afflictionTree">
             <tr>
               <th colspan='4' style='text-align:center'>Affliction</th>
             </tr>
@@ -215,7 +254,7 @@
           </table>
         </div>
         <div class="column talent" style="background-color:#555555;">
-          <table class="center">
+          <table class="center" id="demonologyTree">
             <tr>
               <th colspan='4' style='text-align:center'>Demonology</th>
             </tr>
@@ -257,7 +296,7 @@
           </table>
         </div>
         <div class="column talent" style="background-color:#555555;">
-          <table class="center">
+          <table class="center" id="destructionTree">
             <tr>
               <th colspan='4' style='text-align:center'>Destruction</th>
             </tr>
