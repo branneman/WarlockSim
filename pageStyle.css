@@ -112,6 +112,8 @@ input[type=number]{
     position: relative;
     text-align: center;
     color: orange;
+    border: 1px solid orange;
+    filter: grayscale(100%);
 }
 .centered {
     position: absolute;
@@ -139,7 +141,7 @@ input[type=number]{
     cursor: default;
 }
 .talentIcon {
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
     width: 46px;
     height: 46px;
     user-drag: none; 
