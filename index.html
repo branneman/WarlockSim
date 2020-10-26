@@ -33,12 +33,16 @@
       
       function talentFunc(click,element) {
         if (click == "left") {
-          //element.style.filter = "grayscale(0%)";
-          document.getElementById("testIcon").innerHTML += 1;}
+          document.getElementById("testIcon").innerHTML = Number(document.getElementById("testIcon").innerHTML) + 1;
+          element.style.filter = "grayscale(0%)";
+        }
         else if (click == "right") {
-          //element.style.filter = "grayscale(100%)";
-          document.getElementById("testIcon").innerHTML -= 1;}
-        console.log("Here")
+          document.getElementById("testIcon").innerHTML = Number(document.getElementById("testIcon").innerHTML) - 1;
+          if (document.getElementById("testIcon").innerHTML == 0) {
+            element.style.filter = "grayscale(100%)";
+            document.getElementById("testIcon").innerHTML = undefined;
+          }
+        }
       }
       
       function openPage(pageName,elmnt,color) {
