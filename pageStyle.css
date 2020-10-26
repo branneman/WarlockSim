@@ -123,6 +123,6 @@ input[type=number]{
     filter: grayscale(100%);
     width: 46px;
     height: 46px;
-    onclick: "talentFunc("left")";
-    oncontextmenu: "talentFunc("right"); return false";
+    onclick: "talentFunc("left",this)";
+    oncontextmenu: "talentFunc("right",this); return false";
 }
