@@ -125,6 +125,7 @@
       }
       
       function setTalents(spec) {
+        resetTalents();
         if (spec == "DS/Ruin") {
           document.getElementById("talentSuppression").parentNode.children[1].innerHTML = 2;
           document.getElementById("talentCorruption").parentNode.children[1].innerHTML = 5;
@@ -146,6 +147,15 @@
           document.getElementById("talentIntensity").parentNode.children[1].innerHTML = 2;
           document.getElementById("talentRuin").parentNode.children[1].innerHTML = 1;
         }
+        else if (spec == "SM/Ruin") {
+          
+        }
+        talentFunc();
+      }
+      
+      function resetTalents() {
+        document.getElementById("talentSuppression").parentNode.children[1].innerHTML = 0;
+        document.getElementById("talentCorruption").parentNode.children[1].innerHTML = 0;
         talentFunc();
       }
       
@@ -235,12 +245,12 @@
     </div> <!--Main tab-->
     <div id="talent" class="tabcontent" name="talent" oninput="runSim();">
       <p>Pick your talents & rotation</p>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('DS/Ruin')">DS/Ruin</button>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('SM/Ruin')">SM/Ruin</button>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('DS/ES')">DS/ES</button>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('SM/DS')">SM/DS</button>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('Conflagrate')">Conflagrate</button>
-      <button style="width:119px;height:25px;font-size:14px" onclick="setTalents('Reset')">Reset</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/Ruin')">DS/Ruin</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/Ruin')">SM/Ruin</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/ES')">DS/ES</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/DS')">SM/DS</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Conflagrate')">Conflagrate</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Reset')">Reset</button>
       <div class="row">
         <div class="column talent" style="background-color:#555555;">
           <table class="center" id="afflictionTree">
