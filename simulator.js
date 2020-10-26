@@ -19,7 +19,7 @@ function runSim() {
   
   var timeVec = new Array;
   timeVec[0] = 30;
-  for (var i=30.5; i<=45; i=i+0.5)
+  for (var i=30.5; i<=60; i=i+0.5)
     timeVec[timeVec.length] = i;
   var threatTime = 0;
 
