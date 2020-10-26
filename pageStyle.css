@@ -111,7 +111,7 @@ input[type=number]{
 .wrapper {
   position: relative;
   text-align: center;
-  color: white;
+  color: orange;
 }
 .centered {
   position: absolute;
