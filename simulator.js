@@ -31,7 +31,7 @@ function runSim() {
   var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked;
   SP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
   var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
-  crit += 1*document.getElementById("brilliantOil").checked;
+  crit += 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked;
   int += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked;
   mp5 += 8*document.getElementById("nightfinSoup").checked + 10*document.getElementById("magebloodPotion").checked + 42*document.getElementById("blessingOfWisdom").checked + 25*document.getElementById("manaSpringTotem").checked;
   
