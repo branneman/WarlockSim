@@ -43,7 +43,7 @@
                 var text = affTree[i].children[j].children[0].children[1];
                 var talent = affTree[i].children[j].children[0].children[0];
               }
-              catch(err) {}
+              catch(err) {console.log(i + ", " + j + ": " + err)}
               if (text !== undefined && talent !== undefined) {
                 if (talent.id == "talentAmpCurse" || talent.id == "talentSiphon" || talent.id == "talentExhaust" || talent.id == "talentDarkPact" || talent.id == "talentFelDomination" || talent.id == "talentDemonicSacrifice" || talent.id == "talentSoulLink" || talent.id == "talentShadowburn" || talent.id == "talentRuin" || talent.id == "talentConflagrate")
                   var max = 1;
