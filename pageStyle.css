@@ -4,6 +4,10 @@ html * {
 html {
     overflow-y:scroll;
 }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
