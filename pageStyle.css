@@ -110,4 +110,6 @@ input[type=number]{
 }
 .talentIcon {
     filter: grayscale(100%);
+    width=45;
+    height=45;
 }
