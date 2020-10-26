@@ -11,8 +11,11 @@ function runSim() {
   var ZHC = false;
   var PI = 0;
   
-  var raid = false;
-  var gnome = false;
+  var race = document.getElementById("race").value;
+  if (race == "gnome")
+    var gnome = true;
+  else
+    var gnome = false;
   
   var timeVec = new Array;
   timeVec[0] = 30;
@@ -25,9 +28,12 @@ function runSim() {
   var songflower = document.getElementById("songflower").checked;
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
-  var manaExtra = 0;
-  SP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked;
-  crit = crit + 1*document.getElementById("brilliantOil").checked;
+  var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked;
+  var ShP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
+  var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
+  crit += 1*document.getElementById("brilliantOil").checked;
+  int += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked;
+  mp5 += 8*document.getElementById("nightfinSoup").checked + 10*document.getElementById("magebloodPotion").checked + 36*;
   
   var sbCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
   var burnCost = 365 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
@@ -41,17 +47,17 @@ function runSim() {
   var agony = false;
   var burn = false;
   
-  var shadowMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML); //DS, CoS, Weaving, SM
-  var fireMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML); //DS, CoE, Scorch, Emberstorm
+  var shadowMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+  var fireMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
   
   for (var q=1; q<=6; q++) {
     if (q==1) {
       SP = SP + 1;}
     else if (q==2) {
       SP = SP - 1; 
-      int = int + 10 + 0.5*gnome;}
+      int = int + 10;}
     else if (q==3) {
-      int = int - 10 - 0.5*gnome; 
+      int = int - 10;}
       crit = crit + 1;}
     else if (q==4) {
       crit = crit - 1;
@@ -62,7 +68,7 @@ function runSim() {
     else if (q==6) {
       mp5 = mp5 - 3;}
     
-    var intel = Math.round((int/(1 + 0.05*gnome)+raid*47)*(1 + 0.1*raid)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
+    var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
     var avgNonCrit = (510.5+(SP*3/3.5)) * shadowMultiplier;
