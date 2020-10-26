@@ -29,8 +29,9 @@ function runSim() {
   SP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked;
   crit = crit + 1*document.getElementById("brilliantOil").checked;
   
-  var sbCost = 380; 
-  var sbTime = 2.5;
+  var sbCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  var burnCost = 365 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  var sbTime = 3 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
   var GCD = 1.5;
   var corruptionCost = 290;
   var corruptionDuration = 18;
@@ -38,9 +39,10 @@ function runSim() {
   var agonyCost = 215;
   var agonyDuration = 24;
   var agony = false;
+  var burn = false;
   
-  var shadowMultiplier = 1.15 * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked); //DS, CoS, Weaving
-  var fireMultiplier = 1.15 * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked); //DS, CoE, Scorch
+  var shadowMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML); //DS, CoS, Weaving, SM
+  var fireMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML); //DS, CoE, Scorch, Emberstorm
   
   for (var q=1; q<=6; q++) {
     if (q==1) {
@@ -62,7 +64,7 @@ function runSim() {
     
     var intel = Math.round((int/(1 + 0.05*gnome)+raid*47)*(1 + 0.1*raid)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
-    var tapGain = (424+SP*0.8)*1.2;
+    var tapGain = (424+SP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
     var avgNonCrit = (510.5+(SP*3/3.5)) * shadowMultiplier;
     var avgBurn = (488+(SP*1.5/3.5)) * shadowMultiplier;
     if (hit <= 16)
@@ -81,7 +83,6 @@ function runSim() {
     var damage = 0;
     var mana = manaMain;
     var timePast = 0;
-    var burn = false;
     var SBC = 0;
     for (var i=0; i<timeVec.length; i++) {
       agony = false; corruption = false; time = threatTime; damage = 0; mana = manaMain; timePast = 0; burn = false; SBC = 0;
@@ -105,23 +106,23 @@ function runSim() {
           agony = false;
         if (corruption == true && time>=corruptionUse*corruptionDuration)
           corruption = false;
-        if (mana < sbCost || (timeLeft<5)+(mana<sbCost+365)+(timeLeft>1.5)==3) {
+        if (mana < sbCost || (timeLeft<5)+(mana<sbCost+burnCost)+(timeLeft>1.5)==3) {
           if (timeLeft >= 2) {
               mana = mana + tapGain;
               lifeTaps[i]++;}
-          time = time+GCD;}
+          time += GCD;}
         
         else if (agony == false && agonyDuration <= timeLeft) {
           agony = true; agonyUse++;
-          //damage = damage + (1044*1.06);
-          mana = mana - agonyCost;
-          time = time + GCD;}
+          damage += (1044*1.06);
+          mana -= agonyCost;
+          time += GCD;}
         
         else if (corruption == false && corruptionDuration <= timeLeft) {
           corruption = true; agonyUse++;
-          //damage = damage + 888;
-          mana = mana - corruptionCost;
-          time = time + GCD;}
+          damage += 888;
+          mana -= corruptionCost;
+          time += GCD;}
         
         else if (sbTime <= timeLeft) {
           damage += (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1);
@@ -139,7 +140,7 @@ function runSim() {
         
         else if (sbTime > timeLeft) {
           damage += (avgBurn*critFinal*2 + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1);
-          mana -= 365;
+          mana -= burnCost;
           time += GCD*2;
           burn = true;
         }
