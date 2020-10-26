@@ -118,7 +118,7 @@ input[type=number]{
     position: absolute;
     top: 50%;
     left: 50%;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     transform: translate(-50%, -50%);
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -132,7 +132,7 @@ input[type=number]{
     position: absolute;
     bottom: 4px;
     right: 4px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
