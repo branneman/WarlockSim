@@ -33,7 +33,8 @@
       
       function talentFunc(click,element) {
         var text = element.children[1];
-        console.log(element.children[0].value)
+        var talent = element.children[0];
+        console.log(talent)
         if (click == "left") {
           text.innerHTML = Number(text.innerHTML) + 1;
           element.style.filter = "grayscale(0%)";
@@ -140,29 +141,29 @@
               <th colspan='4' style='text-align:center'>Affliction</th>
             </tr>
             <tr><td>   </td> 
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSuppression" value=5 class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unsummonbuilding.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentCorruption" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_abominationexplosion.jpg" alt="T"><b class="bottom-right">0</b></div></td> 
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSuppression" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unsummonbuilding.jpg" alt="T">    <b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentCorruption" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_abominationexplosion.jpg" alt="T"> <b class="bottom-right">0</b></div></td> 
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofmannoroth.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_haunting.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentWeakness" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofmannoroth.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDrainSoul" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_haunting.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentLifeTap" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_burningspirit.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDrainLife" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain02.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
             <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentAgony" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curseofsargeras.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_fingerofdeath.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentFelConc" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_fingerofdeath.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentAmpCurse" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_contagion.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_callofbone.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentGrimReach" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_callofbone.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentNightfall" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_twilight.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_siphonmana.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDrainMana" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_siphonmana.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
             <tr><td>   </td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSiphon" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_requiem.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_grimward.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_grimward.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentExhaust" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_grimward.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpExhaust" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_grimward.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
             <tr><td>   </td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentShadowMastery" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadetruesight.jpg" alt="T"><b class="bottom-right">0</b></div></td>
@@ -181,30 +182,30 @@
             <tr>
               <th colspan='4' style='text-align:center'>Demonology</th>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_04.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonimp.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentHealthstone" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_stone_04.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpImp" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonimp.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentStamina" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonvoidwalker.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_magicalsentry.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentHealthFunnel" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpVoid" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonvoidwalker.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentFelIntellect" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_magicalsentry.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonsuccubus.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_removecurse.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antishadow.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpSuccubus" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_summonsuccubus.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentFelDomination" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_removecurse.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentFelStamina" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antishadow.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
             <tr><td>   </td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_impphaseshift.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentMasterSummon" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_impphaseshift.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentUnholyPower" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowworddominate.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id"talentDemonicSacrifice" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentEnslaveDemon" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_enslavedemon.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDemonicSacrifice" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_psychicscream.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_ammo_firetar.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentFirestone" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_ammo_firetar.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
             <tr><td>   </td>
                 <td>   </td>
@@ -212,8 +213,8 @@
                 <td>   </td>
             </tr>
             <tr><td>   </td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_gathershadows.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_gem_sapphire_01.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSoulLink" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_gathershadows.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSpellstone" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_gem_sapphire_01.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
           </table>
@@ -230,20 +231,20 @@
             </tr>
             <tr><td>   </td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentBane" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathpact.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fire.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentAftermath" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_fire.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt.jpg" alt="T"></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curse.jpg" alt="T"></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpFirebolt" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt.jpg" alt="T"></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImpLash" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_curse.jpg" alt="T"></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDevastation" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_flameshock.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentShadowburn" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_scourgebuild.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_lavaspawn.jpg" alt="T"><b class="bottom-right">0</b></div></td>
-                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_corpseexplode.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentIntensity" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_lavaspawn.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+                <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentDestructiveReach" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_corpseexplode.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentSearingPain" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_soulburn.jpg" alt="T"><b class="bottom-right">0</b></div></td>
             </tr>
-            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_volcano.jpg" alt="T"><b class="bottom-right">0</b></div></td>
+            <tr><td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentPyroclasm" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_volcano.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentImmolate" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_fire_immolation.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td><div class="wrapper" onclick="talentFunc('left',this);" oncontextmenu="talentFunc('right',this); return false"><img id="talentRuin" class="talentIcon" src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowwordpain.jpg" alt="T"><b class="bottom-right">0</b></div></td>
                 <td>   </td>
