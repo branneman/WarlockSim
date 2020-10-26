@@ -74,7 +74,7 @@ function runSim() {
     var critChance = (1.7 + crit + 5 + (intel/60.6) + 10*onyxiaBuff + 5*songflower + 3*diremaulBuff);
     var critFinal = (1.7 + crit + 5 + (intel/60.6) + 10*onyxiaBuff + 5*songflower + 3*diremaulBuff) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
-    var shadowVuln = 1 - Math.pow(1 - critChance/100, 4/(1-miss/100));
+    var shadowVuln = (1 - Math.pow(1 - critChance/100, 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML);
     
     var DPS = new Array;
     var lifeTaps = new Array;
