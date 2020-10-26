@@ -32,8 +32,10 @@
       }
       
       function talentFunc(click,element) {
+        console.log(element.children)
+        var text = element.children[1];
         if (click == "left") {
-          document.getElementById("testIcon").innerHTML = Number(document.getElementById("testIcon").innerHTML) + 1;
+          text.innerHTML = Number(text.innerHTML) + 1;
           element.style.filter = "grayscale(0%)";
         }
         else if (click == "right") {
