@@ -185,7 +185,7 @@ function runSim() {
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
-  document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr></table>";
+  document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr></table>";
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
