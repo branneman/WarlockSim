@@ -141,7 +141,8 @@ input[type=number]{
 }
 .talentIcon {
     /*filter: grayscale(100%);*/
-    border: 1px solid orange;
+    border: 2px solid orange;
+    border-radius: 4px;
     width: 46px;
     height: 46px;
     user-drag: none; 
