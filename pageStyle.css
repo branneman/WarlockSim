@@ -16,7 +16,7 @@ table {
 td {
   /*border: 1px solid #000000;*/
   text-align: left;
-  padding: 8px;
+  padding: 6px;
 }
 th {
   /*border: 1px solid #000000;*/
@@ -24,7 +24,7 @@ th {
   padding: 8px;
 }
 tr {
-    padding: 8px;
+    padding: 4px;
 }
 tr:nth-child(even) /*{ background-color: #dddddd; }*/
 tr:nth-child(odd) /*{ background-color: #dddddd; }*/
