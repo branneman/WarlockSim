@@ -108,6 +108,6 @@ body, html {
 input[type=number]{
     width: 50px;
 }
-img {
+.talentIcon {
     filter: grayscale(100%);
 }
