@@ -105,7 +105,7 @@ function runSim() {
       
       while (time <= timeVec[i]) {
         var timeLeft = timeVec[i]-time;
-        mana = mana + (time-timePast)*(mp5+36*raid)/5;
+        mana = mana + (time-timePast) * mp5/5;
         timePast = time;
         
         if (agony == true && time>=agonyUse*agonyDuration)
