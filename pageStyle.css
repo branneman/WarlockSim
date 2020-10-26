@@ -83,7 +83,8 @@ body, html {
 }
 
 #main {background-color: #888888;}
-#talent {background-color: #888888;}
+#buffs {background-color: #888888;}
+#talents {background-color: #888888;}
 
 .row {
     display: flex;
