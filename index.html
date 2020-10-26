@@ -32,7 +32,8 @@
   </head>
   <body style="background-color:#888888;">
     <button class="tablink" onclick="openPage('main', this, '#838383')" id="defaultOpen">Main</button>
-    <button class="tablink" onclick="openPage('talent', this, '#838383')">Talents & Rotation</button>
+    <button class="tablink" onclick="openPage('buffs', this, '#838383')">Buffs & Consumables</button>
+    <button class="tablink" onclick="openPage('talents', this, '#838383')">Talents & Rotation</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
@@ -47,14 +48,7 @@
           <label style=color:#9482C9> <input type="number" id="intellect" value="282">    Intellect</label><br>
           <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
           <br>
-
-          <b>Debuffs</b><br>
-          <label style=color:#9482C9> <input type="checkbox" id="curseShadow" checked>      Curse of Shadow</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="shadowWeaving" checked>    Shadow Weaving</label><br>
-          <label style=color:#f20000> <input type="checkbox" id="curseElements" checked>    Curse of the Elements</label><br>
-          <label style=color:#f20000> <input type="checkbox" id="Scorch" checked>           Scorch</label><br>
-          <br>
-
+          
           <b>Race</b><br>
           <select id="race">
             <option value="gnome">  Gnome</option>
@@ -62,21 +56,6 @@
             <option value="undead"> Undead</option>
             <option value="orc">    Orc</option>
           </select><br>
-          <br>
-
-          <b>Consumables</b><br>
-          <label style=color:#9482C9> <input type="checkbox" id="supremeFlask" checked>     Flask of Supreme Power</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="brilliantOil" checked>     Brilliant Wizard Oil</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="arcaneElixir" checked>     Greater Arcane Elixir</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="shadowElixir" checked>     Elixir of Shadow Power</label><br>
-          <label style=color:#f20000> <input type="checkbox" id="fireElixir" checked>       Elixir of Fire Power</label><br>
-          <br>
-          
-          <b>World Buffs</b><br>
-          <label style=color:#9482C9> <input type="checkbox" id="hakkarBuff" checked>       Spirit of Zandalar</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="onyxiaBuff" checked>       Rallying Cry of the Dragonslayer</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="songflower" checked>       Songflower Serenade</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="diremaulBuff" checked>     Dire Maul Tribute Buffs</label><br>
           <br>
           <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
           <p id="finalStats"></p>
@@ -92,7 +71,38 @@
         </div>
       </div>
     </div> <!--Main tab-->
-    <div id="talent" class="tabcontent" name="talent" oninput="runSim();">
+    <div id="buffs" class="tabcontent" name="buffs" oninput="runSim();">
+      <p>Pick your buffs & consumables</p>
+      <div class="row">
+        <div class="column left" style="background-color:#555555;">
+          <h2>Debuffs on Boss</h2>
+          <label style=color:#9482C9> <input type="checkbox" id="curseShadow" checked>      Curse of Shadow</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="shadowWeaving" checked>    Shadow Weaving</label><br>
+          <label style=color:#f20000> <input type="checkbox" id="curseElements" checked>    Curse of the Elements</label><br>
+          <label style=color:#f20000> <input type="checkbox" id="Scorch" checked>           Scorch</label><br>
+          <br><br>
+          
+          <h2>World Buffs</h2>
+          <label style=color:#9482C9> <input type="checkbox" id="hakkarBuff" checked>       Spirit of Zandalar</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="onyxiaBuff" checked>       Rallying Cry of the Dragonslayer</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="songflower" checked>       Songflower Serenade</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="diremaulBuff" checked>     Dire Maul Tribute Buffs</label><br>
+          <br><br>
+        </div>
+        <div class="column left" style="background-color:#555555;">
+          <h2>Buffs</h2>
+          
+          <h2>Consumables</h2>
+          <label style=color:#9482C9> <input type="checkbox" id="supremeFlask" checked>     Flask of Supreme Power</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="brilliantOil" checked>     Brilliant Wizard Oil</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="arcaneElixir" checked>     Greater Arcane Elixir</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="shadowElixir" checked>     Elixir of Shadow Power</label><br>
+          <label style=color:#f20000> <input type="checkbox" id="fireElixir" checked>       Elixir of Fire Power</label><br>
+          <br><br>
+        </div>
+      </div>
+    </div> <!--Buffs tab-->
+    <div id="talents" class="tabcontent" name="talent" oninput="runSim();">
       <p>Pick your talents & rotation</p>
       <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/Ruin');runSim()" id="DSRuin"> DS/Ruin</button>
       <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/Ruin');runSim()">             SM/Ruin</button>
