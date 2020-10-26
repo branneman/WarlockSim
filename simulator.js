@@ -57,7 +57,7 @@ function runSim() {
       SP = SP - 1; 
       int = int + 10;}
     else if (q==3) {
-      int = int - 10;}
+      int = int - 10;
       crit = crit + 1;}
     else if (q==4) {
       crit = crit - 1;
