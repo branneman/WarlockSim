@@ -70,6 +70,7 @@
       
       function setTalents(spec) {
         if (spec == "DS/Ruin") {
+          console.log(document.getElementById("talentSuppression"))
           document.getElementById("talentSuppression").children[1].innerHTML = 2;
           document.getElementById("talentCorruption").children[1].innerHTML = 5;
           document.getElementById("talentLifeTap").children[1].innerHTML = 2;
@@ -165,11 +166,11 @@
     </div> <!--Main tab-->
     <div id="talent" class="tabcontent" name="talent" oninput="runSim();">
       <p>Pick your talents & rotation</p>
-      <button style="width:100px;height:25px;font-size:16px" onclick="setTalents('DS/Ruin')">DS/Ruin</button>
-      <button style="width:100px;height:25px;font-size:16px" onclick="setTalents('SM/Ruin')">SM/Ruin</button>
-      <button style="width:100px;height:25px;font-size:16px" onclick="setTalents('DS/ES')">DS/ES</button>
-      <button style="width:100px;height:25px;font-size:16px" onclick="setTalents('SM/DS')">SM/DS</button>
-      <button style="width:100px;height:25px;font-size:16px" onclick="setTalents('Conflagrate')">Conflagrate</button>
+      <button style="width:140px;height:25px;font-size:16px" onclick="setTalents('DS/Ruin')">DS/Ruin</button>
+      <button style="width:140px;height:25px;font-size:16px" onclick="setTalents('SM/Ruin')">SM/Ruin</button>
+      <button style="width:140px;height:25px;font-size:16px" onclick="setTalents('DS/ES')">DS/ES</button>
+      <button style="width:140px;height:25px;font-size:16px" onclick="setTalents('SM/DS')">SM/DS</button>
+      <button style="width:140px;height:25px;font-size:16px" onclick="setTalents('Conflagrate')">Conflagrate</button>
       <div class="row">
         <div class="column talent" style="background-color:#555555;">
           <table class="center">
