@@ -306,6 +306,7 @@
       }
       setTimeout(function(){ 
         document.getElementById("defaultOpen").click(); 
+        document.getElementById("DSRuin").click();
         runSim(); 
       }, 10);
       Chart.defaults.global.defaultFontColor = 'black';
@@ -377,12 +378,12 @@
     </div> <!--Main tab-->
     <div id="talent" class="tabcontent" name="talent" oninput="runSim();">
       <p>Pick your talents & rotation</p>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/Ruin')">DS/Ruin</button>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/Ruin')">SM/Ruin</button>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/ES')">DS/ES</button>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/DS')">SM/DS</button>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Conflagrate')">Conflagrate</button>
-      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Reset')">Reset</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/Ruin')" id="DSRuin"> DS/Ruin</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/Ruin')">             SM/Ruin</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('DS/ES')">               DS/ES</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('SM/DS')">               SM/DS</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Conflagrate')">         Conflagrate</button>
+      <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Reset')">               Reset</button>
       <div class="row">
         <div class="column talent" style="background-color:#555555;">
           <table class="center" id="afflictionTree">
