@@ -53,17 +53,17 @@
         if (text.innerHTML > 0 && text.innerHTML < max) {
           element.style.filter = "grayscale(0%)";
           element.style.color = "green";
-          talent.style.border: = "2px solid green";
+          talent.style.border = "2px solid green";
         }  
         else if (text.innerHTML >= max) {
           element.style.filter = "grayscale(0%)";
           element.style.color = "orange";
-          talent.style.border: = "2px solid orange";
+          talent.style.border = "2px solid orange";
           text.innerHTML = max;
         }
         else if (text.innerHTML <= 0) {
           element.style.filter = "grayscale(100%)";
-          talent.style.border: = "2px solid orange";
+          talent.style.border = "2px solid orange";
           text.innerHTML = 0;
         }
       }
