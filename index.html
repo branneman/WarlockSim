@@ -38,9 +38,9 @@
         }
         else if (click == "right") {
           document.getElementById("testIcon").innerHTML = Number(document.getElementById("testIcon").innerHTML) - 1;
-          if (document.getElementById("testIcon").innerHTML == 0) {
+          if (document.getElementById("testIcon").innerHTML <= 0) {
             element.style.filter = "grayscale(100%)";
-            document.getElementById("testIcon").innerHTML = undefined;
+            document.getElementById("testIcon").innerHTML = 0;
           }
         }
       }
