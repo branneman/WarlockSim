@@ -37,8 +37,9 @@
           var demTree = document.getElementById("demonologyTree").children[0].children;
           var desTree = document.getElementById("destructionTree").children[0].children;
           for (var i = 1; i<affTree.length; i++) {
-            var text = affTree[i].children[1].children[0].children[1]
-            var talent = affTree[i].children[1].children[0].children[0]
+            var element = affTree[i].children[1].children[0];
+            var text = affTree[i].children[1].children[0].children[1];
+            var talent = affTree[i].children[1].children[0].children[0];
             if (text !== undefined && talent !== undefined) {
               if (talent.id == "talentAmpCurse" || talent.id == "talentSiphon" || talent.id == "talentExhaust" || talent.id == "talentDarkPact" || talent.id == "talentFelDomination" || talent.id == "talentDemonicSacrifice" || talent.id == "talentSoulLink" || talent.id == "talentShadowburn" || talent.id == "talentRuin" || talent.id == "talentConflagrate")
                 var max = 1;
