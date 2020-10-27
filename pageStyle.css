@@ -28,6 +28,9 @@ tr {
 }
 tr:nth-child(even) /*{ background-color: #dddddd; }*/
 tr:nth-child(odd) /*{ background-color: #dddddd; }*/
+.finalStats:td, .finalStats:tr, .finalStats:th {
+    padding: 2px;
+}
 
 .loader {
     border: 3px solid #f3f3f3;
