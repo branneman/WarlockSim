@@ -161,7 +161,7 @@ function runSim() {
       var miss = 1;
     var critChance = (1.7 + crit + (intel/60.6));
     var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
-    var critSearing = (1.7 + crit + (intel/60.6) + 1*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
+    var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
     var shadowVuln = (1 - Math.pow(1 - critChance/100, 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML;
     
