@@ -367,6 +367,7 @@ function runSim() {
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "DPS Graph"},
+      responsive: true,
       maintainAspectRatio: false
     }
   });
@@ -422,6 +423,7 @@ function runSim() {
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "Stat Weights Graph"},
+      responsive: true,
       maintainAspectRatio: false
     }
   });
