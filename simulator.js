@@ -256,7 +256,7 @@ function runSim() {
         else if (siphon == false && siphonDuration <= timeLeft) {
           siphon = true;
           siphonUse = time;
-          damage += (450 + ShP*0.5) * shadowMultiplier * ((shadowVuln*0.2)+1);
+          damage += (450 + ShP*0.5) * shadowMultiplier * ((shadowVuln*0.2)+1) * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
           mana -= siphonCost/(afflictionChance/100);
           time += GCD/(afflictionChance/100);}
         
@@ -367,7 +367,8 @@ function runSim() {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
       animation: {duration: 0},
       events: [],
-      title: {display: true, fontSize: 20, text: "DPS Graph"}
+      title: {display: true, fontSize: 20, text: "DPS Graph"},
+      maintainAspectRatio: false
     }
   });
   
@@ -421,7 +422,8 @@ function runSim() {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true} }] },
       animation: {duration: 0},
       events: [],
-      title: {display: true, fontSize: 20, text: "Stat Weights Graph"}
+      title: {display: true, fontSize: 20, text: "Stat Weights Graph"},
+      maintainAspectRatio: false
     }
   });
   
