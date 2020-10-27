@@ -112,6 +112,10 @@ body, html {
     width: 250px;
     padding: 10px 10px;  
 }
+.talents {
+    width: 400px;
+    padding: 10px 10px;  
+}
 /* Clear floats after the columns */
 .row:after {
     content: "";
