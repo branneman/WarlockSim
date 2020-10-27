@@ -312,5 +312,5 @@ function countTalents() {
   pointCount += document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML;
   pointCount += document.getElementById("talentConflagrate").parentNode.children[1].innerHTML;
   
-  document.getElementById("totalTalentPoints").innerHTML = "Total Talent Points: " + pointCount;
+  //document.getElementById("totalTalentPoints").innerHTML = "Total Talent Points: " + pointCount;
 }
