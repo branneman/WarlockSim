@@ -50,7 +50,6 @@ function talentFunc(click,element) {
         }
       }
     }
-
   }
   else {
     var text = element.children[1];
@@ -89,6 +88,7 @@ function talentFunc(click,element) {
       text.innerHTML = 0;
     }
   }
+  countTalents()
 }
 
 function setTalents(spec) {
@@ -256,4 +256,61 @@ function resetTalents() {
   document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML = 0;
   document.getElementById("talentConflagrate").parentNode.children[1].innerHTML = 0;
   talentFunc();
+}
+
+function countTalents() {
+  var pointCount = Number(document.getElementById("talentSuppression").parentNode.children[1].innerHTML);
+  pointCount += document.getElementById("talentCorruption").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentWeakness").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDrainSoul").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentLifeTap").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDrainLife").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentAgony").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentFelConc").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentAmpCurse").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentGrimReach").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDrainMana").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentSiphon").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentExhaust").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpExhaust").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDarkPact").parentNode.children[1].innerHTML;
+
+  pointCount += document.getElementById("talentHealthstone").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpImp").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentStamina").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentHealthFunnel").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpVoid").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentFelIntellect").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpSuccubus").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentFelDomination").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentFelStamina").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentMasterSummon").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentUnholyPower").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentEnslaveDemon").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentFirestone").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentMasterDemon").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentSoulLink").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentSpellstone").parentNode.children[1].innerHTML;
+
+  pointCount += document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentCataclysm").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentBane").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentAftermath").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpFirebolt").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImpLash").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDevastation").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentIntensity").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentDestructiveReach").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentSearingPain").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentPyroclasm").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentImmolate").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentRuin").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML;
+  pointCount += document.getElementById("talentConflagrate").parentNode.children[1].innerHTML;
+  
+  document.getElementById("totalTalentPoints").innerHTML = "Total Talent Points: " + pointCount;
 }
