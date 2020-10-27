@@ -163,7 +163,7 @@ function runSim() {
     var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
     var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
-    var shadowVuln = (1 - Math.pow(1 - critChance/100, 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML;
+    var shadowVuln = (1 - Math.pow(1 - critFinal/100, 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML;
     
     var DPS = new Array;
     var lifeTaps = new Array;
@@ -271,6 +271,8 @@ function runSim() {
             damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,2);
           else if (SBC == 3)
             damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,3);
+          else if (SBC == 4)
+            damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,4);
           mana -= sbCost;
           time += sbTime;
           SBC++;}
