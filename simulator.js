@@ -11,7 +11,7 @@ function runSim() {
   var curse = document.querySelector('input[name=curse]:checked').value;
   //var curse = document.getElementsByName("curse").value;
   var primary = document.querySelector('input[name=primary]:checked').value;
-  var finisher = document.querySelector('input[name=finisher]:checked').value;
+  var finisher = document.querySelector('input[name=finisher]:checked').value; console.log(curse + primary + finisher)
   if (curse == "debuff") {
     var threatTime = 1.5;
     var useAgony = false;
@@ -178,7 +178,7 @@ function runSim() {
         var doomUse = 0;
       else {
         var doomUse = Infinity;
-        agony = true;}
+        doom = true;}
       if (useAgony == true)
         var agonyUse = 0;
       else {
