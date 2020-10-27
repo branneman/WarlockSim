@@ -69,11 +69,11 @@
           <p id="finalStats"></p>
 
         </div>
-        <div class="column right">
+        <div class="column graphs">
           <p id="dps"></p>
           <canvas id="dpsChart" style="background-color:#999999;" width=300px height=200px></canvas>
         </div>
-        <div class="column right">
+        <div class="column graphs">
           <p id="statWeights"></p>
           <canvas id="statWeightChart" style="background-color:#999999;" width=300px height=200px></canvas>
         </div>
@@ -82,7 +82,7 @@
     <div id="buffs" class="tabcontent" name="buffs" oninput="runSim();">
       <p>Pick your buffs & consumables</p>
       <div class="row">
-        <div class="column left" style="background-color:#555555;">
+        <div class="column buffs" style="background-color:#555555;">
           <h2>Debuffs on Boss</h2>
           <label style=color:#9482C9> <input type="checkbox" id="curseShadow" checked>      Curse of Shadow</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="shadowWeaving" checked>    Shadow Weaving</label><br>
@@ -105,7 +105,7 @@
           <label style=color:#9482C9> <input type="checkbox" id="magebloodPotion">          Mageblood Potion</label><br>
           <br><br>
         </div>
-        <div class="column left" style="background-color:#555555;">
+        <div class="column buffs" style="background-color:#555555;">
           <h2>World Buffs</h2>
           <label style=color:#9482C9> <input type="checkbox" id="hakkarBuff" checked>       Spirit of Zandalar</label><br>
           <label style=color:#9482C9> <input type="checkbox" id="onyxiaBuff" checked>       Rallying Cry of the Dragonslayer</label><br>
@@ -135,7 +135,7 @@
       <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Conflagrate');runSim()">         Conflagrate</button>
       <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Reset');runSim()">               Reset</button>
       <div class="row">
-        <div class="column talent" style="background-color:#555555;">
+        <div class="column talents" style="background-color:#555555;">
           <table class="center" id="afflictionTree" onclick="runSim();">
             <tr>
               <th colspan='4' style='text-align:center'>Affliction</th>
@@ -177,7 +177,7 @@
             </tr>
           </table>
         </div>
-        <div class="column talent" style="background-color:#555555;">
+        <div class="column talents" style="background-color:#555555;">
           <table class="center" id="demonologyTree">
             <tr>
               <th colspan='4' style='text-align:center'>Demonology</th>
@@ -219,7 +219,7 @@
             </tr>
           </table>
         </div>
-        <div class="column talent" style="background-color:#555555;">
+        <div class="column talents" style="background-color:#555555;">
           <table class="center" id="destructionTree">
             <tr>
               <th colspan='4' style='text-align:center'>Destruction</th>
