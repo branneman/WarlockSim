@@ -274,24 +274,27 @@
         </div>
         <div class="column rotation" style="background-color:#555555;">
           <h4>Damage over Time Abilities</h4>
-          <label style=color:#9482C9>
-            <select id="curse">
-              <option value="none">   None</option>
-              <option value="debuff"> Reck/Elements/Shadow</option>
-              <option value="agony">  Agony</option>
-              <option value="doom">   Doom</option>
-            </select>
-            Curse
-          </label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="rotationCorruption"> Corruption</label><br>
-          <label style=color:#f20000> <input type="checkbox" id="rotationImmolate">   Immolate</label><br>
-          <label style=color:#9482C9> <input type="checkbox" id="rotationSiphonLife"> Siphon Life</label><br>
+          <label style=color:#9482C9> <input type="radio" name="curse" value="none" checked>  No Curse</label><br>
+          <label style=color:#9482C9> <input type="radio" name="curse" value="debuff">        Recklessness / Elements / Shadow</label><br>
+          <label style=color:#9482C9> <input type="radio" name="curse" value="agony">         Curse of Agony</label><br>
+          <label style=color:#9482C9> <input type="radio" name="curse" value="doom">          Curse of Doom</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="rotationCorruption">         Corruption</label><br>
+          <label style=color:#f20000> <input type="checkbox" id="rotationImmolate">           Immolate (Rank 8)</label><br>
+          <label style=color:#9482C9> <input type="checkbox" id="rotationSiphonLife">         Siphon Life</label><br>
           <br>
           
           <h4>Primary Damage Spell</h4>
+          <label style=color:#9482C9> <input type="radio" name="primary" value="shadowBolt" checked>  Shadow Bolt</label><br>
+          <label style=color:#f20000> <input type="radio" name="primary" value="searingPain">         Searing Pain</label><br>
+          <label style=color:#f20000> <input type="radio" name="primary" value="immolateR7">          Immolate (Rank 7)</label><br>
+          <label style=color:#f20000> <input type="radio" name="primary" value="immolateR8">          Immolate (Rank 8)</label><br>
+          <label style=color:#9482C9> <input type="radio" name="primary" value="drainLife">           Drain Life</label><br>
           
           <h4>Finisher</h4>
-          
+          <label style=color:#9482C9> <input type="radio" name="finisher" value="shadowburn" checked>   Shadowburn</label><br>
+          <label style=color:#9482C9> <input type="radio" name="finisher" value="deathCoil">            Death Coil</label><br>
+          <label style=color:#f20000> <input type="radio" name="finisher" value="searingPain">          Searing Pain</label><br>
+          <label style=color:#9482C9> <input type="radio" name="finisher" value="none">                 No Finisher</label><br>
         </div>
       </div>
     </div> <!--Talent tab-->
