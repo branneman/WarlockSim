@@ -32,7 +32,7 @@ function runSim() {
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
   var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked;
-  SP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
+  var ShP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
   var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
   crit += 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked;
   int += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked;
@@ -60,9 +60,11 @@ function runSim() {
   
   for (var q=1; q<=6; q++) {
     if (q==1) {
-      SP = SP + 1;}
+      ShP = ShP + 1;
+      FiP = FiP + 1;}
     else if (q==2) {
-      SP = SP - 1; 
+      ShP = ShP - 1;
+      FiP = FiP - 1;
       int = int + 10;}
     else if (q==3) {
       int = int - 10;
@@ -78,9 +80,9 @@ function runSim() {
     
     var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
-    var tapGain = (424+SP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
-    var avgNonCrit = (510.5+(SP*6/7)) * shadowMultiplier;
-    var avgBurn = (488+(SP*3/7)) * shadowMultiplier;
+    var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
+    var avgNonCrit = (510.5+(ShP*6/7)) * shadowMultiplier;
+    var avgBurn = (488+(ShP*3/7)) * shadowMultiplier;
     if (hit <= 16)
       var miss = 100 - 83 - hit;
     else
@@ -209,7 +211,7 @@ function runSim() {
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
-  document.getElementById("finalStats").innerHTML = "<table class='finalStats' style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Shadow Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Fire Power</td><td>&nbsp" + FiP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr><tr><td>Shadow Multiplier</td><td>&nbsp" + formatNumber(shadowMultiplier,4) + "</td></tr><tr><td>Fire Multiplier</td><td>&nbsp" + formatNumber(fireMultiplier,4) + "</td></tr></table>";
+  document.getElementById("finalStats").innerHTML = "<table class='finalStats' style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Shadow Power</td><td>&nbsp" + ShP + "</td></tr><tr><td>Fire Power</td><td>&nbsp" + FiP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr><tr><td>Shadow Multiplier</td><td>&nbsp" + formatNumber(shadowMultiplier,4) + "</td></tr><tr><td>Fire Multiplier</td><td>&nbsp" + formatNumber(fireMultiplier,4) + "</td></tr></table>";
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
