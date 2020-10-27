@@ -44,6 +44,8 @@ function runSim() {
   var levelRes = (bossLevel-60)*8;
   var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseShadow").checked);
   var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseElements").checked);
+  var shadowReduction = 1 - shadowRes/400;
+  var fireReduction = 1 - fireRes/400;
   
   var timeVec = new Array;
   timeVec[0] = fightStart;
@@ -120,8 +122,8 @@ function runSim() {
     var finisherCost = 0;
     var finisherTime = 0;}
   
-  var shadowMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
-  var fireMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+  var shadowMultiplier = shadowReduction * (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+  var fireMultiplier = fireReduction * (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
   var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
   
   for (var q=1; q<=6; q++) {
@@ -314,7 +316,6 @@ function runSim() {
         else
           time += 0.5;
       }
-      damage = damage*0.94;
       DPS[i] = damage/timeVec[i];
       manaLeft[i] = mana;
     } //Loop with timeVec
