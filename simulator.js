@@ -8,9 +8,10 @@ function runSim() {
   var fightStart = Number(document.getElementById("fightStart").value);
   var fightEnd = Number(document.getElementById("fightEnd").value);
   
-  var curse = document.getElementByName("curse").value;
-  var primary = document.getElementByName("primary").value;
-  var finisher = document.getElementByName("finisher").value;
+  var curse = document.querySelector('input[name=curse]:checked').value;
+  //var curse = document.getElementsByName("curse").value;
+  var primary = document.querySelector('input[name=primary]:checked').value;
+  var finisher = document.querySelector('input[name=finisher]:checked').value;
   if (curse == "debuff") {
     var threatTime = 1.5;
     var useAgony = false;
