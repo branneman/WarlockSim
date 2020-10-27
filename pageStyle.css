@@ -30,7 +30,7 @@ tr:nth-child(even) /*{ background-color: #dddddd; }*/
 tr:nth-child(odd) /*{ background-color: #dddddd; }*/
 
 .finalStats td, .finalStats tr, .finalStats th {
-    padding: 2px;
+    padding: 0px;
 }
 
 .loader {
