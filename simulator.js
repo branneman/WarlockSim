@@ -5,9 +5,12 @@ function runSim() {
   var hit = Number(document.getElementById("spellHit").value);
   var int = Number(document.getElementById("intellect").value);
   var mp5 = Number(document.getElementById("mp5").value);
+  var fightStart = Number(document.getElementById("fightStart").value);
+  var fightEnd = Number(document.getElementById("fightEnd").value);
   
   var useAgony = false;
   var useCorruption = false;
+  var useImmolate = false;
   var ZHC = false;
   var PI = 0;
   
@@ -18,8 +21,8 @@ function runSim() {
     var gnome = false;
   
   var timeVec = new Array;
-  timeVec[0] = 30;
-  for (var i=30.5; i<=60; i=i+0.5)
+  timeVec[0] = fightStart;
+  for (var i=fightStart+0.5; i<=fightEnd; i=i+0.5)
     timeVec[timeVec.length] = i;
   var threatTime = 0;
 
@@ -45,10 +48,15 @@ function runSim() {
   var agonyCost = 215;
   var agonyDuration = 24;
   var agony = false;
+  var immolateCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  var immolateDuration = 15;
+  var immolate = false;
+  var immolateTime = 2 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
   var burn = false;
   
   var shadowMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
   var fireMultiplier = (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+  var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
   
   for (var q=1; q<=6; q++) {
     if (q==1) {
@@ -71,8 +79,8 @@ function runSim() {
     var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
     var tapGain = (424+SP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
-    var avgNonCrit = (510.5+(SP*3/3.5)) * shadowMultiplier;
-    var avgBurn = (488+(SP*1.5/3.5)) * shadowMultiplier;
+    var avgNonCrit = (510.5+(SP*6/7)) * shadowMultiplier;
+    var avgBurn = (488+(SP*3/7)) * shadowMultiplier;
     if (hit <= 16)
       var miss = 100 - 83 - hit;
     else
@@ -102,16 +110,23 @@ function runSim() {
       else {
         var corruptionUse = Infinity;
         corruption = true;}
+      if (useImmolate == true)
+        var immolateUse = 0;
+      else {
+        var immolateUse = Infinity;
+        immolate = true;}
       
       while (time <= timeVec[i]) {
         var timeLeft = timeVec[i]-time;
         mana = mana + (time-timePast) * mp5/5;
         timePast = time;
         
-        if (agony == true && time>=agonyUse*agonyDuration)
+        if (agony == true && time>=agonyUse+agonyDuration)
           agony = false;
-        if (corruption == true && time>=corruptionUse*corruptionDuration)
+        if (corruption == true && time>=corruptionUse+corruptionDuration)
           corruption = false;
+        if (immolate == true && time>=immolateUse+immolateDuration)
+          immolate = false;
         if (mana < sbCost || (timeLeft<5)+(mana<sbCost+burnCost)+(timeLeft>1.5)==3) {
           if (timeLeft >= 2) {
               mana = mana + tapGain;
@@ -119,33 +134,42 @@ function runSim() {
           time += GCD;}
         
         else if (agony == false && agonyDuration <= timeLeft) {
-          agony = true; agonyUse++;
+          agony = true; 
+          agonyUse = time;
           damage += (1044*1.06);
           mana -= agonyCost;
           time += GCD;}
         
         else if (corruption == false && corruptionDuration <= timeLeft) {
-          corruption = true; agonyUse++;
+          corruption = true; 
+          corruptionUse = time;
           damage += 888;
           mana -= corruptionCost;
           time += GCD;}
         
+        else if (immolate == false && immolateDuration <= timeLeft) {
+          immolate = true; 
+          immolateUse = time;
+          damage += 1500;
+          mana -= immolateCost;
+          time += GCD;}
+        
         else if (sbTime <= timeLeft) {
-          damage += (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1);
+          damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1);
           if (SBC == 0)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2));
+            damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2));
           else if (SBC == 1)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * (1-critFinal/100);
+            damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * (1-critFinal/100);
           else if (SBC == 2)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,2);
+            damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,2);
           else if (SBC == 3)
-            damage -= (avgNonCrit*critFinal*2 + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,3);
+            damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)) * Math.pow(1-critFinal/100,3);
           mana -= sbCost;
           time += sbTime;
           SBC++;}
         
         else if (sbTime > timeLeft) {
-          damage += (avgBurn*critFinal*2 + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1);
+          damage += (avgBurn*critFinal*critMultiplier + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1);
           mana -= burnCost;
           time += GCD*2;
           burn = true;
@@ -185,7 +209,7 @@ function runSim() {
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
-  document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Spell Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr></table>";
+  document.getElementById("finalStats").innerHTML = "<table style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Shadow Power</td><td>&nbsp" + SP + "</td></tr><tr><td>Fire Power</td><td>&nbsp" + FiP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr><tr><td>Shadow Multiplier</td><td>&nbsp" + shadowMultiplier + "</td></tr><tr><td>Fire Multiplier</td><td>&nbsp" + fireMultiplier + "</td></tr></table>";
   
   var dpsChart = new Chart(document.getElementById('dpsChart'), {
     type: 'line',
