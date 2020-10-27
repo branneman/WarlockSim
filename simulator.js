@@ -249,10 +249,10 @@ function runSim() {
         else if (immolate == false && immolateDuration <= timeLeft && primary !== "immolateR8") {
           immolate = true; 
           immolateUse = time;
-          damage += (avgImmo*critChance*critMultiplier + avgImmo*(100-critChance))/100;
-          damage += (510 + FiP*0.65) * fireMultiplier;
-          mana -= immolateCost/(Number(100-miss)/100);
-          time += GCD/(Number(100-miss)/100);}
+          damage += (avgImmo*critFinal*critMultiplier + avgImmo*regularHit)/100;
+          damage += (510 + FiP*0.65) * fireMultiplier * Number(100-miss)/100;
+          mana -= immolateCost;
+          time += GCD;}
         
         else if (siphon == false && siphonDuration <= timeLeft) {
           siphon = true;
