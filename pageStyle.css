@@ -92,15 +92,19 @@ body, html {
 .column {
     float: left;
 }
-.left {
+.buffs {
     width: 350px;
     padding: 10px 10px;
 }
-.right {
-    width: 42%;
+.settings {
+    width: 250px;
+    padding: 10px 10px;
+}
+.graphs {
+    width: 40%;
     padding: 10px 10px;  
 }
-.talent {
+.talents {
     width: 250px;
     padding: 10px 10px;  
 }
