@@ -20,6 +20,11 @@ function runSim() {
   else
     var gnome = false;
   
+  var bossLevel = Number(document.getElementById("bossLevel").value);
+  var levelRes = (bossLevel-60)*8;
+  var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseShadow").checked);
+  var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseElements").checked);
+  
   var timeVec = new Array;
   timeVec[0] = fightStart;
   for (var i=fightStart+0.5; i<=fightEnd; i=i+0.5)
@@ -42,9 +47,10 @@ function runSim() {
   var burnCost = 365 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
   var sbTime = 3 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
   var GCD = 1.5;
-  var corruptionCost = 290;
+  var corruptionCost = 340;
   var corruptionDuration = 18;
   var corruption = false;
+  var corruptionTime = Math.max(GCD, 2 - 0.4*document.getElementById("talentCorruption").parentNode.children[1].innerHTML);
   var agonyCost = 215;
   var agonyDuration = 24;
   var agony = false;
@@ -83,6 +89,7 @@ function runSim() {
     var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
     var avgNonCrit = (510.5+(ShP*6/7)) * shadowMultiplier;
     var avgBurn = (488+(ShP*3/7)) * shadowMultiplier;
+    var avgImmo = (279+(FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
     if (hit <= 16)
       var miss = 100 - 83 - hit;
     else
@@ -138,21 +145,26 @@ function runSim() {
         else if (agony == false && agonyDuration <= timeLeft) {
           agony = true; 
           agonyUse = time;
-          damage += (1044*1.06);
+          damage += (1044 * (1+0.02*document.getElementById("talentAgony").parentNode.children[1].innerHTML) * (1+Math.abs(Math.sign(Math.max(0,time-15))-1)*0.5*document.getElementById("talentAmpCurse").parentNode.children[1].innerHTML) * (1+0.2*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) + ShP) * shadowMultiplier * ((shadowVuln*0.2)+1)/(1+0.2*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML);
           mana -= agonyCost;
           time += GCD;}
         
         else if (corruption == false && corruptionDuration <= timeLeft) {
           corruption = true; 
           corruptionUse = time;
-          damage += 888;
+          damage += (822+ShP) * shadowMultiplier * ((shadowVuln*0.2)+1);
           mana -= corruptionCost;
-          time += GCD;}
+          time += corruptionTime;
+          damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1) * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
+          mana -= sbCost * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
+          time += sbTime * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
+        }
         
         else if (immolate == false && immolateDuration <= timeLeft) {
           immolate = true; 
           immolateUse = time;
-          damage += 1500;
+          damage += (avgImmo*critFinal*critMultiplier + avgImmo*regularHit)/100;
+          damage += (510 + FiP*0.65) * fireMultiplier * Number(100-miss);
           mana -= immolateCost;
           time += GCD;}
         
