@@ -47,9 +47,9 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
 .gearTable tr td {
     text-align: center;
 }
-/*.gearTable tr td:nth-child(1), gearTable tr td:nth-child(2) {
+.gearTable tr td:nth-child(1), gearTable tr td:nth-child(2) .gearTable tr th:nth-child(1), gearTable tr th:nth-child(2) {
     text-align: left;
-}*/
+}
 
 .loader {
     border: 3px solid #f3f3f3;
