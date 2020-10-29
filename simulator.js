@@ -42,6 +42,15 @@ function runSim() {
   
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
+  if (bossLevel == 63)
+    var baseHit = 83;
+  else if (bossLevel == 62)
+    var baseHit = 94;
+  else if (bossLevel == 61)
+    var baseHit = 95;
+  else if (bossLevel == 60)
+    var baseHit = 96;
+  
   var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseShadow").checked);
   var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseElements").checked);
   var shadowReduction = 1 - shadowRes/400;
@@ -61,7 +70,7 @@ function runSim() {
   var ShP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
   var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
   var afflictionHit = hit + 2*document.getElementById("talentSuppression").parentNode.children[1].innerHTML;
-  var afflictionChance = Math.min(99, 83+afflictionHit);
+  var afflictionChance = Math.min(99, baseHit+afflictionHit);
   crit += 10*onyxiaBuff + 5*songflower + 3*diremaulBuff + 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked + 1*document.getElementById("talentDevastation").parentNode.children[1].innerHTML;
   int  += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked + 10*document.getElementById("runnTumTuber").checked + 15*songflower;
   mp5  += 8*document.getElementById("nightfinSoup").checked + 12*document.getElementById("magebloodPotion").checked + 42*document.getElementById("blessingOfWisdom").checked + 25*document.getElementById("manaSpringTotem").checked;
@@ -155,10 +164,8 @@ function runSim() {
     var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
     var avgImmo = (279+(FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
     var avgImmoR7 = (258+(FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
-    if (hit <= 16)
-      var miss = 100 - 83 - hit;
-    else
-      var miss = 1;
+    
+    var miss = Math.max(1, 100 - baseHit - hit);
     var critChance = (1.7 + crit + (intel/60.6));
     var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
     var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
