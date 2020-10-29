@@ -264,7 +264,7 @@ function runSim() {
         else if (primary == "shadowBolt" && sbTime <= timeLeft) {
           damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100;// * ((shadowVuln*0.2)+1);
           if (SBC == 0)
-            //damage -= (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2));
+            damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((1 - Math.pow(1 - critFinal/100*(1-miss/100), 0))*0.2);
           else if (SBC == 1)
             damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((1 - Math.pow(1 - critFinal/100*(1-miss/100), 1))*0.2);
           else if (SBC == 2)
