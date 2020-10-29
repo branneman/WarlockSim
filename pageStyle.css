@@ -93,8 +93,8 @@ body, html {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 6px 8px;
-    font-size: 16px;
+    padding: 2px 2px;
+    font-size: 14px;
     width: 5%;
 }
 
