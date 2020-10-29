@@ -382,6 +382,8 @@ function runSim() {
       maintainAspectRatio: false
     }
   });
+  dpsChart.data.labels = timeVec;
+  dpsChart.data.datasets[0].data = DPS;
   dpsChart.update();
   
   SPVec = math.subtract(SPVec,baseVec);
