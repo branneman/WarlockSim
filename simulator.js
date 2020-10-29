@@ -385,6 +385,7 @@ function runSim() {
   //dpsChart.data.labels = timeVec;
   //dpsChart.data.datasets[0].data = DPS;
   //dpsChart.update();
+  dpsChart.destroy();
   
   SPVec = math.subtract(SPVec,baseVec);
   critVec = math.subtract(critVec,baseVec);
