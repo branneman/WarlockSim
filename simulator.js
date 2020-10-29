@@ -424,7 +424,7 @@ function runSim() {
         borderColor: 'rgba(0, 255, 0, 0.3)'}]
     },
     options: {
-      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true} }] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration"}}], yAxes: [{ticks: {beginAtZero: true}, scaleLabel: {display: true, labelString: "Value"}}] },
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "Stat Weights Graph"},
