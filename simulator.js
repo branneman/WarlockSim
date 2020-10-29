@@ -368,7 +368,7 @@ function runSim() {
       }]
     },
     options: {
-      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 40}}], yAxes: [{ticks: {beginAtZero: true, max: 1600}, scaleLabel: {display: true, labelString: "DPS", padding: 10}}] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 0}}], yAxes: [{ticks: {beginAtZero: true, max: 1600}, scaleLabel: {display: true, labelString: "DPS", padding: 0}}] },
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "DPS Graph"},
@@ -424,7 +424,7 @@ function runSim() {
         borderColor: 'rgba(0, 255, 0, 0.3)'}]
     },
     options: {
-      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 0}}], yAxes: [{ticks: {beginAtZero: true}, scaleLabel: {display: true, labelString: "Value", padding: 1}}] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 0}}], yAxes: [{ticks: {beginAtZero: true}, scaleLabel: {display: true, labelString: "Value", padding: 0}}] },
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "Stat Weights Graph"},
