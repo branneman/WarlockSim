@@ -40,6 +40,7 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
 }
 .gearTable th {
     border-bottom: 2px solid #000000;
+    font-weight: normal;
 }
 
 .loader {
