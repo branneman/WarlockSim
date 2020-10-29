@@ -364,7 +364,6 @@ function runSim() {
   dpsChart.destroy();*/
   
   document.getElementById('dpsCanvas').remove();
-  document.getElementById('dpsWrapper').empty();
   document.getElementById('dpsWrapper').innerHTML('<canvas id="dpsCanvas" style="background-color:#999999;" width=300px height=200px></canvas>');
   
   var dpsChart = new Chart(document.getElementById('dpsCanvas').getContext('2d'), {
