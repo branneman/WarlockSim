@@ -368,7 +368,7 @@ function runSim() {
       }]
     },
     options: {
-      scales: {xAxes: [{ticks: {autoSkipPadding: 2}}], yAxes: [{ticks: {beginAtZero: true, max: 1600} }] },
+      scales: {xAxes: [{ticks: {autoSkipPadding: 2}, display: true, labelString: "Fight Duration"}], yAxes: [{ticks: {beginAtZero: true, max: 1600}, display: true, labelString: "DPS"}] },
       animation: {duration: 0},
       events: [],
       title: {display: true, fontSize: 20, text: "DPS Graph"},
