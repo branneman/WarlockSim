@@ -8,6 +8,7 @@
     <script src="/WarlockSim/simulator.js"></script>
     <script src="/WarlockSim/talents.js"></script>
     <script type="text/javascript">
+      
       function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -21,12 +22,28 @@
         document.getElementById(pageName).style.display = "block";
         elmnt.style.backgroundColor = color;
       }
+      
+      function openGear(pageName,elmnt,color) {
+        var i, gearcontent, gearlinks;
+        gearcontent = document.getElementsByClassName("gearcontent");
+        for (i = 0; i < gearcontent.length; i++) {
+          gearcontent[i].style.display = "none";
+        }
+        gearlinks = document.getElementsByClassName("gearlink");
+        for (i = 0; i < gearlinks.length; i++) {
+          gearlinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+      
       setTimeout(function(){ 
         document.getElementById("defaultOpen").click(); 
         document.getElementById("DSRuin").click();
         runSim(); 
       }, 10);
       Chart.defaults.global.defaultFontColor = 'black';
+      
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
   </head>
@@ -304,7 +321,19 @@
       </div>
     </div> <!--Talent tab-->
     <div id="gear" class="tabcontent" name="gear" oninput="runSim();">
-      <h1>Nothing to see here, go back to the other tabs</h1>
+      <button class="gearlink" onclick="openGear('gearMainHand', this, '#838383')">Main Hand</button>
+      <button class="gearlink" onclick="openGear('gearOffHand', this, '#838383')">Off Hand</button>
+      <button class="gearlink" onclick="openGear('gearStaff', this, '#838383')">Staff</button>
+      <br>
+      <div id="gearMainHand" class="gearcontent" name="gearMainHand">
+        <p>Gief Wraith Blade</p>
+      </div>
+      <div id="gearOffHand" class="gearcontent" name="gearOffHand">
+        <p>Gief Sapphiron's Left Eye</p>
+      </div>
+      <div id="gearStaff" class="gearcontent" name="gearStaff">
+        <p>Gief Atiesh</p>
+      </div>
     </div> <!--Gear tab-->
   </body>
 </html>
