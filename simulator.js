@@ -354,15 +354,7 @@ function runSim() {
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
   document.getElementById("finalStats").innerHTML = "<table class='finalStats' style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Shadow Power</td><td>&nbsp" + ShP + "</td></tr><tr><td>Fire Power</td><td>&nbsp" + FiP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr><tr><td>Shadow Multiplier</td><td>&nbsp" + formatNumber(shadowMultiplier,4) + "</td></tr><tr><td>Fire Multiplier</td><td>&nbsp" + formatNumber(fireMultiplier,4) + "</td></tr><tr><td>Shadow Vulnerability</td><td>&nbsp" + formatNumber(shadowVuln*100,2) + "%</td></tr></table>";
-  
-  /*if (dpsChart) {
-    dpsChart.destroy();
-    console.log("True")}
-  else
-    console.log("False")
-  var dpsChart = new Chart(document.getElementById('dpsCanvas').getContext('2d'), {type: 'line'});
-  dpsChart.destroy();*/
-  
+
   document.getElementById('dpsCanvas').remove();
   document.getElementById('dpsWrapper').innerHTML = '<canvas id="dpsCanvas" style="background-color:#999999;" width=300px height=200px></canvas>';
   
@@ -387,16 +379,15 @@ function runSim() {
       maintainAspectRatio: false
     }
   });
-  //dpsChart.data.labels = timeVec;
-  //dpsChart.data.datasets[0].data = DPS;
-  //dpsChart.update();
-  //dpsChart.destroy();
   
   SPVec = math.subtract(SPVec,baseVec);
   critVec = math.subtract(critVec,baseVec);
   hitVec = math.subtract(hitVec,baseVec);
   intVec = math.divide(math.subtract(intVec,baseVec),10);
   mp5Vec = math.divide(math.subtract(mp5Vec,baseVec),3);
+  
+  document.getElementById('statWeightCanvas').remove();
+  document.getElementById('statWeightWrapper').innerHTML = '<canvas id="statWeightCanvas" style="background-color:#999999;" width=300px height=200px></canvas>';
   
   var statWeightChart = new Chart(document.getElementById('statWeightCanvas').getContext('2d'), {
     type: 'line',
@@ -441,7 +432,7 @@ function runSim() {
     options: {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 0}}], yAxes: [{ticks: {beginAtZero: true}, scaleLabel: {display: true, labelString: "Value", padding: 0}}] },
       animation: {duration: 0},
-      events: [],
+      //events: [],
       title: {display: true, fontSize: 20, text: "Stat Weights Graph"},
       responsive: true,
       maintainAspectRatio: false
