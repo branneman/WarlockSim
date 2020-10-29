@@ -370,7 +370,7 @@ function runSim() {
   });
   
   try
-    dpsChart.destroy();
+    //dpsChart.destroy();
   catch (err)
     console.log(err)
   
