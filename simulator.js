@@ -370,7 +370,7 @@ function runSim() {
     options: {
       scales: {xAxes: [{ticks: {autoSkipPadding: 2}, scaleLabel: {display: true, labelString: "Fight Duration", padding: 0}}], yAxes: [{ticks: {beginAtZero: true, max: 1600}, scaleLabel: {display: true, labelString: "DPS", padding: 0}}] },
       animation: {duration: 0},
-      events: [],
+      events: ['click'],
       title: {display: true, fontSize: 20, text: "DPS Graph"},
       responsive: true,
       maintainAspectRatio: false
