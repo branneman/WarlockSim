@@ -3,7 +3,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Warlock Simulator</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="/WarlockSim/math.js"></script>
     <script src="/WarlockSim/simulator.js"></script>
     <script src="/WarlockSim/talents.js"></script>
@@ -43,9 +45,12 @@
         runSim(); 
       }, 10);
       Chart.defaults.global.defaultFontColor = 'black';
-      
+      $(document).ready( function () {
+        $('#tableHelmet').DataTable();
+      } );
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
   </head>
   <body style="background-color:#888888;">
     <button class="tablink" onclick="openPage('main', this, '#838383'); runSim()" id="defaultOpen">Main</button>
@@ -352,7 +357,7 @@
         <p>Gief Atiesh</p>
       </div>
       <div id="gearHelmet" class="gearcontent" name="gearHelmet">
-        <table class="gearTable">
+        <table class="gearTable" id="tableHelmet">
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           <tr><td>Felheart Horns</td><td>MC</td><td>27</td><td>20</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Nemesis Skullcap</td><td>Onyxia</td><td>26</td><td>16</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -368,7 +373,7 @@
         </table>
       </div>
       <div id="gearNeck" class="gearcontent" name="gearNeck">
-        <table class="gearTable">
+        <table class="gearTable" id="tableNeck">
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           <tr><td>Gem of Trapped Innocents</td><td>Naxx</td><td>9</td><td>7</td><td>15</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Amulet of Vek'nilash</td><td>AQ40</td><td>9</td><td>5</td><td>27</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
