@@ -45,6 +45,14 @@
         runSim(); 
       }, 10);
       Chart.defaults.global.defaultFontColor = 'black';
+      
+      $.extend( $.fn.dataTable.defaults, {
+        searching: false,
+        info:  false,
+        paging: false,
+        processing: false,
+        order: [[12, 'desc']]
+      } );
       $(document).ready( function () {
         $('#tableHelmet').DataTable();
       } );
