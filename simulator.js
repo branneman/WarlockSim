@@ -104,19 +104,29 @@ function runSim() {
   
   if (primary == "shadowBolt") {
     var primaryCost = sbCost;
-    var primaryTime = sbTime;}
+    var primaryTime = sbTime;
+    var fireDS = false;
+    var shadowDS = true;}
   else if (primary == "searingPain") {
     var primaryCost = searingCost;
-    var primaryTime = GCD;}
+    var primaryTime = GCD;
+    var fireDS = true;
+    var shadowDS = false;}
   else if (primary == "immolateR7") {
     var primaryCost = immolateR7Cost;
-    var primaryTime = immolateTime;}
+    var primaryTime = immolateTime;
+    var fireDS = true;
+    var shadowDS = false;}
   else if (primary == "immolateR8") {
     var primaryCost = immolateCost;
-    var primaryTime = immolateTime;}
+    var primaryTime = immolateTime;
+    var fireDS = true;
+    var shadowDS = false;}
   else if (primary == "drainLife") {
     var primaryCost = drainLifeTime;
-    var primaryTime = drainLifeTime;}
+    var primaryTime = drainLifeTime;
+    var fireDS = false;
+    var shadowDS = true;}
   
   if (finisher == "shadowburn") {
     var finisherCost = burnCost;
@@ -131,8 +141,8 @@ function runSim() {
     var finisherCost = 0;
     var finisherTime = 0;}
   
-  var shadowMultiplier = shadowReduction * (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
-  var fireMultiplier = fireReduction * (1 + 0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+  var shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+  var fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
   var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
   
   for (var q=1; q<=6; q++) {
