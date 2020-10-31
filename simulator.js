@@ -261,7 +261,7 @@ function runSim() {
           time += corruptionTime/(afflictionChance/100);
           damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1) * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
           mana -= sbCost * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
-          time += sbTime * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;}
+          time += GCD * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;}
         
         else if (immolate == false && immolateDuration <= timeLeft && primary !== "immolateR8") {
           immolate = true; 
@@ -317,7 +317,7 @@ function runSim() {
           time += drainLifeTime;
           damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1) * 5*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
           mana -= sbCost * 5*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
-          time += sbTime * 5*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;}
+          time += GCD * 5*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;}
         
         else if (finisher == "shadowburn" && sbTime > timeLeft) {
           damage += (avgBurn*critFinal*critMultiplier + avgBurn*regularHit)/100 * ((shadowVuln*0.2)+1);
