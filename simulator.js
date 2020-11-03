@@ -31,6 +31,7 @@ function runSim() {
   var useCorruption = document.getElementById("rotationCorruption").checked;
   var useImmolate = document.getElementById("rotationImmolate").checked;
   var useSiphon = document.getElementById("rotationSiphonLife").checked;
+  var lifeTap = document.getElementById("disableLifeTap").checked == false;
   var ZHC = false;
   var PI = 0;
   
@@ -167,7 +168,7 @@ function runSim() {
     
     var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
-    var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
+    var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
     var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
     var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
     var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
