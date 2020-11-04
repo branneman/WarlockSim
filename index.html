@@ -41,7 +41,7 @@
       
       function clickTable(tableName,element) {
         var i, tableContent
-        tableContent = document.getElementById(tableName).children[1];
+        tableContent = document.getElementById(tableName).children[1].children;
         console.log(tableContent)
         console.log(element)
         for (i = 0; i < tableContent.length; i++) {
