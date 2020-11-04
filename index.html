@@ -39,6 +39,17 @@
         elmnt.style.backgroundColor = color;
       }
       
+      function clickTable(tableName,element) {
+        var i, tableContent
+        tableContent = document.getElementById(tableName);
+        for (i=0; i<tableContent.length; i++) {
+          document.getElementById(tableName).children[1].children[i].style.backgroundColor = "#FFF";
+          document.getElementById(tableName).children[1].children[i].name = tableName + "NotActive";
+        }
+        element.style.backgroundColor = "#9482C9";
+        element.name = tableName + "Active";
+      }
+      
       setTimeout(function(){ 
         document.getElementById("defaultOpen").click(); 
         document.getElementById("DSRuin").click();
@@ -368,12 +379,12 @@
         <p>Gief Atiesh</p>
       </div>
       <div id="gearHelmet" class="gearcontent" name="gearHelmet">
-        <table class="gearTable compact row-border hover" id="tableHelmet"><thead>
+        <table class="gearTable compact row-border hover" id="tableHelmet" onclick="clickTable('tableHelmet',this)"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
           <tr><td>Felheart Horns</td><td>MC</td><td>27</td><td>20</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Nemesis Skullcap</td><td>Onyxia</td><td>26</td><td>16</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA"><td>Doomcaller's Circlet</td><td>AQ40</td><td>27</td><td>24</td><td>33</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr style="background-color:#AAAAAA" name="activeHelmet"><td>Doomcaller's Circlet</td><td>AQ40</td><td>27</td><td>24</td><td>33</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Plagueheart Circlet</td><td>Naxx</td><td>28</td><td>25</td><td>33</td><td></td><td></td><td>1%</td><td>2%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Mish'undare, Circlet of the Mind Flayer</td><td>BWL</td><td>15</td><td>24</td><td>35</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Spellweaver's Turban</td><td>UBRS</td><td></td><td>9</td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
