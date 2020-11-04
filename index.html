@@ -42,12 +42,9 @@
       function clickTable(tableName,element) {
         var i, tableContent
         tableContent = document.getElementById(tableName).children[1].children;
-        console.log(tableContent)
-        console.log(element)
         for (i = 0; i < tableContent.length; i++) {
           document.getElementById(tableName).children[1].children[i].style.backgroundColor = "#FFF";
           document.getElementById(tableName).children[1].children[i].name = tableName + "NotActive";
-          console.log('Here')
         }
         element.style.backgroundColor = "#9482C9";
         element.name = tableName + "Active";
