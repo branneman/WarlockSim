@@ -10,7 +10,7 @@ function runSim() {
   var mp5t = 0;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
-    SPt += Number(items[i].children[4].innerHTML); console.log(SPt)
+    SPt += Number(items[i].children[4].innerHTML);
     ShP += Number(items[i].children[5].innerHTML);
     FiP += Number(items[i].children[6].innerHTML);
     critt += Number(items[i].children[8].innerHTML.slice(0,1));
@@ -19,7 +19,7 @@ function runSim() {
     pent += Number(items[i].children[9].innerHTML);
     mp5t += Number(items[i].children[10].innerHTML);
   }
-  console.log(SPt); console.log(ShP); console.log(FiP); console.log(critt); console.log(hitt); console.log(intt); console.log(pent); console.log(mp5t)
+  console.log("SP:"+SPt); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+critt); console.log("Hit:"+hitt); console.log("Int:"+intt); console.log("Pen:"+pent); console.log("Mp5:"+mp5t)
   
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
