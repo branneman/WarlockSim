@@ -43,35 +43,51 @@ function runSim() {
     else if (classList[i] == "setPvPEpic")
       setPvPEpic++
   }
-  var bonusDrainMana = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false;
-  if (setT05 >= 6)
+  var bonusList = "", bonusDrainLife = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false;
+  if (setT05 >= 6) {
     SP += 23;
-  if (setT1 >= 3)
-    bonusDrainMana = true;
-  if (setT1 >= 8)
+    bonusList += "<tr><td>Tier 0.5: 6-set</td></tr>";}
+  if (setT1 >= 3) {
+    bonusDrainLife = true;
+    bonusList += "<tr><td>Tier 1: 3-set</td></tr>";}
+  if (setT1 >= 8) {
     bonusShadowCost = true;
-  if (setT2 >= 3)
+    bonusList += "<tr><td>Tier 1: 8-set</td></tr>";}
+  if (setT2 >= 3) {
     SP += 23;
-  if (setT25 >= 3)
+    bonusList += "<tr><td>Tier 2: 3-set</td></tr>";}
+  if (setT25 >= 3) {
     bonusImmolateDMG = true;
-  if (setT25 >= 5)
+    bonusList += "<tr><td>Tier 2.5: 3-set</td></tr>";}
+  if (setT25 >= 5) {
     bonusShadowBoltCost = true;
-  if (setT3 >= 4)
+    bonusList += "<tr><td>Tier 2.5: 5-set</td></tr>";}
+  if (setT3 >= 4) {
     bonusCorruption = true;
+    bonusList += "<tr><td>Tier 3: 4-set</td></tr>";}
   if (setZGRing >= 2) {
-    SP += 6; hit += 1;}
-  if (setZG >= 2)
+    SP += 6; hit += 1;
+    bonusList += "<tr><td>Zanzil's Rings</td></tr>";}
+  if (setZG >= 2) {
     SP += 12;
-  if (setZG >= 3)
+    bonusList += "<tr><td>ZG Gear: 2-set</td></tr>";}
+  if (setZG >= 3) {
     bonusCorruptionZG = true;
-  if (setPvPRare >= 2)
+    bonusList += "<tr><td>ZG Gear: 3-set</td></tr>";}
+  if (setPvPRare >= 2) {
     SP += 23;
-  if (setPvPRare >= 4)
+    bonusList += "<tr><td>PvP Rare: 2-set</td></tr>";}
+  if (setPvPRare >= 4) {
     bonusImmolatePvP = true;
-  if (setPvPEpic >= 3)
+    bonusList += "<tr><td>PvP Rare: 4-set</td></tr>";}
+  if (setPvPEpic >= 3) {
     bonusImmolatePvP = true;
-  if (setPvPEpic >= 6)
+    bonusList += "<tr><td>PvP Epic: 3-set</td></tr>";}
+  if (setPvPEpic >= 6) {
     SP += 23;
+    bonusList += "<tr><td>PvP Epic: 6-set</td></tr>";}
+  
+  document.getElementById("setBonuses").innerHTML = "<table class='finalStats' style=text-align:left><tr><th>Set Bonuses Active</th></tr>" + bonusList + "</table>";
   
   var race = document.getElementById("race").value, gnome = false;
   if (race == "gnome") {
@@ -157,30 +173,30 @@ function runSim() {
   int  += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked + 10*document.getElementById("runnTumTuber").checked + 15*songflower;
   mp5  += 8*document.getElementById("nightfinSoup").checked + 12*document.getElementById("magebloodPotion").checked + 42*document.getElementById("blessingOfWisdom").checked + 25*document.getElementById("manaSpringTotem").checked;
   
-  var sbCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  var sbCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML) * (1-0.15*bonusShadowBoltCost) * (1-0.15*bonusShadowCost);
   var sbTime = 3 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
-  var burnCost = 365 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  var burnCost = 365 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML) * (1-0.15*bonusShadowCost);
   var searingCost = 168 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
-  var deathCoilCost = 565;
-  var drainLifeCost = 300;
+  var deathCoilCost = 565 * (1-0.15*bonusShadowCost);
+  var drainLifeCost = 300 * (1-0.15*bonusShadowCost);
   var drainLifeTime = 5;
   var GCD = 1.5;
-  var corruptionCost = 340;
+  var corruptionCost = 340 * (1-0.15*bonusShadowCost);
   var corruptionDuration = 18;
   var corruption = false;
   var corruptionTime = Math.max(GCD, 2 - 0.4*document.getElementById("talentCorruption").parentNode.children[1].innerHTML);
-  var agonyCost = 215;
+  var agonyCost = 215 * (1-0.15*bonusShadowCost);
   var agonyDuration = 24;
   var agony = false;
-  var doomCost = 300;
+  var doomCost = 300 * (1-0.15*bonusShadowCost);
   var doomDuration = 60;
   var doom = false;
   var immolateCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
   var immolateDuration = 15;
   var immolate = false;
-  var immolateTime = 2 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
+  var immolateTime = 2 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML - 0.2*bonusImmolatePvP;
   var immolateR7Cost = 370 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
-  var siphonCost = 365;
+  var siphonCost = 365 * (1-0.15*bonusShadowCost);
   var siphonDuration = 30;
   var siphon = false;
   
@@ -254,8 +270,8 @@ function runSim() {
     var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
     var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
     var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
-    var avgImmo = (279+(FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
-    var avgImmoR7 = (258+(FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+    var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+    var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
     
     var miss = Math.max(1, 100 - baseHit - hit);
     var critChance = (1.7 + crit + (intel/60.6));
@@ -338,7 +354,7 @@ function runSim() {
         else if (corruption == false && corruptionDuration <= timeLeft) {
           corruption = true; 
           corruptionUse = time;
-          damage += (822+ShP) * shadowMultiplier * ((shadowVuln*0.2)+1);
+          damage += (822+ShP) * shadowMultiplier * ((shadowVuln*0.2)+1) * (1+0.12*bonusCorruption) * (1+0.02*bonusCorruptionZG);
           mana -= corruptionCost/(afflictionChance/100);
           time += corruptionTime/(afflictionChance/100);
           damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1) * 6*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
@@ -394,7 +410,7 @@ function runSim() {
           time += immolateTime;}
         
         else if (primary == "drainLife" && drainLifeTime <= timeLeft) {
-          damage += Math.min(5, Math.floor(timeLeft))*(71+ShP*0.1) * afflictionChance/100 * shadowMultiplier * (1+0.02*document.getElementById("talentDrainLife").parentNode.children[1].innerHTML);
+          damage += Math.min(5, Math.floor(timeLeft))*(71+ShP*0.1) * afflictionChance/100 * shadowMultiplier * (1+0.02*document.getElementById("talentDrainLife").parentNode.children[1].innerHTML) * (1+0.15*bonusDrainLife);
           mana -= drainLifeCost;
           time += drainLifeTime;
           damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln*0.2)+1) * 5*0.02*document.getElementById("talentNightfall").parentNode.children[1].innerHTML;
