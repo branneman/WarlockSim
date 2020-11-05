@@ -38,6 +38,7 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
     border: 0px solid #000000;
     font-family: "Overpass Mono", monospace;
     text-align: center;
+    table-layout: fixed;
 }
 .gearTable th {
     border-bottom: 2px solid #000000;
