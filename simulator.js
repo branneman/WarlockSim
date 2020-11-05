@@ -73,8 +73,8 @@ function runSim() {
   if (setPvPEpic >= 6)
     SP += 23;
   
-  
-  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
+  SP += ShP;
+  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(classList); console.log(" ")
   
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
