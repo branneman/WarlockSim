@@ -9,7 +9,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var pen  = 0;
   var mp5  = 0;
   var classList = new Array;
-  var items = document.getElementsByName('activeItem');
+  var items = document.getElementsByName('activeItem'); console.log(gearTable)
   for (var i=0; i<items.length; i++) {
     if (arguments.length > 0 && gearTable.parentNode.parentNode.id === items[i].parentNode.parentNode.id) {
       if (arguments.length < 3) {
