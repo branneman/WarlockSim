@@ -46,8 +46,17 @@
           document.getElementById(tableName).children[1].children[i].style.backgroundColor = "#FFF";
           document.getElementById(tableName).children[1].children[i].name = tableName + "NotActive";
         }
-        element.style.backgroundColor = "#9482C9";
-        element.name = tableName + "Active";
+        if (arguments.length == 2) {
+          element.style.backgroundColor = "#9482C9";
+          element.name = tableName + "Active";
+        }
+        if (tableName == "tableMainHand" || tableName == "tableOffHand") {
+          clickTable('tableStaff');
+        }
+        else if (tableName == "tableStaff") {
+          clickTable('tableMainHand');
+          clickTable('tableOffHand');
+        }
       }
       
       setTimeout(function(){ 
@@ -390,8 +399,8 @@
         <table class="gearTable compact row-border hover" id="tableMainHand"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Wraith Blade</td><td>Naxx</td><td>10</td><td>8</td><td>95</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Midnight Haze</td><td>Naxx</td><td>20</td><td>12</td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableMainHand',this)"><td>Wraith Blade</td><td>Naxx</td><td>10</td><td>8</td><td>95</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableMainHand',this)"><td>Midnight Haze</td><td>Naxx</td><td>20</td><td>12</td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Grand Marshal's Mageblade</td><td>PvP</td><td>14</td><td>8</td><td>72</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Sharpened Silithid Femur</td><td>AQ40</td><td>14</td><td>7</td><td>72</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Claw of Chromaggus</td><td>BWL</td><td>7</td><td>17</td><td>64</td><td></td><td></td><td></td><td></td><td></td><td>4</td><td></td><td></td></tr>
@@ -416,8 +425,8 @@
         <table class="gearTable compact row-border hover" id="tableOffHand"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Sapphiron's Left Eye</td><td>Naxx</td><td>12</td><td>8</td><td>26</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Royal Scepter of Vek'lor</td><td>AQ40</td><td>10</td><td>9</td><td>20</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableOffHand',this)"><td>Sapphiron's Left Eye</td><td>Naxx</td><td>12</td><td>8</td><td>26</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableOffHand',this)"><td>Royal Scepter of Vek'lor</td><td>AQ40</td><td>10</td><td>9</td><td>20</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Scepter of Interminable Focus</td><td>Stratholme</td><td></td><td></td><td>9</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Jin'do's Bag of Whammies</td><td>ZG</td><td>8</td><td>11</td><td>18</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Talon of Furious Concentration</td><td>AQ20</td><td>8</td><td>8</td><td>21</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
@@ -436,8 +445,8 @@
         <table class="gearTable compact row-border hover" id="tableStaff"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Atiesh, Greatstaff of the Guardian</td><td>Naxx</td><td>30</td><td>29</td><td>183</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Brimstone Staff</td><td>Naxx</td><td>31</td><td>30</td><td>113</td><td></td><td></td><td>2%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableStaff',this)"><td>Atiesh, Greatstaff of the Guardian</td><td>Naxx</td><td>30</td><td>29</td><td>183</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableStaff',this)"><td>Brimstone Staff</td><td>Naxx</td><td>31</td><td>30</td><td>113</td><td></td><td></td><td>2%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Soulseeker</td><td>Naxx</td><td>30</td><td>31</td><td>126</td><td></td><td></td><td></td><td>2%</td><td>25</td><td></td><td></td><td></td></tr>
           <tr style="background-color:#AAAAAA" name="activeItem"><td>Blessed Qiraji Acolyte Staff</td><td>AQ40</td><td>32</td><td>33</td><td>76</td><td></td><td></td><td>2%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           <tr><td>Staff of the Shadow Flame</td><td>BWL</td><td>24</td><td>29</td><td>84</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
@@ -507,21 +516,21 @@
         <table class="gearTable compact row-border hover" id="tableShoulders"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr class="setT3"><td>Plagueheart Shoulderpads</td><td>Naxx</td><td>22</td><td>12</td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Rime Covered Mantle</td><td>Naxx</td><td>12</td><td>12</td><td>39</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem" class="setT25"><td>Doomcaller's Mantle</td><td>AQ40</td><td>20</td><td>11</td><td>28</td><td></td><td></td><td>1%</td><td></td><td>10</td><td></td><td></td><td></td></tr>
-          <tr><td>Mantle of the Blackwing Cabal</td><td>BWL</td><td>12</td><td>16</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Abyssal Cloth Amice of Sorcery</td><td>Silithus</td><td>13</td><td>13</td><td>15</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPEpic"><td>Rank 13 Shoulders</td><td>PvP</td><td>24</td><td>17</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPRare"><td>Rank 10 Shoulders</td><td>PvP</td><td>17</td><td>13</td><td>12</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT2"><td>Nemesis Shoulders</td><td>BWL</td><td>20</td><td>13</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Felcloth Shoulders</td><td>Crafting</td><td></td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Mantle of Maz'Nadir</td><td>AQ20</td><td>11</td><td>15</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Burial Shawl</td><td>Scholomance</td><td></td><td>16</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Kentic Amice</td><td>BRD</td><td>5</td><td>13</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setZG"><td>Zandalar Demoniac's Mantle</td><td>ZG</td><td>23</td><td>19</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Shoulder Pads</td><td>MC</td><td>25</td><td>17</td><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Mantle of Phrenic Power</td><td>AQ40</td><td>20</td><td>20</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setT3"><td>Plagueheart Shoulderpads</td><td>Naxx</td><td>22</td><td>12</td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Rime Covered Mantle</td><td>Naxx</td><td>12</td><td>12</td><td>39</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" style="background-color:#AAAAAA" name="activeItem" class="setT25"><td>Doomcaller's Mantle</td><td>AQ40</td><td>20</td><td>11</td><td>28</td><td></td><td></td><td>1%</td><td></td><td>10</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Mantle of the Blackwing Cabal</td><td>BWL</td><td>12</td><td>16</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Abyssal Cloth Amice of Sorcery</td><td>Silithus</td><td>13</td><td>13</td><td>15</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setPvPEpic"><td>Rank 13 Shoulders</td><td>PvP</td><td>24</td><td>17</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setPvPRare"><td>Rank 10 Shoulders</td><td>PvP</td><td>17</td><td>13</td><td>12</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setT2"><td>Nemesis Shoulders</td><td>BWL</td><td>20</td><td>13</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Felcloth Shoulders</td><td>Crafting</td><td></td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Mantle of Maz'Nadir</td><td>AQ20</td><td>11</td><td>15</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Burial Shawl</td><td>Scholomance</td><td></td><td>16</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Kentic Amice</td><td>BRD</td><td>5</td><td>13</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setZG"><td>Zandalar Demoniac's Mantle</td><td>ZG</td><td>23</td><td>19</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)" class="setT1"><td>Felheart Shoulder Pads</td><td>MC</td><td>25</td><td>17</td><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableShoulders',this)"><td>Mantle of Phrenic Power</td><td>AQ40</td><td>20</td><td>20</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -529,16 +538,16 @@
         <table class="gearTable compact row-border hover" id="tableBack"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Cloak of the Necropolis</td><td>Naxx</td><td>12</td><td>11</td><td>26</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Cloak of the Devoured</td><td>AQ40</td><td>11</td><td>10</td><td>30</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Cloak of Consumption</td><td>ZG</td><td></td><td>10</td><td>23</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Cloak of the Brood Lord</td><td>BWL</td><td>10</td><td>14</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Veil of Eclipse</td><td>Naxx</td><td>10</td><td>10</td><td>28</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
-          <tr><td>Cloak of the Hakkari Worshipers</td><td>ZG</td><td>6</td><td>6</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Cape of the Trinity</td><td>AQ40</td><td>17</td><td>12</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setAQ20"><td>Shroud of Unspoken Names</td><td>AQ20</td><td>16</td><td>9</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Sapphiron Drape</td><td>Onyxia</td><td>10</td><td>17</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Spritecaster Cape</td><td>BRD</td><td>4</td><td>4</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Cloak of the Necropolis</td><td>Naxx</td><td>12</td><td>11</td><td>26</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Cloak of the Devoured</td><td>AQ40</td><td>11</td><td>10</td><td>30</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)" style="background-color:#AAAAAA" name="activeItem"><td>Cloak of Consumption</td><td>ZG</td><td></td><td>10</td><td>23</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Cloak of the Brood Lord</td><td>BWL</td><td>10</td><td>14</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Veil of Eclipse</td><td>Naxx</td><td>10</td><td>10</td><td>28</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Cloak of the Hakkari Worshipers</td><td>ZG</td><td>6</td><td>6</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Cape of the Trinity</td><td>AQ40</td><td>17</td><td>12</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)" class="setAQ20"><td>Shroud of Unspoken Names</td><td>AQ20</td><td>16</td><td>9</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Sapphiron Drape</td><td>Onyxia</td><td>10</td><td>17</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableBack',this)"><td>Spritecaster Cape</td><td>BRD</td><td>4</td><td>4</td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -546,24 +555,24 @@
         <table class="gearTable compact row-border hover" id="tableChest"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr class="setT3"><td>Plagueheart Robe</td><td>Naxx</td><td>27</td><td>22</td><td>51</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setBV"><td>Bloodvine Vest</td><td>Crafting</td><td></td><td>13</td><td>27</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Garb of Royal Ascension</td><td>AQ40</td><td>21</td><td></td><td>30</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT25"><td>Doomcaller's Robes</td><td>AQ40</td><td>23</td><td>17</td><td>41</td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
-          <tr><td>Crystal Webbed Robe</td><td>Naxx</td><td>25</td><td>19</td><td>53</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Robe of Volatile Power</td><td>MC</td><td>10</td><td>15</td><td>23</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Robes</td><td>BWL</td><td>26</td><td>16</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Jade Inlaid Vestments</td><td>Ysondre</td><td>16</td><td>18</td><td>44</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Vestments of the Shifting Sands</td><td>AQ20</td><td>20</td><td>14</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setZG"><td>Zandalar Demoniac's Robe</td><td>ZG</td><td>35</td><td></td><td>27</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Robe of the Void</td><td>Crafting</td><td>14</td><td></td><td>46</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Robes of the Battleguard</td><td>AQ40</td><td>23</td><td>17</td><td>36</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
-          <tr class="setPvPEpic"><td>Rank 12 Chest</td><td>PvP</td><td>30</td><td>24</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPRare"><td>Rank 8 Chest</td><td>PvP</td><td>20</td><td>20</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Robe</td><td>Quest</td><td>27</td><td>22</td><td></td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Robes</td><td>MC</td><td>31</td><td>20</td><td>13</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Flarecore Robe</td><td>Crafting</td><td>35</td><td></td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Dreamweave Vest</td><td>Crafting</td><td></td><td>9</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setT3"><td>Plagueheart Robe</td><td>Naxx</td><td>27</td><td>22</td><td>51</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setBV"><td>Bloodvine Vest</td><td>Crafting</td><td></td><td>13</td><td>27</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Garb of Royal Ascension</td><td>AQ40</td><td>21</td><td></td><td>30</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setT25"><td>Doomcaller's Robes</td><td>AQ40</td><td>23</td><td>17</td><td>41</td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Crystal Webbed Robe</td><td>Naxx</td><td>25</td><td>19</td><td>53</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Robe of Volatile Power</td><td>MC</td><td>10</td><td>15</td><td>23</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Robes</td><td>BWL</td><td>26</td><td>16</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Jade Inlaid Vestments</td><td>Ysondre</td><td>16</td><td>18</td><td>44</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Vestments of the Shifting Sands</td><td>AQ20</td><td>20</td><td>14</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setZG"><td>Zandalar Demoniac's Robe</td><td>ZG</td><td>35</td><td></td><td>27</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Robe of the Void</td><td>Crafting</td><td>14</td><td></td><td>46</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Robes of the Battleguard</td><td>AQ40</td><td>23</td><td>17</td><td>36</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setPvPEpic"><td>Rank 12 Chest</td><td>PvP</td><td>30</td><td>24</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setPvPRare"><td>Rank 8 Chest</td><td>PvP</td><td>20</td><td>20</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setT05"><td>Deathmist Robe</td><td>Quest</td><td>27</td><td>22</td><td></td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)" class="setT1"><td>Felheart Robes</td><td>MC</td><td>31</td><td>20</td><td>13</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Flarecore Robe</td><td>Crafting</td><td>35</td><td></td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableChest',this)"><td>Dreamweave Vest</td><td>Crafting</td><td></td><td>9</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -571,19 +580,19 @@
         <table class="gearTable compact row-border hover" id="tableWrists"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Rockfury Bracers</td><td>Quest</td><td>7</td><td></td><td>27</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Bracers of Arcane Accuracy</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>The Soul Harvester's Bindings</td><td>Naxx</td><td>14</td><td>11</td><td>21</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Burrower Bracers</td><td>AQ40</td><td>10</td><td>13</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Bindings</td><td>Naxx</td><td>23</td><td>14</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Black Bark Wristbands</td><td>Lethon</td><td>15</td><td>4</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Shackles of the Unscarred</td><td>AQ20</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
-          <tr><td>Dryad's Wrist Bindings</td><td>PvP</td><td>8</td><td>8</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setZG"><td>Zandalar Demoniac's Wraps</td><td>ZG</td><td>15</td><td>8</td><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT2"><td>Nemesis Bracers</td><td>BWL</td><td>21</td><td>11</td><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Bracers</td><td>MC</td><td>18</td><td>11</td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Bracers</td><td>Quest</td><td>12</td><td>12</td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Sublime Wristguards</td><td>Dire Maul</td><td>6</td><td>10</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" style="background-color:#AAAAAA" name="activeItem"><td>Rockfury Bracers</td><td>Quest</td><td>7</td><td></td><td>27</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Bracers of Arcane Accuracy</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>The Soul Harvester's Bindings</td><td>Naxx</td><td>14</td><td>11</td><td>21</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Burrower Bracers</td><td>AQ40</td><td>10</td><td>13</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" class="setT3"><td>Plagueheart Bindings</td><td>Naxx</td><td>23</td><td>14</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Black Bark Wristbands</td><td>Lethon</td><td>15</td><td>4</td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Shackles of the Unscarred</td><td>AQ20</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Dryad's Wrist Bindings</td><td>PvP</td><td>8</td><td>8</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" class="setZG"><td>Zandalar Demoniac's Wraps</td><td>ZG</td><td>15</td><td>8</td><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" class="setT2"><td>Nemesis Bracers</td><td>BWL</td><td>21</td><td>11</td><td>15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" class="setT1"><td>Felheart Bracers</td><td>MC</td><td>18</td><td>11</td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)" class="setT05"><td>Deathmist Bracers</td><td>Quest</td><td>12</td><td>12</td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWrists',this)"><td>Sublime Wristguards</td><td>Dire Maul</td><td>6</td><td>10</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -591,20 +600,20 @@
         <table class="gearTable compact row-border hover" id="tableHands"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Dark Storm Gauntlets</td><td>AQ40</td><td>19</td><td>15</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Ebony Flame Gloves</td><td>BWL</td><td>17</td><td>12</td><td></td><td>43</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Gloves</td><td>Naxx</td><td>25</td><td>17</td><td>26</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Bloodtinged Gloves</td><td>ZG</td><td>10</td><td>10</td><td>19</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Wraps</td><td>Quest</td><td>16</td><td>13</td><td>13</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Felcloth Gloves</td><td>Crafting</td><td>9</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT2"><td>Nemesis Gloves</td><td>BWL</td><td>17</td><td>15</td><td>15</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPEpic"><td>Rank 12 Gloves</td><td>PvP</td><td>20</td><td>3</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Hands of Power</td><td>LBRS</td><td></td><td>6</td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Gloves</td><td>MC</td><td>18</td><td>15</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPRare"><td>Rank 7 Gloves</td><td>PvP</td><td>14</td><td>4</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Dreamweave Gloves</td><td>Crafting</td><td></td><td>4</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Gloves of the Hypnotic Flame</td><td>MC</td><td>18</td><td>19</td><td>9</td><td></td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Inferno Gloves</td><td>Crafting</td><td>9</td><td></td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Dark Storm Gauntlets</td><td>AQ40</td><td>19</td><td>15</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" style="background-color:#AAAAAA" name="activeItem"><td>Ebony Flame Gloves</td><td>BWL</td><td>17</td><td>12</td><td></td><td>43</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setT3"><td>Plagueheart Gloves</td><td>Naxx</td><td>25</td><td>17</td><td>26</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Bloodtinged Gloves</td><td>ZG</td><td>10</td><td>10</td><td>19</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setT05"><td>Deathmist Wraps</td><td>Quest</td><td>16</td><td>13</td><td>13</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Felcloth Gloves</td><td>Crafting</td><td>9</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setT2"><td>Nemesis Gloves</td><td>BWL</td><td>17</td><td>15</td><td>15</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setPvPEpic"><td>Rank 12 Gloves</td><td>PvP</td><td>20</td><td>3</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Hands of Power</td><td>LBRS</td><td></td><td>6</td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setT1"><td>Felheart Gloves</td><td>MC</td><td>18</td><td>15</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)" class="setPvPRare"><td>Rank 7 Gloves</td><td>PvP</td><td>14</td><td>4</td><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Dreamweave Gloves</td><td>Crafting</td><td></td><td>4</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Gloves of the Hypnotic Flame</td><td>MC</td><td>18</td><td>19</td><td>9</td><td></td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableHands',this)"><td>Inferno Gloves</td><td>Crafting</td><td>9</td><td></td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -612,18 +621,18 @@
         <table class="gearTable compact row-border hover" id="tableWaist"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Eyestalk Waist Cord</td><td>AQ40</td><td>10</td><td>9</td><td>41</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Belt</td><td>Naxx</td><td>23</td><td>12</td><td>34</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Angelista's Grasp</td><td>BWL</td><td>17</td><td>20</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Mana Igniting Cord</td><td>MC</td><td>12</td><td>16</td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Belt</td><td>BWL</td><td>18</td><td>8</td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Firemaw's Clutch</td><td>BWL</td><td>12</td><td>12</td><td>35</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
-          <tr><td>Ban'thok Sash</td><td>BRD</td><td>10</td><td>11</td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Sash of Whispered Secrets</td><td>MC</td><td>20</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Belt of Untapped Power</td><td>ZG</td><td>6</td><td>7</td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Belt</td><td>MC</td><td>18</td><td>15</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Clutch of Andros</td><td>Scholomance</td><td>9</td><td>19</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Belt</td><td>Quest</td><td>16</td><td>16</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Eyestalk Waist Cord</td><td>AQ40</td><td>10</td><td>9</td><td>41</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)" class="setT3"><td>Plagueheart Belt</td><td>Naxx</td><td>23</td><td>12</td><td>34</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Angelista's Grasp</td><td>BWL</td><td>17</td><td>20</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Mana Igniting Cord</td><td>MC</td><td>12</td><td>16</td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)" style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Belt</td><td>BWL</td><td>18</td><td>8</td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Firemaw's Clutch</td><td>BWL</td><td>12</td><td>12</td><td>35</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Ban'thok Sash</td><td>BRD</td><td>10</td><td>11</td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Sash of Whispered Secrets</td><td>MC</td><td>20</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Belt of Untapped Power</td><td>ZG</td><td>6</td><td>7</td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)" class="setT1"><td>Felheart Belt</td><td>MC</td><td>18</td><td>15</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)"><td>Clutch of Andros</td><td>Scholomance</td><td>9</td><td>19</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWaist',this)" class="setT05"><td>Deathmist Belt</td><td>Quest</td><td>16</td><td>16</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -631,24 +640,24 @@
         <table class="gearTable compact row-border hover" id="tableLegs"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Leggings of Polarity</td><td>Naxx</td><td>20</td><td>14</td><td>44</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Fel Infused Leggings</td><td>Kazzak</td><td>21</td><td></td><td></td><td>64</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setBV"><td>Bloodvine Leggings</td><td>Crafting</td><td></td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Leggings of the Black Blizzard</td><td>AQ20</td><td>14</td><td>16</td><td>41</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Leggings</td><td>Naxx</td><td>30</td><td>25</td><td>37</td><td></td><td></td><td></td><td>1%</td><td>10</td><td></td><td></td><td></td></tr>
-          <tr class="setT25"><td>Doomcaller's Trousers</td><td>AQ40</td><td>28</td><td>24</td><td>34</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT2"><td>Nemesis Leggings</td><td>MC</td><td>23</td><td>16</td><td>39</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Flarecore Leggings</td><td>Crafting</td><td>21</td><td></td><td>43</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPEpic"><td>Rank 12 Leggings</td><td>PvP</td><td>28</td><td>19</td><td>37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Leggings of Torment</td><td>UBRS</td><td>16</td><td>16</td><td></td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Skyshroud Leggings</td><td>LBRS</td><td>8</td><td>8</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Pants</td><td>MC</td><td>20</td><td>19</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Abyssal Cloth Pants of Sorcery</td><td>Silithus</td><td>15</td><td>15</td><td>18</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Bloodtinged Kilt</td><td>ZG</td><td>20</td><td>20</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPRare"><td>Rank 8 Leggings</td><td>PvP</td><td>21</td><td>13</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Leggings</td><td>Quest</td><td>22</td><td>21</td><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Leggings of the Festering Swarm</td><td>AQ40</td><td>17</td><td>23</td><td></td><td></td><td>57</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Spiritshroud Leggings</td><td>UBRS</td><td>13</td><td>16</td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Leggings of Polarity</td><td>Naxx</td><td>20</td><td>14</td><td>44</td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" style="background-color:#AAAAAA" name="activeItem"><td>Fel Infused Leggings</td><td>Kazzak</td><td>21</td><td></td><td></td><td>64</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setBV"><td>Bloodvine Leggings</td><td>Crafting</td><td></td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Leggings of the Black Blizzard</td><td>AQ20</td><td>14</td><td>16</td><td>41</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setT3"><td>Plagueheart Leggings</td><td>Naxx</td><td>30</td><td>25</td><td>37</td><td></td><td></td><td></td><td>1%</td><td>10</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setT25"><td>Doomcaller's Trousers</td><td>AQ40</td><td>28</td><td>24</td><td>34</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setT2"><td>Nemesis Leggings</td><td>MC</td><td>23</td><td>16</td><td>39</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Flarecore Leggings</td><td>Crafting</td><td>21</td><td></td><td>43</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setPvPEpic"><td>Rank 12 Leggings</td><td>PvP</td><td>28</td><td>19</td><td>37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Leggings of Torment</td><td>UBRS</td><td>16</td><td>16</td><td></td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Skyshroud Leggings</td><td>LBRS</td><td>8</td><td>8</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setT1"><td>Felheart Pants</td><td>MC</td><td>20</td><td>19</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Abyssal Cloth Pants of Sorcery</td><td>Silithus</td><td>15</td><td>15</td><td>18</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Bloodtinged Kilt</td><td>ZG</td><td>20</td><td>20</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setPvPRare"><td>Rank 8 Leggings</td><td>PvP</td><td>21</td><td>13</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)" class="setT05"><td>Deathmist Leggings</td><td>Quest</td><td>22</td><td>21</td><td>16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Leggings of the Festering Swarm</td><td>AQ40</td><td>17</td><td>23</td><td></td><td></td><td>57</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableLegs',this)"><td>Spiritshroud Leggings</td><td>UBRS</td><td>13</td><td>16</td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -656,22 +665,22 @@
         <table class="gearTable compact row-border hover" id="tableFeet"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr class="setT3"><td>Plagueheart Sandals</td><td>Naxx</td><td>20</td><td>16</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setBV"><td>Bloodvine Boots</td><td>Crafting</td><td></td><td>16</td><td>19</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Boots of Epiphany</td><td>AQ40</td><td>18</td><td>19</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Snowblind Shoes</td><td>Azuregos</td><td>10</td><td>10</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
-          <tr><td>Betrayer's Boots</td><td>ZG</td><td>8</td><td>12</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT25"><td>Doomcaller's Footwraps</td><td>AQ40</td><td>20</td><td>16</td><td>28</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
-          <tr class="setPvPEpic"><td>Rank 12 Boots</td><td>PvP</td><td>22</td><td>13</td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Maleki's Footwraps</td><td>Stratholme</td><td>9</td><td>9</td><td></td><td>27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Boots</td><td>BWL</td><td>20</td><td>17</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Omnicast Boots</td><td>BRD</td><td>6</td><td>9</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Recomposed Boots</td><td>AQ40</td><td>21</td><td>13</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Dragonrider Boots</td><td>UBRS</td><td>5</td><td>16</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setPvPRare"><td>Rank 7 Boots</td><td>PvP</td><td>17</td><td>13</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT1"><td>Felheart Slippers</td><td>MC</td><td>23</td><td>11</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setT05"><td>Deathmist Sandals</td><td>Quest</td><td>24</td><td>14</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Fire Striders</td><td>Stratholme</td><td></td><td></td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setT3"><td>Plagueheart Sandals</td><td>Naxx</td><td>20</td><td>16</td><td>32</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setBV"><td>Bloodvine Boots</td><td>Crafting</td><td></td><td>16</td><td>19</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Boots of Epiphany</td><td>AQ40</td><td>18</td><td>19</td><td>34</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Snowblind Shoes</td><td>Azuregos</td><td>10</td><td>10</td><td>32</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Betrayer's Boots</td><td>ZG</td><td>8</td><td>12</td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setT25"><td>Doomcaller's Footwraps</td><td>AQ40</td><td>20</td><td>16</td><td>28</td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setPvPEpic"><td>Rank 12 Boots</td><td>PvP</td><td>22</td><td>13</td><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Maleki's Footwraps</td><td>Stratholme</td><td>9</td><td>9</td><td></td><td>27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" style="background-color:#AAAAAA" name="activeItem" class="setT2"><td>Nemesis Boots</td><td>BWL</td><td>20</td><td>17</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Omnicast Boots</td><td>BRD</td><td>6</td><td>9</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Recomposed Boots</td><td>AQ40</td><td>21</td><td>13</td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Dragonrider Boots</td><td>UBRS</td><td>5</td><td>16</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setPvPRare"><td>Rank 7 Boots</td><td>PvP</td><td>17</td><td>13</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setT1"><td>Felheart Slippers</td><td>MC</td><td>23</td><td>11</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)" class="setT05"><td>Deathmist Sandals</td><td>Quest</td><td>24</td><td>14</td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableFeet',this)"><td>Fire Striders</td><td>Stratholme</td><td></td><td></td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -679,30 +688,30 @@
         <table class="gearTable compact row-border hover" id="tableRing1"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Ring of the Fallen God</td><td>AQ40</td><td>5</td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of the Inevitable</td><td>Naxx</td><td></td><td></td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Seal of the Damned</td><td>Naxx</td><td>17</td><td></td><td>21</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem" class="setAQ20"><td>Ring of Unspoken Names</td><td>AQ20</td><td>12</td><td></td><td>14</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Forced Concentration</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ritssyn's Ring of Chaos</td><td>AQ40</td><td>6</td><td></td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Mindtear Band</td><td>Taerar</td><td>6</td><td>6</td><td>22</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Wrath of Cenarius</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Dark Dominion</td><td>BWL</td><td>12</td><td>6</td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Rune Band of Wizardry</td><td>UBRS</td><td>7</td><td></td><td>16</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setZGRing"><td>Zanzil's Seal</td><td>ZG</td><td>10</td><td>10</td><td>11</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Spell Power</td><td>MC</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Signet of the Bronze Dragonflight</td><td>Quest</td><td>8</td><td>9</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Ring</td><td>Naxx</td><td>24</td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Swarming Thought</td><td>AQ40</td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Servitude</td><td>ZG</td><td>8</td><td>9</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Elemental Focus Band</td><td>World</td><td>8</td><td>11</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of the Desert Winds</td><td>AQ20</td><td></td><td>9</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td>3</td><td></td><td></td></tr>
-          <tr class="setZGRing"><td>Zanzil's Band</td><td>ZG</td><td></td><td>13</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td>4</td><td></td><td></td></tr>
-          <tr><td>Songstone of Ironforge</td><td>Quest</td><td></td><td>7</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Blackrock</td><td>BWL</td><td></td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td></td></tr>
-          <tr><td>Ring of Eternal Flame</td><td>Naxx</td><td></td><td>10</td><td></td><td></td><td>34</td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Don Rodrigo's Band</td><td>PvP</td><td>7</td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
-          <tr><td>Dragonslayer's Signet</td><td>Onyxia</td><td>12</td><td>12</td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of the Fallen God</td><td>AQ40</td><td>5</td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Band of the Inevitable</td><td>Naxx</td><td></td><td></td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Seal of the Damned</td><td>Naxx</td><td>17</td><td></td><td>21</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)" style="background-color:#AAAAAA" name="activeItem" class="setAQ20"><td>Ring of Unspoken Names</td><td>AQ20</td><td>12</td><td></td><td>14</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Band of Forced Concentration</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ritssyn's Ring of Chaos</td><td>AQ40</td><td>6</td><td></td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Mindtear Band</td><td>Taerar</td><td>6</td><td>6</td><td>22</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Wrath of Cenarius</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Band of Dark Dominion</td><td>BWL</td><td>12</td><td>6</td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Rune Band of Wizardry</td><td>UBRS</td><td>7</td><td></td><td>16</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)" class="setZGRing"><td>Zanzil's Seal</td><td>ZG</td><td>10</td><td>10</td><td>11</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of Spell Power</td><td>MC</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Signet of the Bronze Dragonflight</td><td>Quest</td><td>8</td><td>9</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)" class="setT3"><td>Plagueheart Ring</td><td>Naxx</td><td>24</td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of Swarming Thought</td><td>AQ40</td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Band of Servitude</td><td>ZG</td><td>8</td><td>9</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Elemental Focus Band</td><td>World</td><td>8</td><td>11</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of the Desert Winds</td><td>AQ20</td><td></td><td>9</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td>3</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)" class="setZGRing"><td>Zanzil's Band</td><td>ZG</td><td></td><td>13</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td>4</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Songstone of Ironforge</td><td>Quest</td><td></td><td>7</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of Blackrock</td><td>BWL</td><td></td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Ring of Eternal Flame</td><td>Naxx</td><td></td><td>10</td><td></td><td></td><td>34</td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Don Rodrigo's Band</td><td>PvP</td><td>7</td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing1',this)"><td>Dragonslayer's Signet</td><td>Onyxia</td><td>12</td><td>12</td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -710,30 +719,30 @@
         <table class="gearTable compact row-border hover" id="tableRing2"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Ring of the Fallen God</td><td>AQ40</td><td>5</td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of the Inevitable</td><td>Naxx</td><td></td><td></td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Seal of the Damned</td><td>Naxx</td><td>17</td><td></td><td>21</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setAQ20"><td>Ring of Unspoken Names</td><td>AQ20</td><td>12</td><td></td><td>14</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Forced Concentration</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ritssyn's Ring of Chaos</td><td>AQ40</td><td>6</td><td></td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Mindtear Band</td><td>Taerar</td><td>6</td><td>6</td><td>22</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Wrath of Cenarius</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Dark Dominion</td><td>BWL</td><td>12</td><td>6</td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Rune Band of Wizardry</td><td>UBRS</td><td>7</td><td></td><td>16</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr class="setZGRing"><td>Zanzil's Seal</td><td>ZG</td><td>10</td><td>10</td><td>11</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Spell Power</td><td>MC</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Signet of the Bronze Dragonflight</td><td>Quest</td><td>8</td><td>9</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
-          <tr class="setT3"><td>Plagueheart Ring</td><td>Naxx</td><td>24</td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Swarming Thought</td><td>AQ40</td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
-          <tr><td>Band of Servitude</td><td>ZG</td><td>8</td><td>9</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Elemental Focus Band</td><td>World</td><td>8</td><td>11</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of the Desert Winds</td><td>AQ20</td><td></td><td>9</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td>3</td><td></td><td></td></tr>
-          <tr class="setZGRing"><td>Zanzil's Band</td><td>ZG</td><td></td><td>13</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td>4</td><td></td><td></td></tr>
-          <tr><td>Songstone of Ironforge</td><td>Quest</td><td></td><td>7</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ring of Blackrock</td><td>BWL</td><td></td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td></td></tr>
-          <tr><td>Ring of Eternal Flame</td><td>Naxx</td><td></td><td>10</td><td></td><td></td><td>34</td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Don Rodrigo's Band</td><td>PvP</td><td>7</td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
-          <tr><td>Dragonslayer's Signet</td><td>Onyxia</td><td>12</td><td>12</td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)" style="background-color:#AAAAAA" name="activeItem"><td>Ring of the Fallen God</td><td>AQ40</td><td>5</td><td>6</td><td>37</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Band of the Inevitable</td><td>Naxx</td><td></td><td></td><td>36</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Seal of the Damned</td><td>Naxx</td><td>17</td><td></td><td>21</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)" class="setAQ20"><td>Ring of Unspoken Names</td><td>AQ20</td><td>12</td><td></td><td>14</td><td></td><td></td><td>1%</td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Band of Forced Concentration</td><td>BWL</td><td>9</td><td>12</td><td>21</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ritssyn's Ring of Chaos</td><td>AQ40</td><td>6</td><td></td><td>25</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Mindtear Band</td><td>Taerar</td><td>6</td><td>6</td><td>22</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Wrath of Cenarius</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Band of Dark Dominion</td><td>BWL</td><td>12</td><td>6</td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Rune Band of Wizardry</td><td>UBRS</td><td>7</td><td></td><td>16</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)" class="setZGRing"><td>Zanzil's Seal</td><td>ZG</td><td>10</td><td>10</td><td>11</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ring of Spell Power</td><td>MC</td><td></td><td></td><td>33</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Signet of the Bronze Dragonflight</td><td>Quest</td><td>8</td><td>9</td><td>28</td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)" class="setT3"><td>Plagueheart Ring</td><td>Naxx</td><td>24</td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ring of Swarming Thought</td><td>AQ40</td><td></td><td></td><td>26</td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Band of Servitude</td><td>ZG</td><td>8</td><td>9</td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Elemental Focus Band</td><td>World</td><td>8</td><td>11</td><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ring of the Desert Winds</td><td>AQ20</td><td></td><td>9</td><td>9</td><td></td><td></td><td></td><td>1%</td><td></td><td>3</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)" class="setZGRing"><td>Zanzil's Band</td><td>ZG</td><td></td><td>13</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td>4</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Songstone of Ironforge</td><td>Quest</td><td></td><td>7</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ring of Blackrock</td><td>BWL</td><td></td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Ring of Eternal Flame</td><td>Naxx</td><td></td><td>10</td><td></td><td></td><td>34</td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Don Rodrigo's Band</td><td>PvP</td><td>7</td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td>20</td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableRing2',this)"><td>Dragonslayer's Signet</td><td>Onyxia</td><td>12</td><td>12</td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -741,22 +750,22 @@
         <table class="gearTable compact row-border hover" id="tableTrinket1"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Mark of the Champion</td><td>Naxx</td><td></td><td></td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Neltharion's Tear</td><td>BWL</td><td></td><td></td><td>44</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Rune of the Dawn</td><td>Quest</td><td></td><td></td><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Briarwood Reed</td><td>UBRS</td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of the Beast</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Royal Seal of Eldre'Thalas</td><td>Quest</td><td></td><td></td>23<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>The Restrained Essence of Sapphiron</td><td>Naxx</td><td></td><td></td><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Talisman of Ephemeral Power</td><td>MC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of Diminution</td><td>Naxx</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Zandalarian Hero Charm</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Hazza'rah's Charm of Destruction</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Nat Pagle's Broken Reel</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of Moam</td><td>AQ20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>The Black Book</td><td>BWL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Pimgib's Collar</td><td>Dire Maul</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Fetish of the Sand Reaver</td><td>AQ40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Mark of the Champion</td><td>Naxx</td><td></td><td></td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Neltharion's Tear</td><td>BWL</td><td></td><td></td><td>44</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Rune of the Dawn</td><td>Quest</td><td></td><td></td><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Briarwood Reed</td><td>UBRS</td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Eye of the Beast</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Royal Seal of Eldre'Thalas</td><td>Quest</td><td></td><td></td>23<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>The Restrained Essence of Sapphiron</td><td>Naxx</td><td></td><td></td><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Talisman of Ephemeral Power</td><td>MC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Eye of Diminution</td><td>Naxx</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)" style="background-color:#AAAAAA" name="activeItem"><td>Zandalarian Hero Charm</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Hazza'rah's Charm of Destruction</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Nat Pagle's Broken Reel</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Eye of Moam</td><td>AQ20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>The Black Book</td><td>BWL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Pimgib's Collar</td><td>Dire Maul</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket1',this)"><td>Fetish of the Sand Reaver</td><td>AQ40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -764,22 +773,22 @@
         <table class="gearTable compact row-border hover" id="tableTrinket2"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Mark of the Champion</td><td>Naxx</td><td></td><td></td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Neltharion's Tear</td><td>BWL</td><td></td><td></td><td>44</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Rune of the Dawn</td><td>Quest</td><td></td><td></td><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Briarwood Reed</td><td>UBRS</td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of the Beast</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Royal Seal of Eldre'Thalas</td><td>Quest</td><td></td><td></td>23<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>The Restrained Essence of Sapphiron</td><td>Naxx</td><td></td><td></td><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Talisman of Ephemeral Power</td><td>MC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of Diminution</td><td>Naxx</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Zandalarian Hero Charm</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Hazza'rah's Charm of Destruction</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Nat Pagle's Broken Reel</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Eye of Moam</td><td>AQ20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>The Black Book</td><td>BWL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Pimgib's Collar</td><td>Dire Maul</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Fetish of the Sand Reaver</td><td>AQ40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Mark of the Champion</td><td>Naxx</td><td></td><td></td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)" style="background-color:#AAAAAA" name="activeItem"><td>Neltharion's Tear</td><td>BWL</td><td></td><td></td><td>44</td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Rune of the Dawn</td><td>Quest</td><td></td><td></td><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Briarwood Reed</td><td>UBRS</td><td></td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Eye of the Beast</td><td>Quest</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Royal Seal of Eldre'Thalas</td><td>Quest</td><td></td><td></td>23<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>The Restrained Essence of Sapphiron</td><td>Naxx</td><td></td><td></td><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Talisman of Ephemeral Power</td><td>MC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Eye of Diminution</td><td>Naxx</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Zandalarian Hero Charm</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Hazza'rah's Charm of Destruction</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Nat Pagle's Broken Reel</td><td>ZG</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Eye of Moam</td><td>AQ20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>The Black Book</td><td>BWL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Pimgib's Collar</td><td>Dire Maul</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableTrinket2',this)"><td>Fetish of the Sand Reaver</td><td>AQ40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -787,17 +796,17 @@
         <table class="gearTable compact row-border hover" id="tableWand"><thead>
           <tr><th>Name</th><th>Source</th><th>Stamina</th><th>Intellect</th><th>Spell Power</th><th>Shadow Power</th><th>Fire Power</th><th>Spell Hit</th><th>Spell Crit</th><th>Spell Pen</th><th>Mp5</th><th>Value</th><th>DPS</th></tr>
           </thead><tbody>
-          <tr><td>Doomfinger</td><td>Naxx</td><td></td><td></td><td>16</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Wand of Qiraji Nobility</td><td>AQ40</td><td>5</td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Wand of Fates</td><td>Naxx</td><td>7</td><td>7</td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr style="background-color:#AAAAAA" name="activeItem"><td>Touch of Chaos</td><td>ZG</td><td></td><td></td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Skul's Ghastly Touch</td><td>Stratholme</td><td></td><td></td><td></td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Bonecreeper Stylus</td><td>Scholomance</td><td></td><td>4</td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Ritssyn's Wand of Bad Mojo</td><td>Stratholme</td><td>4</td><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Lethtendris's Wand</td><td>Dire Maul</td><td></td><td></td><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Dragon's Touch</td><td>BWL</td><td>7</td><td>12</td><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Stormrager</td><td>Quest</td><td>8</td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>Pyric Caduceus</td><td>BRD</td><td></td><td></td><td></td><td></td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Doomfinger</td><td>Naxx</td><td></td><td></td><td>16</td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Wand of Qiraji Nobility</td><td>AQ40</td><td>5</td><td></td><td>19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Wand of Fates</td><td>Naxx</td><td>7</td><td>7</td><td>12</td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)" style="background-color:#AAAAAA" name="activeItem"><td>Touch of Chaos</td><td>ZG</td><td></td><td></td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Skul's Ghastly Touch</td><td>Stratholme</td><td></td><td></td><td></td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Bonecreeper Stylus</td><td>Scholomance</td><td></td><td>4</td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Ritssyn's Wand of Bad Mojo</td><td>Stratholme</td><td>4</td><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Lethtendris's Wand</td><td>Dire Maul</td><td></td><td></td><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Dragon's Touch</td><td>BWL</td><td>7</td><td>12</td><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Stormrager</td><td>Quest</td><td>8</td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr onclick="clickTable('tableWand',this)"><td>Pyric Caduceus</td><td>BRD</td><td></td><td></td><td></td><td></td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
