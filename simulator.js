@@ -1,5 +1,5 @@
 function runSim() {
-  
+  console.time('Timer')
   var SP   = 0 + 30*document.getElementById("enchantSpellPower").checked + 8*document.getElementById("enchantFocus1").checked + 8*document.getElementById("enchantFocus2").checked + 18*document.getElementById("enchantZG1").checked + 18*document.getElementById("enchantZG2").checked + 18*document.getElementById("enchantZGShoulder").checked + 15*document.getElementById("enchantPowerScourge").checked;
   var ShP  = 0 + 20*document.getElementById("enchantShadow").checked;
   var FiP  = 0 + 20*document.getElementById("enchantFire").checked;
@@ -553,7 +553,7 @@ function runSim() {
       maintainAspectRatio: false
     }
   });
-  
+  console.timeEnd('Timer')
 } //Function
 
 function formatNumber(num, places) {
