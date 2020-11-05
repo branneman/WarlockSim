@@ -50,21 +50,7 @@
           element.style.backgroundColor = "#9482C9";
           element.setAttribute('name', 'activeItem');
         }
-        /*if (tableName == "tableMainHand" || tableName == "tableOffHand") {
-          clickTable("tableStaff");
-        }
-        else if (tableName == "tableStaff") {
-          clickTable("tableMainHand");
-          clickTable("tableOffHand");
-        }*/
       }
-      
-      setTimeout(function(){ 
-        document.getElementById("defaultOpen").click(); 
-        document.getElementById("DSRuin").click();
-        runSim(); 
-      }, 10);
-      Chart.defaults.global.defaultFontColor = 'black';
       
       $.extend( $.fn.dataTable.defaults, {
         searching: false,
@@ -92,7 +78,15 @@
         $('#tableTrinket1').DataTable();
         $('#tableTrinket2').DataTable();
         $('#tableWand').DataTable();
+        
+        setTimeout(function(){ 
+          document.getElementById("defaultOpen").click(); 
+          document.getElementById("DSRuin").click();
+          runSim(); 
+        }, 10);
+        Chart.defaults.global.defaultFontColor = 'black';
       } );
+      
     </script> 
     <link rel="stylesheet" href="pageStyle.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
