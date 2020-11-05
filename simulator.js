@@ -73,8 +73,19 @@ function runSim() {
   if (setPvPEpic >= 6)
     SP += 23;
   
+  var race = document.getElementById("race").value, gnome = false;
+  if (race == "gnome") {
+    var gnome = true;
+    int += 113;}
+  else if (race == "human")
+    int += 110;
+  else if (race == "orc")
+    int += 107;
+  else if (race == "undead")
+    int += 108;
+  
   SP += ShP;
-  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(classList); console.log(" ")
+  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(" ")
   
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
@@ -110,12 +121,6 @@ function runSim() {
   var lifeTap = document.getElementById("disableLifeTap").checked == false;
   var ZHC = false;
   var PI = 0;
-  
-  var race = document.getElementById("race").value;
-  if (race == "gnome")
-    var gnome = true;
-  else
-    var gnome = false;
   
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
