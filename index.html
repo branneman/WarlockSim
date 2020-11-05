@@ -44,11 +44,11 @@
         tableContent = document.getElementById(tableName).children[1].children;
         for (i = 0; i < tableContent.length; i++) {
           document.getElementById(tableName).children[1].children[i].style.backgroundColor = "#FFF";
-          document.getElementById(tableName).children[1].children[i].name = tableName + "NotActive";
+          document.getElementById(tableName).children[1].children[i].setAttribute('name', tableName + 'Inactive');
         }
         if (arguments.length == 2) {
           element.style.backgroundColor = "#9482C9";
-          element.name = "activeItem";
+          element.setAttribute('name', 'activeItem');
         }
         /*if (tableName == "tableMainHand" || tableName == "tableOffHand") {
           clickTable("tableStaff");
