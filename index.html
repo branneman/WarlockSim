@@ -43,7 +43,7 @@
         for (i = 0; i < gearTable.length; i++) {
           runSim(gearTable[i], baseLine); 
         }
-        //$('#'+gearName).DataTable().draw();
+        gearTable[0].parentNode.parentNode.draw();
       }
       
       function clickTable(tableName,element) {
