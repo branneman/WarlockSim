@@ -19,7 +19,7 @@ function runSim() {
     int  += Number(items[i].children[3].innerHTML);
     pen  += Number(items[i].children[9].innerHTML);
     mp5  += Number(items[i].children[10].innerHTML);
-    classList += items[i].classList[0];
+    classList.push(items[i].classList[0]);
   }
   console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
   
