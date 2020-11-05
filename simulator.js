@@ -1,4 +1,4 @@
-function runSim() {
+function runSim(gearTable, baseLine, makeBaseLine) {
   console.time('Timer')
   var SP   = 0 + 30*document.getElementById("enchantSpellPower").checked + 8*document.getElementById("enchantFocus1").checked + 8*document.getElementById("enchantFocus2").checked + 18*document.getElementById("enchantZG1").checked + 18*document.getElementById("enchantZG2").checked + 18*document.getElementById("enchantZGShoulder").checked + 15*document.getElementById("enchantPowerScourge").checked;
   var ShP  = 0 + 20*document.getElementById("enchantShadow").checked;
@@ -11,15 +11,30 @@ function runSim() {
   var classList = new Array;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
-    SP   += Number(items[i].children[4].innerHTML);
-    ShP  += Number(items[i].children[5].innerHTML);
-    FiP  += Number(items[i].children[6].innerHTML);
-    crit += Number(items[i].children[8].innerHTML.slice(0,1));
-    hit  += Number(items[i].children[7].innerHTML.slice(0,1));
-    int  += Number(items[i].children[3].innerHTML);
-    pen  += Number(items[i].children[9].innerHTML);
-    mp5  += Number(items[i].children[10].innerHTML);
-    classList.push(items[i].classList[0]);
+    if (arguments.length > 0 && gearTable.parentNode.parentNode.id === items[i].parentNode.parentNode.id) {
+      if (arguments.length < 3) {
+        SP   += Number(gearTable.children[4].innerHTML);
+        ShP  += Number(gearTable.children[5].innerHTML);
+        FiP  += Number(gearTable.children[6].innerHTML);
+        crit += Number(gearTable.children[8].innerHTML.slice(0,1));
+        hit  += Number(gearTable.children[7].innerHTML.slice(0,1));
+        int  += Number(gearTable.children[3].innerHTML);
+        pen  += Number(gearTable.children[9].innerHTML);
+        mp5  += Number(gearTable.children[10].innerHTML);
+        classList.push(gearTable.classList[0]);
+      }
+    }
+    else {
+      SP   += Number(items[i].children[4].innerHTML);
+      ShP  += Number(items[i].children[5].innerHTML);
+      FiP  += Number(items[i].children[6].innerHTML);
+      crit += Number(items[i].children[8].innerHTML.slice(0,1));
+      hit  += Number(items[i].children[7].innerHTML.slice(0,1));
+      int  += Number(items[i].children[3].innerHTML);
+      pen  += Number(items[i].children[9].innerHTML);
+      mp5  += Number(items[i].children[10].innerHTML);
+      classList.push(items[i].classList[0]);
+    }
   }
   
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0;
@@ -464,6 +479,13 @@ function runSim() {
   
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
   var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
+  if (arguments.length == 3)
+    return formatNumber(math.sum(baseVec)/baseVec.length,2);
+  if (arguments.length == 2) {
+    gearTable.children[12].innerHTML = formatNumber(math.sum(baseVec)/baseVec.length,2);
+    gearTable.children[11].innerHTML = (formatNumber(math.sum(baseVec)/baseVec.length,2)-baseLine)/SPVal;
+    return
+  }
 
   document.getElementById("dps").innerHTML = dpsOutput;
   document.getElementById('defaultOpen').innerHTML = "Main: " + "<b><span style='font-size:20px'>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " </span><span style='font-size:14px'>DPS</span></b>";;
