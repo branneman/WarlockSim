@@ -52,9 +52,9 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
     text-align: left;
     width: 400px;
 }
-/*.gearTable tr td:nth-child(2), .gearTable tr th:nth-child(2) {
-    text-align: left;
-}*/
+.gearTable tr td:nth-child(2), .gearTable tr th:nth-child(2), .gearTable tr td:nth-child(3), .gearTable tr th:nth-child(3), .gearTable tr td:nth-child(4), .gearTable tr th:nth-child(4), .gearTable tr td:nth-child(5), .gearTable tr th:nth-child(5), {
+    width: 100px;
+}
 
 
 .loader {
