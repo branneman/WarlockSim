@@ -1,25 +1,27 @@
 function runSim() {
   
-  var SP = 0;
-  var ShP = 0;
-  var FiP = 0;
+  var SP   = 0;
+  var ShP  = 0;
+  var FiP  = 0;
   var crit = 0;
-  var hit = 0;
-  var int = 0;
-  var pen = 0;
-  var mp5 = 0;
+  var hit  = 0;
+  var int  = 0;
+  var pen  = 0;
+  var mp5  = 0;
+  var classList = new Array;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
-    SP += Number(items[i].children[4].innerHTML);
-    ShP += Number(items[i].children[5].innerHTML);
-    FiP += Number(items[i].children[6].innerHTML);
+    SP   += Number(items[i].children[4].innerHTML);
+    ShP  += Number(items[i].children[5].innerHTML);
+    FiP  += Number(items[i].children[6].innerHTML);
     crit += Number(items[i].children[8].innerHTML.slice(0,1));
-    hit += Number(items[i].children[7].innerHTML.slice(0,1));
-    int += Number(items[i].children[3].innerHTML);
-    pen += Number(items[i].children[9].innerHTML);
-    mp5 += Number(items[i].children[10].innerHTML);
+    hit  += Number(items[i].children[7].innerHTML.slice(0,1));
+    int  += Number(items[i].children[3].innerHTML);
+    pen  += Number(items[i].children[9].innerHTML);
+    mp5  += Number(items[i].children[10].innerHTML);
+    classList += items[i].classList[0];
   }
-  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log("Pen:"+pen); console.log("Mp5:"+mp5)
+  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
   
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
