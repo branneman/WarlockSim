@@ -100,8 +100,7 @@ function runSim() {
   else if (race == "undead")
     int += 108;
   
-  SP += ShP;
-  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(" ")
+  console.log("SP:"+(SP+ShP)); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(" ")
   
   /*var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
@@ -165,8 +164,8 @@ function runSim() {
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
   var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked + 100*document.getElementById("enchantMana").checked;
-  var ShP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
-  var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
+  ShP += SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
+  FiP += SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
   var afflictionHit = hit + 2*document.getElementById("talentSuppression").parentNode.children[1].innerHTML;
   var afflictionChance = Math.min(99, baseHit+afflictionHit);
   crit += 10*onyxiaBuff + 5*songflower + 3*diremaulBuff + 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked + 1*document.getElementById("talentDevastation").parentNode.children[1].innerHTML;
