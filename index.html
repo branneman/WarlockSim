@@ -50,6 +50,7 @@
           element.style.backgroundColor = "#9482C9";
           element.setAttribute('name', 'activeItem');
         }
+        runSim();
       }
       
       $.extend( $.fn.dataTable.defaults, {
@@ -79,12 +80,11 @@
         $('#tableTrinket2').DataTable();
         $('#tableWand').DataTable();
         
-        setTimeout(function(){ 
+        //setTimeout(function(){ 
           document.getElementById('defaultGear').click();
-          document.getElementById("defaultOpen").click(); 
           document.getElementById("DSRuin").click();
-          runSim(); 
-        }, 10);
+          document.getElementById("defaultOpen").click(); 
+        //}, 10);
         Chart.defaults.global.defaultFontColor = 'black';
       } );
       
@@ -212,7 +212,7 @@
       <button style="width:118px;height:25px;font-size:14px" onclick="setTalents('Reset');runSim()">               Reset</button>
       <div class="row">
         <div class="column talents" style="background-color:#555555;">
-          <table class="center" id="afflictionTree" onclick="runSim();">
+          <table class="center" id="afflictionTree" onclick="runSim();" oncontextmenu="runSim();">
             <tr>
               <th colspan='4' style='text-align:center'>Affliction</th>
             </tr>
