@@ -21,7 +21,6 @@ function runSim() {
     mp5  += Number(items[i].children[10].innerHTML);
     classList.push(items[i].classList[0]);
   }
-  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
   
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0;
   for (i=0; i<classList.length; i++) {
@@ -44,6 +43,38 @@ function runSim() {
     else if (classList[i] == "setPvPEpic")
       setPvPEpic++
   }
+  var bonusDrainMana = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false;
+  if (setT05 >= 6)
+    SP += 23;
+  if (setT1 >= 3)
+    bonusDrainMana = true;
+  if (setT1 >= 8)
+    bonusShadowCost = true;
+  if (setT2 >= 3)
+    SP += 23;
+  if (setT25 >= 3)
+    bonusImmolateDMG = true;
+  if (setT25 >= 5)
+    bonusShadowBoltCost = true;
+  if (setT3 >= 4)
+    bonusCorruption = true;
+  if (setZGRing >= 2) {
+    SP += 6; hit += 1;}
+  if (setZG >= 2)
+    SP += 12;
+  if (setZG >= 3)
+    bonusCorruptionZG = true;
+  if (setPvPRare >= 2)
+    SP += 23;
+  if (setPvPRare >= 4)
+    bonusImmolatePvP = true;
+  if (setPvPEpic >= 3)
+    bonusImmolatePvP = true;
+  if (setPvPEpic >= 6)
+    SP += 23;
+  
+  
+  console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
   
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
