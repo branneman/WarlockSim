@@ -1,11 +1,11 @@
 function runSim() {
   
-  var SP   = 0;
-  var ShP  = 0;
-  var FiP  = 0;
-  var crit = 0;
+  var SP   = 0 + 30*document.getElementById("enchantSpellPower").checked + 8*document.getElementById("enchantFocus1").checked + 8*document.getElementById("enchantFocus2").checked + 18*document.getElementById("enchantZG1").checked + 18*document.getElementById("enchantZG2").checked + 18*document.getElementById("enchantZGShoulder").checked + 15*document.getElementById("enchantPowerScourge").checked;
+  var ShP  = 0 + 20*document.getElementById("enchantShadow").checked;
+  var FiP  = 0 + 20*document.getElementById("enchantFire").checked;
+  var crit = 0 + 1*document.getElementById("enchantPowerScourge").checked;
   var hit  = 0;
-  var int  = 0;
+  var int  = 0 + 7*document.getElementById("enchantIntellect").checked + 3*document.getElementById("enchantStats").checked + 4*document.getElementById("enchantGreaterStats").checked;
   var pen  = 0;
   var mp5  = 0;
   var classList = new Array;
@@ -143,7 +143,7 @@ function runSim() {
   var songflower = document.getElementById("songflower").checked;
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
-  var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked;
+  var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked + 100*document.getElementById("enchantMana").checked;
   var ShP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
   var FiP = SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
   var afflictionHit = hit + 2*document.getElementById("talentSuppression").parentNode.children[1].innerHTML;
