@@ -69,7 +69,7 @@
       $(document).ready( function () {
         $('#tableMainHand').DataTable();
         $('#tableOffHand').DataTable();
-        $('#tableStaff').DataTable();
+        $('#tableStaff').DataTable({columnDefs: [{type: 'non-empty-string', targets: [11,12]}]});
         $('#tableHelmet').DataTable();
         $('#tableNeck').DataTable();
         $('#tableShoulders').DataTable();
@@ -86,9 +86,11 @@
         $('#tableTrinket2').DataTable();
         $('#tableWand').DataTable();
         Chart.defaults.global.defaultFontColor = 'black';
-        document.getElementById('defaultGear').click();
-        document.getElementById("DSRuin").click();
-        document.getElementById("defaultOpen").click(); 
+        setTimeout(function(){ 
+          document.getElementById('defaultGear').click();
+          document.getElementById("DSRuin").click();
+          document.getElementById("defaultOpen").click(); 
+          }, 20);
       } );
       
     </script> 
