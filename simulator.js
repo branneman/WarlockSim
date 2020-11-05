@@ -480,8 +480,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
   var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
   if (arguments.length == 3) {
-    return formatNumber(math.sum(baseVec)/baseVec.length,2);
     console.timeEnd('Timer')
+    return formatNumber(math.sum(baseVec)/baseVec.length,2);
   }
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
