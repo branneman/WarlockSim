@@ -1,6 +1,13 @@
 function runSim() {
   
-  var SPt, ShP, FiP, critt, hitt, intt, pent, mp5t
+  var SPt = 0;
+  var ShP = 0;
+  var FiP = 0;
+  var critt = 0;
+  var hitt = 0;
+  var intt = 0;
+  var pent = 0;
+  var mp5t = 0;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
     SPt += Number(items[i].children[4].innerHTML); console.log(SPt)
