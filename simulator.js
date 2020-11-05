@@ -23,6 +23,28 @@ function runSim() {
   }
   console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log(classList); console.log(" ")
   
+  var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0;
+  for (i=0; i<classList.length; i++) {
+    if (classList[i] == "setT05")
+      setT05++
+    else if (classList[i] == "setT1")
+      setT1++
+    else if (classList[i] == "setT2")
+      setT2++
+    else if (classList[i] == "setT3")
+      setT3++
+    else if (classList[i] == "setZGRing")
+      setZGRing++
+    else if (classList[i] == "setZG")
+      setZG++
+    else if (classList[i] == "setAQ20")
+      setAQ20++
+    else if (classList[i] == "setPvPRare")
+      setPvPRare++
+    else if (classList[i] == "setPvPEpic")
+      setPvPEpic++
+  }
+  
   var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
   var hit = Number(document.getElementById("spellHit").value);
