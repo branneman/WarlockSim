@@ -80,6 +80,7 @@
         $('#tableWand').DataTable();
         
         setTimeout(function(){ 
+          document.getElementById('defaultGear').click();
           document.getElementById("defaultOpen").click(); 
           document.getElementById("DSRuin").click();
           runSim(); 
@@ -95,7 +96,7 @@
     <button class="tablink" onclick="openPage('main', this, '#838383'); runSim()" id="defaultOpen">Main</button>
     <button class="tablink" onclick="openPage('buffs', this, '#838383')">Buffs & Consumables</button>
     <button class="tablink" onclick="openPage('talents', this, '#838383')">Talents & Rotation</button>
-    <button class="tablink" onclick="openPage('gear', this, '#838383'); document.getElementById('defaultGear').click()">Gear (WIP)</button>
+    <button class="tablink" onclick="openPage('gear', this, '#838383')">Gear (WIP)</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
       <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
