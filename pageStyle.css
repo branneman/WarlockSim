@@ -44,12 +44,19 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
     font-weight: normal;
     text-align: center;
 }
-.gearTable tr td {
+.gearTable tr td th {
     text-align: center;
+    width: 100px;
 }
-.gearTable tr td:nth-child(1), .gearTable tr td:nth-child(2), .gearTable tr th:nth-child(1), .gearTable tr th:nth-child(2) {
+.gearTable tr td:nth-child(1), .gearTable tr th:nth-child(1) {
     text-align: left;
+    width: 350px;
 }
+.gearTable tr td:nth-child(2), .gearTable tr th:nth-child(2) {
+    text-align: left;
+    width: 100px;
+}
+
 
 .loader {
     border: 3px solid #f3f3f3;
