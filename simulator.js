@@ -3,11 +3,11 @@ function runSim() {
   var SPt, ShP, FiP, critt, hitt, intt, pent, mp5t
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
-    SPt += Number(items[i].children[4].innerHTML);
+    SPt += Number(items[i].children[4].innerHTML); console.log(SPt)
     ShP += Number(items[i].children[5].innerHTML);
     FiP += Number(items[i].children[6].innerHTML);
-    critt += Number(items[i].children[8].innerHTML);
-    hitt += Number(items[i].children[7].innerHTML);
+    critt += Number(items[i].children[8].innerHTML.slice(0,1));
+    hitt += Number(items[i].children[7].innerHTML.slice(0,1));
     intt += Number(items[i].children[3].innerHTML);
     pent += Number(items[i].children[9].innerHTML);
     mp5t += Number(items[i].children[10].innerHTML);
