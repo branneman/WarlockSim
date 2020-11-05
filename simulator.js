@@ -9,7 +9,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var pen  = 0;
   var mp5  = 0;
   var classList = new Array;
-  var items = document.getElementsByName('activeItem'); console.log(gearTable)
+  var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
     if (arguments.length > 0 && gearTable.parentNode.parentNode.id === items[i].parentNode.parentNode.id) {
       if (arguments.length < 3) {
@@ -479,11 +479,14 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
   var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
-  if (arguments.length == 3)
+  if (arguments.length == 3) {
     return formatNumber(math.sum(baseVec)/baseVec.length,2);
+    console.timeEnd('Timer')
+  }
   if (arguments.length == 2) {
-    gearTable.children[12].innerHTML = formatNumber(math.sum(baseVec)/baseVec.length,2);
-    gearTable.children[11].innerHTML = (formatNumber(math.sum(baseVec)/baseVec.length,2)-baseLine)/SPVal;
+    gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
+    gearTable.children[11].innerHTML = Number(formatNumber((math.sum(baseVec)/baseVec.length-baseLine)/SPVal,2));
+    console.timeEnd('Timer')
     return
   }
 
