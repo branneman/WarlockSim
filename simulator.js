@@ -103,11 +103,11 @@ function runSim() {
   SP += ShP;
   console.log("SP:"+SP); console.log("ShP:"+ShP); console.log("FiP:"+FiP); console.log("Crit:"+crit); console.log("Hit:"+hit); console.log("Int:"+int); console.log(" ")
   
-  var SP = Number(document.getElementById("spellPower").value);
+  /*var SP = Number(document.getElementById("spellPower").value);
   var crit = Number(document.getElementById("spellCrit").value);
   var hit = Number(document.getElementById("spellHit").value);
   var int = Number(document.getElementById("intellect").value);
-  var mp5 = Number(document.getElementById("mp5").value);
+  var mp5 = Number(document.getElementById("mp5").value);*/
   var fightStart = Number(document.getElementById("fightStart").value);
   var fightEnd = Number(document.getElementById("fightEnd").value);
   
@@ -149,8 +149,8 @@ function runSim() {
   else if (bossLevel == 60)
     var baseHit = 96;
   
-  var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseShadow").checked);
-  var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - Number(document.getElementById("spellPen").value) - 75*document.getElementById("curseElements").checked);
+  var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
+  var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
   var shadowReduction = 1 - shadowRes/400;
   var fireReduction = 1 - fireRes/400;
   
