@@ -351,7 +351,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var lifeTaps = new Array;
     var manaLeft = new Array;
     for (var i=0; i<timeVec.length; i++) {
-      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinket1Time = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = true, trinket2Bonus = false, piTime = 0, piCD = 0;
+      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinket1Time = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0;
       if (useDoom == true)
         var doomUse = 0;
       else {
@@ -403,8 +403,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         if (trinket1Bonus == true && trinket1Time <= 0) {
           if (trinket1 == "TREOS") {
             trinket1Bonus = false;
-            ShP -= 130/2;
-            FiP -= 130/2; console.log("Minus, " + trinket1Bonus)
+            ShP -= 130;
+            FiP -= 130; console.log("Minus, " + trinket1Bonus)
           }
           updateValues();
         }
