@@ -398,7 +398,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           trinket1Bonus == false;
           if (trinket1 == "TREOS") {
             ShP -= 130;
-            FiP -= 130;
+            FiP -= 130; console.log("Minus")
             updateValues();
           }
         }
@@ -410,7 +410,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               trinket1Time = 20;
               trinket1CD = 120;
               ShP += 130;
-              FiP += 130;
+              FiP += 130; console.log("Plus")
               updateValues();
             }
           }
