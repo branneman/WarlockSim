@@ -37,12 +37,13 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       classList.push(items[i].classList[0]);
     }
   }
-  if (arguments.length > 0) {
-    items[iIndex]=gearTable;
-    console.log(items[iIndex].children[0].innerHTML); console.log(gearTable)
-  }
+  if (arguments.length > 0)
+    var extraName = gearTable.children[0].innerHTML;
+  else
+    var extraName = "Nope";
+  
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
-  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron") {
+  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron" || extraName == "The Restrained Essence of Sapphiron") {
     TREOS = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "TREOS";
