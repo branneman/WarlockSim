@@ -395,8 +395,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           siphon = false;
         
         if (trinket1Bonus == true && trinket1Time <= 0) {
-          trinket1Bonus == false;
-          if (trinket1 == "TREOS") {
+          if (trinket1 == "TREOS" && trinket1Bonus == true) {
+            trinket1Bonus == false;
             ShP -= 130;
             FiP -= 130; console.log("Minus")
             updateValues();
