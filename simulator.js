@@ -497,9 +497,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   }
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
-    var valueSP = Number(gearTable.children[4].innerHTML) + Number(gearTable.children[5].innerHTML)*shadowDS + Number(gearTable.children[6].innerHTML)*fireDS + Number(gearTable.children[8].innerHTML.slice(0,1))*critVal/SPVal + Number(gearTable.children[7].innerHTML.slice(0,1))*hitVal/SPVal + Number(gearTable.children[3].innerHTML)*intVal/SPVal + Number(gearTable.children[9].innerHTML)*penVal/SPVal + Number(gearTable.children[10].innerHTML)*mp5Val/SPVal;
-    gearTable.children[11].innerHTML = Number(formatNumber(valueSP,2));
-    console.timeEnd('Timer'); console.log(Number(gearTable.children[9].innerHTML)*penVal/SPVal)
+    //var valueSP = Number(gearTable.children[4].innerHTML) + Number(gearTable.children[5].innerHTML)*shadowDS + Number(gearTable.children[6].innerHTML)*fireDS + Number(gearTable.children[8].innerHTML.slice(0,1))*critVal/SPVal + Number(gearTable.children[7].innerHTML.slice(0,1))*hitVal/SPVal + Number(gearTable.children[3].innerHTML)*intVal/SPVal + Number(gearTable.children[9].innerHTML)*penVal/SPVal + Number(gearTable.children[10].innerHTML)*mp5Val/SPVal;
+    //gearTable.children[11].innerHTML = Number(formatNumber(valueSP,2));
+    gearTable.children[11].innerHTML = Number(formatNumber((math.sum(baseVec)/baseVec.length-baseLine)/SPVal,2));
+    console.timeEnd('Timer');
     return
   }
 
