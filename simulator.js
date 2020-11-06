@@ -37,7 +37,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     }
   }
   
-  var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0;
+  var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
       setT05++
@@ -57,6 +57,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       setPvPRare++
     else if (classList[i] == "setPvPEpic")
       setPvPEpic++
+    else if (classList[i] == "setBV")
+      setBV++
   }
   var bonusList = "", bonusDrainLife = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false;
   if (setT05 >= 6) {
@@ -101,6 +103,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   if (setPvPEpic >= 6) {
     SP += 23;
     bonusList += "<tr><td>PvP Epic: 6-set</td></tr>";}
+  if (setBV >= 3) {
+    crit += 2;
+    bonusList += "<tr><td>Bloodvine Set</td></tr>";}
   
   document.getElementById("setBonuses").innerHTML = "<table class='finalStats' style=text-align:left><tr><th>Set Bonuses Active</th></tr>" + bonusList + "</table>";
   
