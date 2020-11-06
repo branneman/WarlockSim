@@ -38,21 +38,22 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     }
   }
   var itemName1 = false, itemName2 = false, itemName3 = false;
+  if (arguments.length == 3)
+    var tempItem = "Nope";
+  else
+    var tempItem = gearTable.children[0].innerHTML;
   if (arguments.length > 0 && iIndex==13) {
-    if (arguments.length < 3)
-      var itemName1 = gearTable.children[0].innerHTML;
+    var itemName1 = tempItem;
     var itemName2 = items[14].children[0].innerHTML;
     var itemName3 = items[15].children[0].innerHTML;}
   else if (arguments.length > 0 && iIndex==14) {
     var itemName1 = items[13].children[0].innerHTML;
-    if (arguments.length < 3)
-      var itemName2 = gearTable.children[0].innerHTML;
+    var itemName2 = tempItem;
     var itemName3 = items[15].children[0].innerHTML;}
   else if (arguments.length > 0 && iIndex==14) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
-    if (arguments.length < 3) {
-      var itemName3 = gearTable.children[0].innerHTML;}}
+    var itemName3 = tempItem;}
   else {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
