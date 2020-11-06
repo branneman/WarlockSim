@@ -36,20 +36,50 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       classList.push(items[i].classList[0]);
     }
   }
-  var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false;
-  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron")
+  var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
+  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron") {
     TREOS = true;
-  else if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm")
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "TREOS";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "TREOS";
+  }
+  else if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm") {
     ZHC = true;
-  else if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power")
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "ZHC";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "ZHC";
+  }
+  else if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power") {
     TOEP = true;
-  else if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction")
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "TOEP";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "TOEP";
+  }
+  else if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction") {
     HCOD = true;
-  else if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel")
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "HCOD";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "HCOD";
+  }
+  else if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel") {
     REEL = true;
-  else if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam")
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "REEL";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "REEL";
+  }
+  else if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam") {
     EOM = true;
-  console.log("TREOS:"+TREOS+" ZHC:"+ZHC+" TEOP:"+TOEP+" HCOD:"+HCOD+" REEL:"+REEL+" EOM:"+EOM)
+    if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
+      trinket1 = "EOM";
+    else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
+      trinket2 = "EOM";
+  }
+  console.log("TREOS:"+TREOS+" ZHC:"+ZHC+" TEOP:"+TOEP+" HCOD:"+HCOD+" REEL:"+REEL+" EOM:"+EOM); console.log(trinket1); console.log(trinket2)
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
@@ -212,22 +242,17 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var GCD = 1.5;
   var corruptionCost = 340 * (1-0.15*bonusShadowCost);
   var corruptionDuration = 18;
-  var corruption = false;
   var corruptionTime = Math.max(GCD, 2 - 0.4*document.getElementById("talentCorruption").parentNode.children[1].innerHTML);
   var agonyCost = 215 * (1-0.15*bonusShadowCost);
   var agonyDuration = 24;
-  var agony = false;
   var doomCost = 300 * (1-0.15*bonusShadowCost);
   var doomDuration = 60;
-  var doom = false;
   var immolateCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
   var immolateDuration = 15;
-  var immolate = false;
   var immolateTime = 2 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML - 0.2*bonusImmolatePvP;
   var immolateR7Cost = 370 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
   var siphonCost = 365 * (1-0.15*bonusShadowCost);
   var siphonDuration = 30;
-  var siphon = false;
   
   if (primary == "shadowBolt") {
     var primaryCost = sbCost;
@@ -314,18 +339,13 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
     var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
-    var shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML;
+    var shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
     
     var DPS = new Array;
     var lifeTaps = new Array;
     var manaLeft = new Array;
-    var time = threatTime;
-    var damage = 0;
-    var mana = manaMain;
-    var timePast = 0;
-    var SBC = 0;
     for (var i=0; i<timeVec.length; i++) {
-      doom = false; agony = false; corruption = false; immolate = false; siphon = false; time = threatTime; damage = 0; mana = manaMain; timePast = 0; SBC = 0;
+      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinketTime = 0, piTime = 0;
       if (useDoom == true)
         var doomUse = 0;
       else {
@@ -355,6 +375,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       while (time <= timeVec[i]) {
         var timeLeft = timeVec[i]-time;
         mana += (time-timePast) * mp5/5;
+        trinketTime -= time-timePast;
+        piTime += time-timePast;
         timePast = time;
         
         if (doom == true && time>=doomUse+doomDuration)
@@ -368,6 +390,15 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         if (siphon == true && time>=siphonUse+siphonDuration)
           siphon = false;
         
+        if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0) {
+          if (primary == "shadowBolt" && SBC > 4) {
+            
+            //UseTrinket
+          }
+          else if (primary !== "shadowBolt") {
+          }
+        }
+        
         if ((mana<primaryCost) + (timeLeft>primaryTime) == 2 || (timeLeft<primaryTime*2) + (mana<primaryCost+finisherCost) + (timeLeft>=primaryTime+finisherTime) == 3) {
           mana += tapGain;
           lifeTaps[i]++;
@@ -376,7 +407,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         else if (doom == false && doomDuration <= timeLeft) {
           doom = true;
           doomUse = time;
-          damage += (3200 + SP) * shadowMultiplier * ((shadowVuln*0.2)+1) * (afflictionChance/100);
+          damage += (3200 + ShP) * shadowMultiplier * ((shadowVuln*0.2)+1) * (afflictionChance/100);
           mana -= doomCost;
           time += GCD;}
         
