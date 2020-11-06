@@ -404,9 +404,15 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           if (trinket1 == "TREOS") {
             trinket1Bonus = false;
             ShP -= 130;
-            FiP -= 130; console.log("Minus, " + trinket1Bonus)
+            FiP -= 130;
           }
-          updateValues();
+          var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
+          var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
+          var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+          var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
+          var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
+          var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+          var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
         }
         
         if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinket1Time <= 0) {
@@ -416,10 +422,14 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               trinket1Time = 20;
               trinket1CD = 120;
               ShP += 130;
-              FiP += 130; console.log("Plus, " + trinket1Bonus)
-              console.log(avgBurn)
-              updateValues();
-              console.log(avgBurn)
+              FiP += 130;
+              var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
+              var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
+              var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+              var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
+              var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
+              var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+              var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             }
           }
           else if (primary !== "shadowBolt") {
