@@ -51,8 +51,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   else if (arguments.length > 0 && iIndex==14) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
-    if (arguments.length < 3)
-      var itemName3 = gearTable.children[0].innerHTML;}
+    if (arguments.length < 3) {
+      var itemName3 = gearTable.children[0].innerHTML;}}
   else {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
