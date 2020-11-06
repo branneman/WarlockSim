@@ -22,6 +22,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         pen  += Number(gearTable.children[9].innerHTML);
         mp5  += Number(gearTable.children[10].innerHTML);
         classList.push(gearTable.classList[0]);
+        var iIndex = i;
       }
     }
     else {
@@ -36,6 +37,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       classList.push(items[i].classList[0]);
     }
   }
+  if (arguments.length > 0)
+    items[iIndex]=gearTable;
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
   if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron") {
     TREOS = true;
