@@ -49,7 +49,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     REEL = true;
   else if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam")
     EOM = true;
-  console.log("TREOS:"+TREOS+"ZHC:"+ZHC+"TEOP:"+TOEP+"HCOD:"+HCOD+"REEL:"+REEL+"EOM:"+EOM)
+  console.log("TREOS:"+TREOS+" ZHC:"+ZHC+" TEOP:"+TOEP+" HCOD:"+HCOD+" REEL:"+REEL+" EOM:"+EOM)
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
@@ -58,6 +58,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       setT1++
     else if (classList[i] == "setT2")
       setT2++
+    else if (classList[i] == "setT25")
+      setT25++
     else if (classList[i] == "setT3")
       setT3++
     else if (classList[i] == "setZGRing")
