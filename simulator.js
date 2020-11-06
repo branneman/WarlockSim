@@ -36,7 +36,20 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       classList.push(items[i].classList[0]);
     }
   }
-  
+  var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false;
+  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron")
+    TREOS = true;
+  else if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm")
+    ZHC = true;
+  else if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power")
+    TOEP = true;
+  else if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction")
+    HCOD = true;
+  else if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel")
+    REEL = true;
+  else if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam")
+    EOM = true;
+  console.log(TREOS+ZHC+TOEP+HCOD+REEL+EOM)
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
