@@ -40,7 +40,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var itemName1 = false, itemName2 = false, itemName3 = false;
   if (arguments.length == 3)
     var tempItem = "Nope";
-  else
+  else if (arguments.length > 0)
     var tempItem = gearTable.children[0].innerHTML;
   if (arguments.length > 0 && iIndex==13) {
     var itemName1 = tempItem;
