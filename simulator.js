@@ -168,11 +168,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   else if (bossLevel == 60)
     var baseHit = 96;
   
-  var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
-  var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
-  var shadowReduction = 1 - shadowRes/400;
-  var fireReduction = 1 - fireRes/400;
-  
   var timeVec = new Array;
   timeVec[0] = fightStart;
   for (var i=fightStart+0.5; i<=fightEnd; i=i+0.5)
@@ -258,11 +253,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var finisherCost = 0;
     var finisherTime = 0;}
   
-  var shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
-  var fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
-  var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
-  
-  for (var q=1; q<=6; q++) {
+  for (var q=1; q<=7; q++) {
     if (q==1) {
       ShP = ShP + 1;
       FiP = FiP + 1;}
@@ -280,7 +271,18 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       hit = hit - 1;
       mp5 = mp5 + 3;}
     else if (q==6) {
-      mp5 = mp5 - 3;}
+      mp5 = mp5 - 3;
+      pen = pen + 1;}
+    else if (q==7) {
+      pen = pen - 1;}
+    
+    var shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
+    var fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
+    var shadowReduction = 1 - shadowRes/400;
+    var fireReduction = 1 - fireRes/400;
+    var shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+    var fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+    var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
     
     var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
@@ -474,13 +476,18 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       var mp5DPS  = math.sum(DPS)/DPS.length;
       var mp5Vec  = DPS;}
     else if (q==6) {
+      var penDPS  = math.sum(DPS)/DPS.length;
+      var penVec  = DPS;}
+    else if (q==7) {
       var baseDPS = math.sum(DPS)/DPS.length;
       var baseVec = DPS;}
   } //Loop with q
   var SPVal   = (SPDPS-baseDPS);
-  var intVal  = (intDPS-baseDPS);
+  var intVal  = (intDPS-baseDPS)/10;
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
+  var penVal  = (penDPS-baseDPS);
+  var mp5Val  = (mp5DPS-baseDPS)/3;
   
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
   var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
@@ -490,7 +497,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   }
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
-    gearTable.children[11].innerHTML = Number(formatNumber((math.sum(baseVec)/baseVec.length-baseLine)/SPVal,2));
+    var valueSP = Number(gearTable.children[4].innerHTML) + Number(gearTable.children[5].innerHTML)*shadowDS + Number(gearTable.children[6].innerHTML)*fireDS + Number(gearTable.children[8].innerHTML.slice(0,1))*critVal/SPVal + Number(gearTable.children[7].innerHTML.slice(0,1))*hitVal/SPVal + Number(gearTable.children[3].innerHTML)*intVal/SPVal + Number(gearTable.children[9].innerHTML)*penVal/SPVal + Number(gearTable.children[10].innerHTML)*mp5Val/SPVal;
+    gearTable.children[11].innerHTML = Number(formatNumber((valueSP,2));
     console.timeEnd('Timer')
     return
   }
@@ -530,6 +538,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   hitVec = math.subtract(hitVec,baseVec);
   intVec = math.divide(math.subtract(intVec,baseVec),10);
   mp5Vec = math.divide(math.subtract(mp5Vec,baseVec),3);
+  penVec = math.subtract(penVec,baseVec);
   
   document.getElementById('statWeightCanvas').remove();
   document.getElementById('statWeightWrapper').innerHTML = '<canvas id="statWeightCanvas" style="background-color:#999999;" width=300px height=200px></canvas>';
@@ -566,6 +575,13 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         lineTension: 0,
         backgroundColor: 'rgba(255, 0, 255, 0.4)',
         borderColor: 'rgba(255, 0, 255, 0.3)'},
+                 {
+        label: "Pen Value",
+        data: math.dotDivide(penVec,SPVec),
+        fill: false,
+        lineTension: 0,
+        backgroundColor: 'rgba(255, 128, 0, 0.4)',
+        borderColor: 'rgba(255, 128, 0, 0.3)'},
                  {
         label: "DPS per SP",
         data: SPVec,
