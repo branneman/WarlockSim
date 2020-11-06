@@ -44,35 +44,35 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "TREOS";
   }
-  else if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm") {
+  if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm") {
     ZHC = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "ZHC";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "ZHC";
   }
-  else if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power") {
+  if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power") {
     TOEP = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "TOEP";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "TOEP";
   }
-  else if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction") {
+  if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction") {
     HCOD = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "HCOD";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "HCOD";
   }
-  else if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel") {
+  if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel") {
     REEL = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "REEL";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "REEL";
   }
-  else if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam") {
+  if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam") {
     EOM = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "EOM";
