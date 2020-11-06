@@ -488,13 +488,13 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var hitVal  = (hitDPS-baseDPS);
   var penVal  = (penDPS-baseDPS);
   var mp5Val  = (mp5DPS-baseDPS)/3;
-  console.log(penVal); console.log(penDPS); console.log(baseDPS)
+
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
   var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
   if (arguments.length == 3) {
     console.timeEnd('Timer')
     return formatNumber(math.sum(baseVec)/baseVec.length,2);
-  }
+  } console.log(Number(gearTable.children[9].innerHTML)*penVal/SPVal)
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
     var valueSP = Number(gearTable.children[4].innerHTML) + Number(gearTable.children[5].innerHTML)*shadowDS + Number(gearTable.children[6].innerHTML)*fireDS + Number(gearTable.children[8].innerHTML.slice(0,1))*critVal/SPVal + Number(gearTable.children[7].innerHTML.slice(0,1))*hitVal/SPVal + Number(gearTable.children[3].innerHTML)*intVal/SPVal + Number(gearTable.children[9].innerHTML)*penVal/SPVal + Number(gearTable.children[10].innerHTML)*mp5Val/SPVal;
