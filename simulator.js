@@ -12,6 +12,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
     if (arguments.length > 0 && gearTable.parentNode.parentNode.id === items[i].parentNode.parentNode.id) {
+      var iIndex = i;
       if (arguments.length < 3) {
         SP   += Number(gearTable.children[4].innerHTML);
         ShP  += Number(gearTable.children[5].innerHTML);
@@ -22,7 +23,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         pen  += Number(gearTable.children[9].innerHTML);
         mp5  += Number(gearTable.children[10].innerHTML);
         classList.push(gearTable.classList[0]);
-        var iIndex = i;
       }
     }
     else {
