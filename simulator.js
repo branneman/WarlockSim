@@ -37,8 +37,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       classList.push(items[i].classList[0]);
     }
   }
-  if (arguments.length > 0)
+  if (arguments.length > 0) {
     items[iIndex]=gearTable;
+    console.log(items)
+  }
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
   if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron") {
     TREOS = true;
