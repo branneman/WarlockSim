@@ -8,7 +8,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var int  = 0 + 7*document.getElementById("enchantIntellect").checked + 3*document.getElementById("enchantStats").checked + 4*document.getElementById("enchantGreaterStats").checked;
   var pen  = 0;
   var mp5  = 0;
-  var classList = new Array, itemList = new Array;
+  var classList = new Array;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
     if (arguments.length > 0 && gearTable.parentNode.parentNode.id === items[i].parentNode.parentNode.id) {
@@ -22,7 +22,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         pen  += Number(gearTable.children[9].innerHTML);
         mp5  += Number(gearTable.children[10].innerHTML);
         classList.push(gearTable.classList[0]);
-        itemList.push(gearTable);
       }
     }
     else {
@@ -35,46 +34,45 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       pen  += Number(items[i].children[9].innerHTML);
       mp5  += Number(items[i].children[10].innerHTML);
       classList.push(items[i].classList[0]);
-      itemList.push(items[i]);
     }
   }
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
-  if (itemList[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || itemList[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || itemList[15].children[0] == "The Restrained Essence of Sapphiron") {
+  if (items[13].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[14].children[0].innerHTML == "The Restrained Essence of Sapphiron" || items[15].children[0] == "The Restrained Essence of Sapphiron" || gearTable.children[0] == "The Restrained Essence of Sapphiron") {
     TREOS = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "TREOS";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "TREOS";
   }
-  if (itemList[13].children[0].innerHTML == "Zandalarian Hero Charm" || itemList[14].children[0].innerHTML == "Zandalarian Hero Charm" || itemList[15].children[0] == "Zandalarian Hero Charm") {
+  if (items[13].children[0].innerHTML == "Zandalarian Hero Charm" || items[14].children[0].innerHTML == "Zandalarian Hero Charm" || items[15].children[0] == "Zandalarian Hero Charm") {
     ZHC = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "ZHC";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "ZHC";
   }
-  if (itemList[13].children[0].innerHTML == "Talisman of Ephemeral Power" || itemList[14].children[0].innerHTML == "Talisman of Ephemeral Power" || itemList[15].children[0] == "Talisman of Ephemeral Power") {
+  if (items[13].children[0].innerHTML == "Talisman of Ephemeral Power" || items[14].children[0].innerHTML == "Talisman of Ephemeral Power" || items[15].children[0] == "Talisman of Ephemeral Power") {
     TOEP = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "TOEP";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "TOEP";
   }
-  if (itemList[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || itemList[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || itemList[15].children[0] == "Hazza'rah's Charm of Destruction") {
+  if (items[13].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[14].children[0].innerHTML == "Hazza'rah's Charm of Destruction" || items[15].children[0] == "Hazza'rah's Charm of Destruction") {
     HCOD = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "HCOD";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "HCOD";
   }
-  if (itemList[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || itemList[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || itemList[15].children[0] == "Nat Pagle's Broken Reel") {
+  if (items[13].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[14].children[0].innerHTML == "Nat Pagle's Broken Reel" || items[15].children[0] == "Nat Pagle's Broken Reel") {
     REEL = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "REEL";
     else if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 2)
       trinket2 = "REEL";
   }
-  if (itemList[13].children[0].innerHTML == "Eye of Moam" || itemList[14].children[0].innerHTML == "Eye of Moam" || itemList[15].children[0] == "Eye of Moam") {
+  if (items[13].children[0].innerHTML == "Eye of Moam" || items[14].children[0].innerHTML == "Eye of Moam" || items[15].children[0] == "Eye of Moam") {
     EOM = true;
     if (TREOS+ZHC+TOEP+HCOD+REEL+EOM == 1)
       trinket1 = "EOM";
