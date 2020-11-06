@@ -417,7 +417,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               trinket1CD = 120;
               ShP += 130;
               FiP += 130; console.log("Plus, " + trinket1Bonus)
+              console.log(avgBurn)
               updateValues();
+              console.log(avgBurn)
             }
           }
           else if (primary !== "shadowBolt") {
