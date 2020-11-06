@@ -53,7 +53,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
     var itemName3 = items[15].children[0].innerHTML;}
-  
+  console.log(itemName1 + ", " + itemName2 + ", " + itemName3)
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
   if (itemName1 == "The Restrained Essence of Sapphiron" || itemName2 == "The Restrained Essence of Sapphiron" || itemName3 == "The Restrained Essence of Sapphiron") {
     TREOS = true;
