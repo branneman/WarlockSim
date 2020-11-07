@@ -151,7 +151,8 @@ body, html {
 .info {
     width: 20%;
     height: 100vh;
-    padding: 10px 10px 10px 0px;
+    padding: 10px;
+    padding-bottom: 0px;
     background-color: #555555;
 }
 .allTheTabs {
