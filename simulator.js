@@ -60,7 +60,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
     var itemName3 = items[15].children[0].innerHTML;}
-  console.log(iIndex + ": " + itemName1 + ", " + itemName2 + ", " + itemName3)
+  //console.log(iIndex + ": " + itemName1 + ", " + itemName2 + ", " + itemName3)
   var TREOS = false, ZHC = false, TOEP = false, HCOD = false, REEL = false, EOM = false, trinket1 = false, trinket2 = false;
   if (itemName1 == "The Restrained Essence of Sapphiron" || itemName2 == "The Restrained Essence of Sapphiron" || itemName3 == "The Restrained Essence of Sapphiron") {
     TREOS = true;
@@ -105,7 +105,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       trinket2 = "EOM";
   }
   //console.log("TREOS:"+TREOS+" ZHC:"+ZHC+" TEOP:"+TOEP+" HCOD:"+HCOD+" REEL:"+REEL+" EOM:"+EOM); 
-  console.log(trinket1); console.log(trinket2)
+  //console.log(trinket1); console.log(trinket2)
   var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
@@ -581,7 +581,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ShP += 50;
               FiP += 50;
               pen += 100;
-            }console.log("Trinket1 at: " + time)
+            }
             shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
             fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
             shadowReduction = 1 - shadowRes/400;
@@ -647,7 +647,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ShP += 50;
               FiP += 50;
               pen += 100;
-            }console.log("Trinket2 at: " + time)
+            }
             shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
             fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
             shadowReduction = 1 - shadowRes/400;
