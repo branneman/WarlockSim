@@ -223,8 +223,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var useImmolate = document.getElementById("rotationImmolate").checked;
   var useSiphon = document.getElementById("rotationSiphonLife").checked;
   var lifeTap = document.getElementById("disableLifeTap").checked == false;
-  var ZHC = false;
-  var PI = 0;
   
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
