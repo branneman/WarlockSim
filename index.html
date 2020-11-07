@@ -100,13 +100,18 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
   </head>
   <body style="background-color:#888888;">
+    <div class="row">
+      <div class="column info">
+        <h1>Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></h1>
+      </div>
+      <div class="column allTheTabs">
     <button class="tablink" onclick="openPage('main', this, '#838383'); runSim()" id="defaultOpen">Main</button>
     <button class="tablink" onclick="openPage('buffs', this, '#838383')">Buffs & Consumables</button>
     <button class="tablink" onclick="openPage('talents', this, '#838383')">Talents & Rotation</button>
     <button class="tablink" onclick="openPage('gear', this, '#838383')">Gear</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
-      <h1>Warlock Simulator <span style="font-size:16px">by Tesram-Mograine</span></h1>
+      
       <div class="row">
         <div class="column settings" style="background-color:#555555;">
           
@@ -151,11 +156,11 @@
         </div>
         <div class="column graphs">
           <p id="dps"></p>
-          <div id="dpsWrapper" style="height:400px"><canvas id="dpsCanvas" style="background-color:#999999;" width=300px height=200px></canvas></div>
+          <div id="dpsWrapper" style="height:400px;padding:5px"><canvas id="dpsCanvas" style="background-color:#999999;" width=300px height=200px></canvas></div>
         </div>
         <div class="column graphs">
           <p id="statWeights"></p>
-          <div id="statWeightWrapper" style="height:400px"><canvas id="statWeightCanvas" style="background-color:#999999;" width=300px height=200px></canvas></div>
+          <div id="statWeightWrapper" style="height:400px;padding:5px"><canvas id="statWeightCanvas" style="background-color:#999999;" width=300px height=200px></canvas></div>
         </div>
       </div>
     </div> <!--Main tab-->
@@ -864,5 +869,7 @@
         </div>
       </div>
     </div> <!--Gear tab-->
+        </div>
+      </div>
   </body>
 </html>
