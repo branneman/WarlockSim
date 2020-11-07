@@ -459,7 +459,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
         }
         
-        if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket1CD <= 0 && time > 100) {
+        if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket1CD <= 0) {
           if (primary == "shadowBolt" && SBC > 4) {
             if (trinket1 == "TREOS") {
               trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
