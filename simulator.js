@@ -598,6 +598,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         else
           time += 0.5;
       }
+      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld;
       DPS[i] = damage/timeVec[i];
       manaLeft[i] = mana;
     } //Loop with timeVec
