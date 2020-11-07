@@ -632,7 +632,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var mp5Val  = (mp5DPS-baseDPS)/3;
 
   var dpsOutput = "<h2>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></h2>";
-  var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP, Hit = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
+  var statWeightOutput = "<h2><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " SP<br>Hit  = " + formatNumber(hitVal/SPVal,2) + " SP</span> </h2>";
   if (arguments.length == 3) {
     console.timeEnd('Timer')
     return formatNumber(math.sum(baseVec)/baseVec.length,2);
@@ -647,7 +647,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   }
 
   document.getElementById("dps").innerHTML = dpsOutput;
-  document.getElementById('defaultOpen').innerHTML = "Main: " + "<b><span style='font-size:20px'>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " </span><span style='font-size:14px'>DPS</span></b>";;
+  //document.getElementById('defaultOpen').innerHTML = "Main: " + "<b><span style='font-size:20px'>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " </span><span style='font-size:14px'>DPS</span></b>";;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
   document.getElementById("finalStats").innerHTML = "<table class='finalStats' style=text-align:left><tr><th colspan=2>Stats</th></tr><tr><td>Shadow Power</td><td>&nbsp" + ShP + "</td></tr><tr><td>Fire Power</td><td>&nbsp" + FiP + "</td></tr><tr><td>Crit Chance</td><td>&nbsp" + formatNumber(critChance,2) + "%</td></tr><tr><td>Hit Chance</td><td>&nbsp" + Number(100-miss) + "%</td></tr><tr><td>Intellect</td><td>&nbsp" + intel + "</td></tr><tr><td>Spell Pen</td><td>&nbsp" + pen + "</td></tr><tr><td>Mana per 5</td><td>&nbsp" + mp5 + "</td></tr><tr><td>Total Mana</td><td>&nbsp" + manaMain + "</td></tr><tr><td>Shadow Multiplier</td><td>&nbsp" + formatNumber(shadowMultiplier,4) + "</td></tr><tr><td>Fire Multiplier</td><td>&nbsp" + formatNumber(fireMultiplier,4) + "</td></tr><tr><td>Shadow Vulnerability</td><td>&nbsp" + formatNumber(shadowVuln*100,2) + "%</td></tr></table>";
 
