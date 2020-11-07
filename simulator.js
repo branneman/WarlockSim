@@ -442,8 +442,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           }
           else if (trinket1 == "ZHC") {
             trinket1Bonus = false;
-            ShP = ShPOld;
-            FiP = FiPOld;
+            ShP -= 17*ZHCStacks;
+            FiP -= 17*ZHCStacks;
             ZHCStacks = 0;
           }
           else if (trinket1 == "TOEP") {
@@ -494,8 +494,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           }
           else if (trinket2 == "ZHC") {
             trinket1Bonus = false;
-            ShP = ShPOld;
-            FiP = FiPOld;
+            ShP -= 17*ZHCStacks;
+            FiP -= 17*ZHCStacks;
             ZHCStacks = 0;
           }
           else if (trinket2 == "TOEP") {
@@ -581,7 +581,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ShP += 50;
               FiP += 50;
               pen += 100;
-            }
+            }console.log("Trinket1 at: " + time)
             shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
             fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
             shadowReduction = 1 - shadowRes/400;
@@ -647,7 +647,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ShP += 50;
               FiP += 50;
               pen += 100;
-            }
+            }console.log("Trinket2 at: " + time)
             shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
             fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
             shadowReduction = 1 - shadowRes/400;
