@@ -1,5 +1,5 @@
 function loadCookie() {
-  document.getElementById("tailoring").checked = getCookie("tailoring");
+  document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
   console.log(getCookie("tailoring"))
   console.log('Cookies Loaded')
 }
