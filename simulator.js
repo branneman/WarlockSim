@@ -178,7 +178,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     crit += 2;
     bonusList += "<tr><td>Bloodvine Set</td></tr>";}
   
-  document.getElementById("setBonuses").innerHTML = "<table class='finalStats' style=text-align:left><tr><th>Set Bonuses Active</th></tr>" + bonusList + "</table>";
+  if (arguments.length == 0)
+    document.getElementById("setBonuses").innerHTML = "<table class='finalStats' style=text-align:left><tr><th>Set Bonuses Active</th></tr>" + bonusList + "</table>";
   
   var race = document.getElementById("race").value, gnome = false;
   if (race == "gnome") {
@@ -368,10 +369,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var DPS = new Array;
     var lifeTaps = new Array;
     var manaLeft = new Array;
-    var ShPOld = ShP, FiPOld = FiP, critOld = crit, hitOld = hit;
+    var ShPOld = ShP, FiPOld = FiP, critOld = crit, hitOld = hit, penOld = pen;
     for (var i=0; i<timeVec.length; i++) {
       var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinketTime = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0, ZHCStacks = 0;
-      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld;
+      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld, pen = penOld;
       if (useDoom == true)
         var doomUse = 0;
       else {
@@ -450,6 +451,26 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             ShP -= 175;
             FiP -= 175;
           }
+          else if (trinket1 == "HCOD") {
+            trinket1Bonus = false;
+            crit -= 10;
+          }
+          else if (trinket1 == "REEL") {
+            trinket1Bonus = false;
+            hit -= 10;
+          }
+          else if (trinket1 == "EOM") {
+            trinket1Bonus = false;
+            ShP -= 50;
+            FiP -= 50;
+            pen -= 100;
+          }
+          shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
+          fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
+          shadowReduction = 1 - shadowRes/400;
+          fireReduction = 1 - fireRes/400;
+          shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+          fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
           tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
           avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
           avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
@@ -457,19 +478,25 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgSearing = (226+(FiP*3/7)) * fireMultiplier;
           avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+          miss = Math.max(1, 100 - baseHit - hit);
+          critChance = (1.7 + crit + (intel/60.6));
+          critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+          critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
+          regularHit = 100-miss-critFinal;
+          shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
         }
         
         if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket1CD <= 0) {
           if (primary == "shadowBolt" && SBC > 4) {
             if (trinket1 == "TREOS") {
-              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
+              trinket1Bonus = true;
               trinketTime = 19.9;
               trinket1CD = 120;
               ShP += 130;
               FiP += 130;
             }
             else if (trinket1 == "ZHC") {
-              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
+              trinket1Bonus = true;
               trinketTime = 19.9;
               trinket1CD = 120;
               ShP += 204;
@@ -477,15 +504,41 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ZHCStacks = 12;
             }
             else if (trinket1 == "TOEP") {
-              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
+              trinket1Bonus = true;
               trinketTime = 14.9;
               trinket1CD = 90;
               ShP += 175;
               FiP += 175;
             }
+            else if (trinket1 == "HCOD") {
+              trinket1Bonus = true;
+              trinketTime = 19.9;
+              trinket1CD = 180;
+              crit += 10;
+            }
+            else if (trinket1 == "REEL") {
+              trinket1Bonus = true;
+              trinketTime = 14.9;
+              trinket1CD = 75;
+              hit += 10;
+            }
+            else if (trinket1 == "EOM") {
+              trinket1Bonus = true;
+              trinketTime = 29.9;
+              trinket1CD = 180;
+              ShP += 50;
+              FiP += 50;
+              pen += 100;
+            }
           }
           else if (primary !== "shadowBolt") {
           }
+          shadowRes = levelRes + Math.max(0, Number(document.getElementById("bossShadowRes").value) - pen - 75*document.getElementById("curseShadow").checked);
+          fireRes = levelRes + Math.max(0, Number(document.getElementById("bossFireRes").value) - pen - 75*document.getElementById("curseElements").checked);
+          shadowReduction = 1 - shadowRes/400;
+          fireReduction = 1 - fireRes/400;
+          shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+          fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
           tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
           avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
           avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
@@ -493,6 +546,12 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgSearing = (226+(FiP*3/7)) * fireMultiplier;
           avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+          miss = Math.max(1, 100 - baseHit - hit);
+          critChance = (1.7 + crit + (intel/60.6));
+          critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+          critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
+          regularHit = 100-miss-critFinal;
+          shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
         }
         
         if ((mana<primaryCost) + (timeLeft>primaryTime) == 2 || (timeLeft<primaryTime*2) + (mana<primaryCost+finisherCost) + (timeLeft>=primaryTime+finisherTime) == 3) {
@@ -598,7 +657,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         else
           time += 0.5;
       }
-      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld;
+      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld, pen = penOld;
       DPS[i] = damage/timeVec[i];
       manaLeft[i] = mana;
     } //Loop with timeVec
@@ -630,7 +689,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var critVal = (critDPS-baseDPS);
   var hitVal  = (hitDPS-baseDPS);
   var penVal  = (penDPS-baseDPS);
-  var mp5Val  = (mp5DPS-baseDPS)/3; console.log(baseVec)
+  var mp5Val  = (mp5DPS-baseDPS)/3;
 
   var dpsOutput = "<br><br><b><span style='font-size:22px'>&nbsp;" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></b>";
   var statWeightOutput = "<br><b><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span><br><span style='font-size:18px'>Hit &nbsp;= " + formatNumber(hitVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span></b>";
