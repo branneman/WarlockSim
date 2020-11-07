@@ -366,8 +366,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var DPS = new Array;
     var lifeTaps = new Array;
     var manaLeft = new Array;
+    var ShPOld = ShP, FiPOld = FiP, critOld = crit, hitOld = hit;
     for (var i=0; i<timeVec.length; i++) {
       var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinketTime = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0, ZHCStacks = 0;
+      ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld;
       if (useDoom == true)
         var doomUse = 0;
       else {
@@ -437,8 +439,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           }
           else if (trinket1 == "ZHC") {
             trinket1Bonus = false;
-            ShP -= ZHCStacks*17;
-            FiP -= ZHCStacks*17;
+            ShP = ShPOld;
+            FiP = FiPOld;
             ZHCStacks = 0;
           }
           else if (trinket1 == "TOEP") {
