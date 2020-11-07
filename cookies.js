@@ -1,6 +1,7 @@
 function loadCookie() {
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
   document.getElementById("race").value = getCookie("race");
+  document.getElementById("fightStart").value = getCookie("fightStart");
   console.log('Cookies Loaded')
 }
 
