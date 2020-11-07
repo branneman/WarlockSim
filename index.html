@@ -102,7 +102,11 @@
   <body style="background-color:#888888;">
     <div class="row">
       <div class="column info" oninput="runSim()">
-        <b style="font-size:32px">Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></b>
+        <div style="text-align:center"><b style="font-size:32px">Warlock Simulator</b></div>
+        
+        <p id="dps"></p>
+        <p id="statWeights"></p>
+        
         <h2>Settings</h2>
         <!--<b>Gear Stats</b><br>
         <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
@@ -122,15 +126,15 @@
         <br>
 
         <label style="display:inline-block;text-align:center"><b>Boss Level</b><br>
-          <select id="bossLevel" style="width:60px">
+          <select id="bossLevel" style="width:80px">
             <option value="63">     63</option>
             <option value="62">     62</option>
             <option value="61">     61</option>
             <option value="60">     60</option>
           </select>
-        </label>
+        </label>&nbsp;&nbsp;&nbsp;
         <label style="display:inline-block;text-align:center"><b>Race</b><br>
-          <select id="race" style="width:60px">
+          <select id="race" style="width:80px">
             <option value="gnome">  Gnome</option>
             <option value="human">  Human</option>
             <option value="undead"> Undead</option>
@@ -154,11 +158,9 @@
             <!--<div class="column settings" style="background-color:#555555;">
             </div>-->
             <div class="column graphs">
-              <p id="dps"></p>
               <div id="dpsWrapper" style="background-color:#999999;height:400px;padding:5px"><canvas id="dpsCanvas" width=300px height=200px></canvas></div>
             </div>
             <div class="column graphs">
-              <p id="statWeights"></p>
               <div id="statWeightWrapper" style="background-color:#999999;height:400px;padding:5px"><canvas id="statWeightCanvas" width=300px height=200px></canvas></div>
             </div>
           </div>
