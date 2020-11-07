@@ -77,7 +77,7 @@ tr:nth-child(odd) /*{ background-color: #dddddd; }*/
     100% { transform: rotate(360deg); }
 }
 
-* {box-sizing: content-box}
+* {box-sizing: border-box}
 
 /* Set height of body and the document to 100% */
 body, html {
