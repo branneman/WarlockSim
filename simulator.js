@@ -919,6 +919,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       maintainAspectRatio: false
     }
   });
+  //Cookie Time
+  setCookie("tailoring",tailoring,365);
   console.timeEnd('Timer')
 } //Function
 
