@@ -94,6 +94,7 @@ body, html {
     outline: none;
     cursor: pointer;
     padding: 15px;
+    padding-bottom: 0px;
     font-size: 20px;
     width: 25%;
 }
@@ -131,6 +132,7 @@ body, html {
     color: black;
     display: none;
     padding: 20px 10px;
+    padding-bottom: 0px;
     height: 100%;
 }
 
@@ -158,27 +160,33 @@ body, html {
 }
 .allTheTabs {
     width: 80%;
-    padding: 10px 10px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .buffs {
     width: 350px;
-    padding: 10px 10px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .settings {
     width: 300px;
-    padding: 10px 10px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .graphs {
     width: 50%;
-    padding: 10px 10px;  
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .talents {
     width: 250px;
-    padding: 10px 10px;  
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .rotation {
     width: 450px;
-    padding: 10px 10px;  
+    padding: 10px;
+    padding-bottom: 0px;
 }
 /* Clear floats after the columns */
 .row:after {
