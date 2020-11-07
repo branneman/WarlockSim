@@ -1,11 +1,14 @@
 function loadCookie() {
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
-  console.log(getCookie("tailoring"))
+  document.getElementById("race").value = getCookie("race");
   console.log('Cookies Loaded')
 }
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
+  if (arguments.length == 2) {
+    exdays = 365;
+  }
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires="+d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires;// + ";path=/";
