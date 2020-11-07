@@ -8,6 +8,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var int  = 0 + 7*document.getElementById("enchantIntellect").checked + 3*document.getElementById("enchantStats").checked + 4*document.getElementById("enchantGreaterStats").checked;
   var pen  = 0;
   var mp5  = 0;
+  var tailoring = document.getElementById("tailoring").checked;
+  
   var classList = new Array;
   var items = document.getElementsByName('activeItem');
   for (var i=0; i<items.length; i++) {
@@ -172,7 +174,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   if (setPvPEpic >= 6) {
     SP += 23;
     bonusList += "<tr><td>PvP Epic: 6-set</td></tr>";}
-  if (setBV >= 3) {
+  if (setBV >= 3 && tailoring == true) {
     crit += 2;
     bonusList += "<tr><td>Bloodvine Set</td></tr>";}
   
