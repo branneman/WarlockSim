@@ -102,7 +102,45 @@
   <body style="background-color:#888888;">
     <div class="row">
       <div class="column info">
-        <h1>Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></h1>
+        <h1 style="text-align:center">Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></h1>
+        <h2>Settings</h2>
+        <!--<b>Gear Stats</b><br>
+        <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
+        <label style=color:#9482C9> <input type="number" id="spellCrit" value="8">      Spell Crit</label><br>
+        <label style=color:#9482C9> <input type="number" id="spellHit" value="9">       Spell Hit</label><br>
+        <label style=color:#9482C9> <input type="number" id="intellect" value="282">    Intellect</label><br>
+        <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
+        <label style=color:#9482C9> <input type="number" id="spellPen" value="0">       Spell Penetration</label><br>
+        <br>-->
+
+        <b>Fight Info</b><br>
+        <label style=color:#9482C9> <input type="number" id="fightStart" value="40">    Minimum Fight Duration</label><br>
+        <label style=color:#9482C9> <input type="number" id="fightEnd" value="60">      Maximum Fight Duration</label><br>
+        <label style=color:#9482C9> <input type="number" id="bossShadowRes" value="0">  Boss Shadow Resistance</label><br>
+        <label style=color:#f20000> <input type="number" id="bossFireRes" value="0">    Boss Fire Resistance</label><br>
+        <br>
+
+        <b>Boss Level</b><br>
+        <select id="bossLevel">
+          <option value="63">     63</option>
+          <option value="62">     62</option>
+          <option value="61">     61</option>
+          <option value="60">     60</option>
+        </select><br>
+        <br>
+
+        <b>Race</b><br>
+        <select id="race">
+          <option value="gnome">  Gnome</option>
+          <option value="human">  Human</option>
+          <option value="undead"> Undead</option>
+          <option value="orc">    Orc</option>
+        </select><br>
+        <br>
+        <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
+        <p id="finalStats"></p>
+        <p id="setBonuses"></p>
+        
       </div>
       <div class="column allTheTabs">
     <button class="tablink" onclick="openPage('main', this, '#838383'); runSim()" id="defaultOpen">Main</button>
@@ -111,49 +149,10 @@
     <button class="tablink" onclick="openPage('gear', this, '#838383')">Gear</button>
     
     <div id="main" class="tabcontent" name="main" oninput="runSim();">
-      
+      <p>Graphs</p>
       <div class="row">
-        <div class="column settings" style="background-color:#555555;">
-          
-          <h2>Settings</h2>
-          <!--<b>Gear Stats</b><br>
-          <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
-          <label style=color:#9482C9> <input type="number" id="spellCrit" value="8">      Spell Crit</label><br>
-          <label style=color:#9482C9> <input type="number" id="spellHit" value="9">       Spell Hit</label><br>
-          <label style=color:#9482C9> <input type="number" id="intellect" value="282">    Intellect</label><br>
-          <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
-          <label style=color:#9482C9> <input type="number" id="spellPen" value="0">       Spell Penetration</label><br>
-          <br>-->
-          
-          <b>Fight Info</b><br>
-          <label style=color:#9482C9> <input type="number" id="fightStart" value="40">    Minimum Fight Duration</label><br>
-          <label style=color:#9482C9> <input type="number" id="fightEnd" value="60">      Maximum Fight Duration</label><br>
-          <label style=color:#9482C9> <input type="number" id="bossShadowRes" value="0">  Boss Shadow Resistance</label><br>
-          <label style=color:#f20000> <input type="number" id="bossFireRes" value="0">    Boss Fire Resistance</label><br>
-          <br>
-          
-          <b>Boss Level</b><br>
-          <select id="bossLevel">
-            <option value="63">     63</option>
-            <option value="62">     62</option>
-            <option value="61">     61</option>
-            <option value="60">     60</option>
-          </select><br>
-          <br>
-          
-          <b>Race</b><br>
-          <select id="race">
-            <option value="gnome">  Gnome</option>
-            <option value="human">  Human</option>
-            <option value="undead"> Undead</option>
-            <option value="orc">    Orc</option>
-          </select><br>
-          <br>
-          <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
-          <p id="finalStats"></p>
-          <p id="setBonuses"></p>
-
-        </div>
+        <!--<div class="column settings" style="background-color:#555555;">
+        </div>-->
         <div class="column graphs">
           <p id="dps"></p>
           <div id="dpsWrapper" style="height:400px;padding:5px"><canvas id="dpsCanvas" style="background-color:#999999;" width=300px height=200px></canvas></div>
