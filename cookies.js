@@ -1,4 +1,5 @@
 function loadCookie() {
+  document.getElementById("tailoring").checked = getCookie("tailoring");
 }
 
 function setCookie(cname, cvalue, exdays) {
