@@ -921,7 +921,41 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   });
   //Cookie Time
   setCookie("tailoring", tailoring);
-  setCookie("race", document.getElementById("race").value);
+  setCookie("fightStart", fightStart);
+  setCookie("fightEnd", fightEnd);
+  setCookie("bossShadowRes", Number(document.getElementById("bossShadowRes").value));
+  setCookie("bossFireRes", Number(document.getElementById("bossFireRes").value));
+  setCookie("bossLevel", Number(bossLevel));
+  setCookie("race", race);
+  
+  setCookie("curseShadow", document.getElementById("curseShadow").checked);
+  setCookie("shadowWeaving", document.getElementById("shadowWeaving").checked);
+  setCookie("curseElements", document.getElementById("curseElements").checked);
+  setCookie("Scorch", document.getElementById("Scorch").checked);
+  setCookie("supremeFlask", document.getElementById("supremeFlask").checked);
+  setCookie("brilliantOil", document.getElementById("brilliantOil").checked);
+  setCookie("arcaneElixir", document.getElementById("arcaneElixir").checked);
+  setCookie("shadowElixir", document.getElementById("shadowElixir").checked);
+  setCookie("holiday", document.getElementById("holiday").checked);
+  setCookie("fireElixir", document.getElementById("fireElixir").checked);
+  setCookie("manaPotion", document.getElementById("manaPotion").checked);
+  setCookie("demonicRune", document.getElementById("demonicRune").checked);
+  setCookie("runnTumTuber", document.getElementById("runnTumTuber").checked);
+  setCookie("nightfinSoup", document.getElementById("nightfinSoup").checked);
+  setCookie("magebloodPotion", document.getElementById("magebloodPotion").checked);
+  setCookie("hakkarBuff", hakkarBuff);
+  setCookie("onyxiaBuff", onyxiaBuff);
+  setCookie("songflower", songflower);
+  setCookie("diremaulBuff", diremaulBuff);
+  setCookie("darkMoonFaire", document.getElementById("darkMoonFaire").checked);
+  setCookie("tracesOfSilithus", document.getElementById("tracesOfSilithus").checked);
+  setCookie("arcaneIntellect", document.getElementById("arcaneIntellect").checked);
+  setCookie("markOfTheWild", document.getElementById("markOfTheWild").checked);
+  setCookie("moonkinAura", document.getElementById("moonkinAura").checked);
+  setCookie("blessingOfWisdom", document.getElementById("blessingOfWisdom").checked);
+  setCookie("blessingOfKings", document.getElementById("blessingOfKings").checked);
+  setCookie("manaSpringTotem", document.getElementById("manaSpringTotem").checked);
+  setCookie("lifeTap", lifeTap);
 
   console.timeEnd('Timer')
 } //Function
