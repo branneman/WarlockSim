@@ -921,6 +921,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   });
   //Cookie Time
   setCookie("tailoring",tailoring,365);
+  console.log(getCookie("tailoring"))
+  console.log('Cookies Saved')
   console.timeEnd('Timer')
 } //Function
 
