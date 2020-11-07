@@ -1,9 +1,23 @@
 function loadCookie() {
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
+  
+  if (getCookie("fightStart") !== "noCookie")
+    document.getElementById("fightStart").value = Number(getCookie("fightStart"));
+  
+  if (getCookie("fightEnd") !== "noCookie")
+    document.getElementById("fightEnd").value = Number(getCookie("fightEnd"));
+  
+  if (getCookie("bossShadowRes") !== "noCookie")
+    document.getElementById("bossShadowRes").value = Number(getCookie("bossShadowRes"));
+  
+  if (getCookie("bossFireRes") !== "noCookie")
+    document.getElementById("bossFireRes").value = Number(getCookie("bossFireRes"));
+  
+  if (getCookie("bossLevel") !== "noCookie")
+    document.getElementById("bossLevel").value = Number(getCookie("bossLevel"));
+  
   if (getCookie("race") !== "noCookie")
     document.getElementById("race").value = getCookie("race");
-  if (getCookie("fightStart") !== "noCookie")
-    document.getElementById("fightStart").value = getCookie("fightStart");
   
   
   console.log('Cookies Loaded')
