@@ -20,6 +20,35 @@ function loadCookie() {
     document.getElementById("race").value = getCookie("race");
   
   
+  document.getElementById("curseShadow").checked = getCookie("curseShadow") == "true";
+  document.getElementById("shadowWeaving").checked = getCookie("shadowWeaving") == "true";
+  document.getElementById("curseElements").checked = getCookie("curseElements") == "true";
+  document.getElementById("Scorch").checked = getCookie("Scorch") == "true";
+  document.getElementById("supremeFlask").checked = getCookie("supremeFlask") == "true";
+  document.getElementById("brilliantOil").checked = getCookie("brilliantOil") == "true";
+  document.getElementById("arcaneElixir").checked = getCookie("arcaneElixir") == "true";
+  document.getElementById("shadowElixir").checked = getCookie("shadowElixir") == "true";
+  document.getElementById("holiday").checked = getCookie("holiday") == "true";
+  document.getElementById("fireElixir").checked = getCookie("fireElixir") == "true";
+  document.getElementById("manaPotion").checked = getCookie("manaPotion") == "true";
+  document.getElementById("demonicRune").checked = getCookie("demonicRune") == "true";
+  document.getElementById("runnTumTuber").checked = getCookie("runnTumTuber") == "true";
+  document.getElementById("nightfinSoup").checked = getCookie("nightfinSoup") == "true";
+  document.getElementById("magebloodPotion").checked = getCookie("magebloodPotion") == "true";
+  document.getElementById("hakkarBuff").checked = getCookie("hakkarBuff") == "true";
+  document.getElementById("onyxiaBuff").checked = getCookie("onyxiaBuff") == "true";
+  document.getElementById("songflower").checked = getCookie("songflower") == "true";
+  document.getElementById("diremaulBuff").checked = getCookie("diremaulBuff") == "true";
+  document.getElementById("darkMoonFaire").checked = getCookie("darkMoonFaire") == "true";
+  document.getElementById("tracesOfSilithus").checked = getCookie("tracesOfSilithus") == "true";
+  document.getElementById("arcaneIntellect").checked = getCookie("arcaneIntellect") == "true";
+  document.getElementById("markOfTheWild").checked = getCookie("markOfTheWild") == "true";
+  document.getElementById("moonkinAura").checked = getCookie("moonkinAura") == "true";
+  document.getElementById("blessingOfWisdom").checked = getCookie("blessingOfWisdom") == "true";
+  document.getElementById("blessingOfKings").checked = getCookie("blessingOfKings") == "true";
+  document.getElementById("manaSpringTotem").checked = getCookie("manaSpringTotem") == "true";
+  document.getElementById("lifeTap").checked = getCookie("lifeTap") == "true";
+  
   console.log('Cookies Loaded')
 }
 
