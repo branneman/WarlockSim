@@ -94,7 +94,6 @@ body, html {
     outline: none;
     cursor: pointer;
     padding: 15px;
-    padding-bottom: 0px;
     font-size: 20px;
     width: 25%;
 }
@@ -108,7 +107,6 @@ body, html {
     color: black;
     display: none;
     padding: 50px 20px;
-    padding-bottom: 0px;
     height: 100%;
 }
 
@@ -132,7 +130,6 @@ body, html {
     color: black;
     display: none;
     padding: 20px 10px;
-    padding-bottom: 0px;
     height: 100%;
 }
 
@@ -153,7 +150,7 @@ body, html {
 }
 .info {
     width: 20%;
-    height: 100vh;
+    height: 98vh;
     padding: 10px;
     padding-bottom: 0px;
     background-color: #555555;
