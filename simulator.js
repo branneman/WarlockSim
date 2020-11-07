@@ -462,14 +462,14 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket1CD <= 0) {
           if (primary == "shadowBolt" && SBC > 4) {
             if (trinket1 == "TREOS") {
-              trinket1Bonus = true;
+              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
               trinketTime = 19.9;
               trinket1CD = 120;
               ShP += 130;
               FiP += 130;
             }
             else if (trinket1 == "ZHC") {
-              trinket1Bonus = true;
+              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
               trinketTime = 19.9;
               trinket1CD = 120;
               ShP += 204;
@@ -477,7 +477,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
               ZHCStacks = 12;
             }
             else if (trinket1 == "TOEP") {
-              trinket1Bonus = true;
+              trinket1Bonus = true; console.log("Trinket 1 activated at: " + time)
               trinketTime = 14.9;
               trinket1CD = 90;
               ShP += 175;
