@@ -2,7 +2,8 @@ html * {
     font-family: "Overpass Mono", monospace;
 }
 html {
-    overflow-y:scroll;
+    /*overflow-y:scroll;*/
+    height: 100vp;
 }
 .center {
     margin-left: auto;
@@ -150,7 +151,7 @@ body, html {
 }
 .info {
     width: 20%;
-    height: 98vh;
+    /*height: 99vh;*/
     padding: 10px;
     padding-bottom: 0px;
     background-color: #555555;
