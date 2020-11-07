@@ -91,11 +91,13 @@
         Chart.defaults.global.defaultFontColor = 'black';
         
         loadCookie();
+        document.getElementById("DSRuin").click();
         setTimeout(function(){ 
-          document.getElementById("DSRuin").click();
           document.getElementById("defaultOpen").click();
+          }, 10);
+        setTimeout(function(){ 
           document.getElementById('defaultGear').click();
-          }, 20);
+          }, 10);
       } );
       
     </script> 
