@@ -2,7 +2,7 @@ html * {
     font-family: "Overpass Mono", monospace;
 }
 html {
-    /*overflow-y:scroll;*/
+    overflow-y: hidden;
 }
 .center {
     margin-left: auto;
