@@ -488,31 +488,31 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         
         if (trinket2Bonus == true && trinketTime <= 0) {
           if (trinket2 == "TREOS") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             ShP -= 130;
             FiP -= 130;
           }
           else if (trinket2 == "ZHC") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             ShP -= 17*ZHCStacks;
             FiP -= 17*ZHCStacks;
             ZHCStacks = 0;
           }
           else if (trinket2 == "TOEP") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             ShP -= 175;
             FiP -= 175;
           }
           else if (trinket2 == "HCOD") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             crit -= 10;
           }
           else if (trinket2 == "REEL") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             hit -= 10;
           }
           else if (trinket2 == "EOM") {
-            trinket1Bonus = false;
+            trinket2Bonus = false;
             ShP -= 50;
             FiP -= 50;
             pen -= 100;
@@ -607,43 +607,43 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket2CD <= 0) {
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
             if (trinket2 == "TREOS") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 19.9;
-              trinket1CD = 120;
+              trinket2CD = 120;
               ShP += 130;
               FiP += 130;
             }
             else if (trinket2 == "ZHC") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 19.9;
-              trinket1CD = 120;
+              trinket2CD = 120;
               ShP += 204;
               FiP += 204;
               ZHCStacks = 12;
             }
             else if (trinket2 == "TOEP") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 14.9;
-              trinket1CD = 90;
+              trinket2CD = 90;
               ShP += 175;
               FiP += 175;
             }
             else if (trinket2 == "HCOD") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 19.9;
-              trinket1CD = 180;
+              trinket2CD = 180;
               crit += 10;
             }
             else if (trinket2 == "REEL") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 14.9;
-              trinket1CD = 75;
+              trinket2CD = 75;
               hit += 10;
             }
             else if (trinket2 == "EOM") {
-              trinket1Bonus = true;
+              trinket2Bonus = true;
               trinketTime = 29.9;
-              trinket1CD = 180;
+              trinket2CD = 180;
               ShP += 50;
               FiP += 50;
               pen += 100;
