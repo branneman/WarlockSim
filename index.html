@@ -102,7 +102,7 @@
   <body style="background-color:#888888;">
     <div class="row">
       <div class="column info" oninput="runSim()">
-        <div stlye="text-align:center"><b style="font-size:32px">Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></b></div>
+        <b style="font-size:32px">Warlock Simulator<br><span style="font-size:16px">by Tesram-Mograine</span></b>
         <h2>Settings</h2>
         <!--<b>Gear Stats</b><br>
         <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
@@ -121,23 +121,25 @@
         <label style=color:#f20000> <input type="number" id="bossFireRes" value="0">    Boss Fire Resistance</label><br>
         <br>
 
-        <label style="display:inline-block"><b>Boss Level</b><br>
-          <select id="bossLevel">
-            <option value="63">     63</option>
-            <option value="62">     62</option>
-            <option value="61">     61</option>
-            <option value="60">     60</option>
-          </select>
-        </label>
-        <label style="display:inline-block"><b>Race</b><br>
-          <select id="race">
-            <option value="gnome">  Gnome</option>
-            <option value="human">  Human</option>
-            <option value="undead"> Undead</option>
-            <option value="orc">    Orc</option>
-          </select>
-        </label>
-        <button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
+        <div style="text-align:center">
+          <label style="display:inline-block"><b>Boss Level</b><br>
+            <select id="bossLevel">
+              <option value="63">     63</option>
+              <option value="62">     62</option>
+              <option value="61">     61</option>
+              <option value="60">     60</option>
+            </select>
+          </label>
+          <label style="display:inline-block"><b>Race</b><br>
+            <select id="race">
+              <option value="gnome">  Gnome</option>
+              <option value="human">  Human</option>
+              <option value="undead"> Undead</option>
+              <option value="orc">    Orc</option>
+            </select>
+          </label>
+          &nbsp;&nbsp;&nbsp;<button id="myButton" type="button" onclick="runSim();">Run Sim</button><br>
+        </div>
         
         <p id="finalStats"></p>
         <p id="setBonuses"></p>
