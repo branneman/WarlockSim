@@ -148,6 +148,15 @@ body, html {
 .column {
     float: left;
 }
+.info {
+    width: 20%;
+    padding: 10px 10px;
+    background-color: #555555;
+}
+.allTheTabs {
+    width: 80%;
+    padding: 10px 10px;
+}
 .buffs {
     width: 350px;
     padding: 10px 10px;
