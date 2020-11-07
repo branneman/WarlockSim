@@ -47,7 +47,7 @@ function loadCookie() {
   document.getElementById("blessingOfWisdom").checked = getCookie("blessingOfWisdom") == "true";
   document.getElementById("blessingOfKings").checked = getCookie("blessingOfKings") == "true";
   document.getElementById("manaSpringTotem").checked = getCookie("manaSpringTotem") == "true";
-  document.getElementById("lifeTap").checked = getCookie("lifeTap") == "true";
+  document.getElementById("disableLifeTap").checked = getCookie("lifeTap") == "true";
   
   console.log('Cookies Loaded')
 }
