@@ -1,7 +1,11 @@
 function loadCookie() {
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
-  document.getElementById("race").value = getCookie("race");
-  document.getElementById("fightStart").value = getCookie("fightStart");
+  if (getCookie("race") !== "noCookie")
+    document.getElementById("race").value = getCookie("race");
+  if (getCookie("fightStart") !== "noCookie")
+    document.getElementById("fightStart").value = getCookie("fightStart");
+  
+  
   console.log('Cookies Loaded')
 }
 
@@ -27,7 +31,7 @@ function getCookie(cname) {
       return c.substring(name.length, c.length);
     }
   }
-  return "";
+  return "noCookie";
 }
 
 function checkCookie() {
