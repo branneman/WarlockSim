@@ -920,9 +920,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     }
   });
   //Cookie Time
-  setCookie("tailoring",tailoring,365);
-  console.log(getCookie("tailoring"))
-  console.log('Cookies Saved')
+  setCookie("tailoring", tailoring);
+  setCookie("race", document.getElementById("race").value);
+
   console.timeEnd('Timer')
 } //Function
 
