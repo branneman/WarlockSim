@@ -369,7 +369,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var lifeTaps = new Array;
     var manaLeft = new Array;
     for (var i=0; i<timeVec.length; i++) {
-      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinket1Time = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0;
+      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinket1Time = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0, ZHCStacks = 0;
       if (useDoom == true)
         var doomUse = 0;
       else {
@@ -437,17 +437,20 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           if (primary == "shadowBolt" && SBC > 4) {
             if (trinket1CD <= 0 && trinket1 == "TREOS") {
               trinket1Bonus = true;
-              trinket1Time = 20;
+              trinket1Time = 19.9;
               trinket1CD = 120;
               ShP += 130;
               FiP += 130;
-              var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
-              var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
-              var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
-              var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
-              var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
-              var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
-              var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+              updateValues();
+            }
+            if (trinket1CD <= 0 && trinket1 == "ZHC") {
+              trinket1Bonus = true;
+              trinket1Time = 19.9;
+              trinket1CD = 120;
+              ShP += 204;
+              FiP += 204;
+              ZHCStacks = 12;
+              updateValues();
             }
           }
           else if (primary !== "shadowBolt") {
@@ -556,6 +559,24 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         
         else
           time += 0.5;
+        
+        // Nested Functions
+        function updateValues() {
+          var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
+          var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
+          var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+          var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
+          var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
+          var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+          var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+
+          var miss = Math.max(1, 100 - baseHit - hit);
+          var critChance = (1.7 + crit + (intel/60.6));
+          var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+          var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
+          var regularHit = 100-miss-critFinal;
+          var shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
+        }
       }
       DPS[i] = damage/timeVec[i];
       manaLeft[i] = mana;
@@ -702,24 +723,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     }
   });
   console.timeEnd('Timer')
-  
-  // Nested Functions
-  function updateValues() {
-    var tapGain = (424+ShP*0.8) * (1 + 0.1*document.getElementById("talentLifeTap").parentNode.children[1].innerHTML) * lifeTap;
-    var avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
-    var avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
-    var avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
-    var avgSearing = (226+(FiP*3/7)) * fireMultiplier;
-    var avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
-    var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
-
-    var miss = Math.max(1, 100 - baseHit - hit);
-    var critChance = (1.7 + crit + (intel/60.6));
-    var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
-    var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
-    var regularHit = 100-miss-critFinal;
-    var shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
-  }
 } //Function
 
 function formatNumber(num, places) {
