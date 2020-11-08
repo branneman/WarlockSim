@@ -54,7 +54,6 @@ function loadCookie() {
     var currentCookie = getCookie(currentID);
     if (currentCookie !== "noCookie")
       document.getElementById(currentID).parentNode.children[1].innerHTML = currentCookie;
-    console.log(currentCookie)
   }
   talentFunc();
   
