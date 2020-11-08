@@ -1017,6 +1017,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("rotationPrimary", primary);
   setCookie("rotationFinisher", finisher);
   
+  setCookie("items", items);
   
   setCookie("enchantSpellPower", document.getElementById("enchantSpellPower").checked);
   setCookie("enchantZG1", document.getElementById("enchantZG1").checked);
