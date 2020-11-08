@@ -51,8 +51,10 @@ function loadCookie() {
   
   for (var i=0; i<50; i++) {
     var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
-    if (getCookie(currentID) !== "noCookie")
-      document.getElementById(currentID).value = getCookie(currentID);
+    var currentCookie = getCookie(currentID);
+    if (currentCookie !== "noCookie")
+      document.getElementById(currentID).value = Number(currentCookie);
+    console.log(currentCookie)
   }
   talentFunc();
   
