@@ -53,7 +53,7 @@ function loadCookie() {
     var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
     var currentCookie = getCookie(currentID);
     if (currentCookie !== "noCookie")
-      document.getElementById(currentID).value = Number(currentCookie);
+      document.getElementById(currentID).innerHTML = currentCookie;
     console.log(currentCookie)
   }
   talentFunc();
