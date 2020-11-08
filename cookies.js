@@ -49,6 +49,13 @@ function loadCookie() {
   document.getElementById("manaSpringTotem").checked = getCookie("manaSpringTotem") == "true";
   document.getElementById("disableLifeTap").checked = getCookie("lifeTap") == "false";
   
+  for (var i=0; i<50; i++) {
+    var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
+    if (getCookie(currentID) !== "noCookie")
+      document.getElementById(currentID).value = getCookie(currentID);
+  }
+  talentFunc();
+  
   console.log('Cookies Loaded')
 }
 
