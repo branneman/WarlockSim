@@ -58,6 +58,32 @@ function loadCookie() {
   }
   talentFunc();
   
+  document.querySelector('input[value='+getCookie("rotationCurse")+']').checked = true
+  document.getElementById("rotationCorruption").checked = getCookie("rotationCorruption") == "true";
+  document.getElementById("rotationImmolate").checked = getCookie("rotationImmolate") == "true";
+  document.getElementById("rotationSiphon").checked = getCookie("rotationSiphon") == "true";
+  document.querySelector('input[value='+getCookie("rotationPrimary")+']').checked = true
+  document.querySelector('input[value='+getCookie("rotationFinisher")+']').checked = true
+  
+  
+  
+  document.getElementById("enchantSpellPower").checked = getCookie("enchantSpellPower") == "true";
+  document.getElementById("enchantZG1").checked = getCookie("enchantZG1") == "true";
+  document.getElementById("enchantFocus1").checked = getCookie("enchantFocus1") == "true";
+  document.getElementById("enchantPowerScourge").checked = getCookie("enchantPowerScourge") == "true";
+  document.getElementById("enchantZGShoulder").checked = getCookie("enchantZGShoulder") == "true";
+  document.getElementById("enchantThreat").checked = getCookie("enchantThreat") == "true";
+  document.getElementById("enchantGreaterStats").checked = getCookie("enchantGreaterStats") == "true";
+  document.getElementById("enchantStats").checked = getCookie("enchantStats") == "true";
+  document.getElementById("enchantIntellect").checked = getCookie("enchantIntellect") == "true";
+  document.getElementById("enchantStaminaWrists").checked = getCookie("enchantStaminaWrists") == "true";
+  document.getElementById("enchantShadow").checked = getCookie("enchantShadow") == "true";
+  document.getElementById("enchantFire").checked = getCookie("enchantFire") == "true";
+  document.getElementById("enchantZG2").checked = getCookie("enchantZG2") == "true";
+  document.getElementById("enchantFocus2").checked = getCookie("enchantFocus2") == "true";
+  document.getElementById("enchantMinorSpeed").checked = getCookie("enchantMinorSpeed") == "true";
+  document.getElementById("enchantStaminaFeet").checked = getCookie("enchantStaminaFeet") == "true";
+  
   console.log('Cookies Loaded')
 }
 
