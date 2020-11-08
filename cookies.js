@@ -58,12 +58,15 @@ function loadCookie() {
   }
   talentFunc();
   
-  document.querySelector('input[value='+getCookie("rotationCurse")+']').checked = true
+  if (getCookie("rotationCurse") !== "noCookie")
+    document.querySelector('input[value='+getCookie("rotationCurse")+']').checked = true
   document.getElementById("rotationCorruption").checked = getCookie("rotationCorruption") == "true";
   document.getElementById("rotationImmolate").checked = getCookie("rotationImmolate") == "true";
   document.getElementById("rotationSiphon").checked = getCookie("rotationSiphon") == "true";
-  document.querySelector('input[value='+getCookie("rotationPrimary")+']').checked = true
-  document.querySelector('input[value='+getCookie("rotationFinisher")+']').checked = true
+  if (getCookie("rotationPrimary") !== "noCookie")
+    document.querySelector('input[value='+getCookie("rotationPrimary")+']').checked = true
+  if (getCookie("rotationFinisher") !== "noCookie")
+    document.querySelector('input[value='+getCookie("rotationFinisher")+']').checked = true
   
   
   
