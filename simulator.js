@@ -1010,6 +1010,32 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("talentEmberstorm", document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML);
   setCookie("talentConflagrate", document.getElementById("talentConflagrate").parentNode.children[1].innerHTML);
   
+  setCookie("rotationCurse", curse);
+  setCookie("rotationCorruption", useCorruption);
+  setCookie("rotationImmolate", useImmolate);
+  setCookie("rotationSiphon", useSiphon);
+  setCookie("rotationPrimary", primary);
+  setCookie("rotationFinisher", finisher);
+  
+  
+  setCookie("enchantSpellPower", document.getElementById("enchantSpellPower").checked);
+  setCookie("enchantZG1", document.getElementById("enchantZG1").checked);
+  setCookie("enchantFocus1", document.getElementById("enchantFocus1").checked);
+  setCookie("enchantPowerScourge", document.getElementById("enchantPowerScourge").checked);
+  setCookie("enchantZGShoulder", document.getElementById("enchantZGShoulder").checked);
+  setCookie("enchantThreat", document.getElementById("enchantThreat").checked);
+  setCookie("enchantGreaterStats", document.getElementById("enchantGreaterStats").checked);
+  setCookie("enchantStats", document.getElementById("enchantStats").checked);
+  setCookie("enchantMana", document.getElementById("enchantMana").checked);
+  setCookie("enchantIntellect", document.getElementById("enchantIntellect").checked);
+  setCookie("enchantStaminaWrists", document.getElementById("enchantStaminaWrists").checked);
+  setCookie("enchantShadow", document.getElementById("enchantShadow").checked);
+  setCookie("enchantFire", document.getElementById("enchantFire").checked);
+  setCookie("enchantZG2", document.getElementById("enchantZG2").checked);
+  setCookie("enchantFocus2", document.getElementById("enchantFocus2").checked);
+  setCookie("enchantMinorSpeed", document.getElementById("enchantMinorSpeed").checked);
+  setCookie("enchantStaminaFeet", document.getElementById("enchantStaminaFeet").checked);
+  
   console.timeEnd('Timer')
 } //Function
 
