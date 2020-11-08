@@ -62,7 +62,7 @@ function loadCookie() {
     document.querySelector('input[value='+getCookie("rotationCurse")+']').checked = true
   document.getElementById("rotationCorruption").checked = getCookie("rotationCorruption") == "true";
   document.getElementById("rotationImmolate").checked = getCookie("rotationImmolate") == "true";
-  document.getElementById("rotationSiphon").checked = getCookie("rotationSiphon") == "true";
+  document.getElementById("rotationSiphonLife").checked = getCookie("rotationSiphon") == "true";
   if (getCookie("rotationPrimary") !== "noCookie")
     document.querySelector('input[value='+getCookie("rotationPrimary")+']').checked = true
   if (getCookie("rotationFinisher") !== "noCookie")
