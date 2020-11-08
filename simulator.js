@@ -956,7 +956,60 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("blessingOfKings", document.getElementById("blessingOfKings").checked);
   setCookie("manaSpringTotem", document.getElementById("manaSpringTotem").checked);
   setCookie("lifeTap", lifeTap);
+  
+  setCookie("talentSuppression", document.getElementById("talentSuppression").parentNode.children[1].innerHTML);
+  setCookie("talentCorruption", document.getElementById("talentCorruption").parentNode.children[1].innerHTML);
+  setCookie("talentWeakness", document.getElementById("talentWeakness").parentNode.children[1].innerHTML);
+  setCookie("talentDrainSoul", document.getElementById("talentDrainSoul").parentNode.children[1].innerHTML);
+  setCookie("talentLifeTap", document.getElementById("talentLifeTap").parentNode.children[1].innerHTML);
+  setCookie("talentDrainLife", document.getElementById("talentDrainLife").parentNode.children[1].innerHTML);
+  setCookie("talentAgony", document.getElementById("talentAgony").parentNode.children[1].innerHTML);
+  setCookie("talentFelConc", document.getElementById("talentFelConc").parentNode.children[1].innerHTML);
+  setCookie("talentAmpCurse", document.getElementById("talentAmpCurse").parentNode.children[1].innerHTML);
+  setCookie("talentGrimReach", document.getElementById("talentGrimReach").parentNode.children[1].innerHTML);
+  setCookie("talentNightfall", document.getElementById("talentNightfall").parentNode.children[1].innerHTML);
+  setCookie("talentDrainMana", document.getElementById("talentDrainMana").parentNode.children[1].innerHTML);
+  setCookie("talentSiphon", document.getElementById("talentSiphon").parentNode.children[1].innerHTML);
+  setCookie("talentExhaust", document.getElementById("talentExhaust").parentNode.children[1].innerHTML);
+  setCookie("talentImpExhaust", document.getElementById("talentImpExhaust").parentNode.children[1].innerHTML);
+  setCookie("talentShadowMastery", document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML);
+  setCookie("talentDarkPact", document.getElementById("talentDarkPact").parentNode.children[1].innerHTML);
 
+  setCookie("talentHealthstone", document.getElementById("talentHealthstone").parentNode.children[1].innerHTML);
+  setCookie("talentImpImp", document.getElementById("talentImpImp").parentNode.children[1].innerHTML);
+  setCookie("talentStamina", document.getElementById("talentStamina").parentNode.children[1].innerHTML);
+  setCookie("talentHealthFunnel", document.getElementById("talentHealthFunnel").parentNode.children[1].innerHTML);
+  setCookie("talentImpVoid", document.getElementById("talentImpVoid").parentNode.children[1].innerHTML);
+  setCookie("talentFelIntellect", document.getElementById("talentFelIntellect").parentNode.children[1].innerHTML);
+  setCookie("talentImpSuccubus", document.getElementById("talentImpSuccubus").parentNode.children[1].innerHTML);
+  setCookie("talentFelDomination", document.getElementById("talentFelDomination").parentNode.children[1].innerHTML);
+  setCookie("talentFelStamina", document.getElementById("talentFelStamina").parentNode.children[1].innerHTML);
+  setCookie("talentMasterSummon", document.getElementById("talentMasterSummon").parentNode.children[1].innerHTML);
+  setCookie("talentUnholyPower", document.getElementById("talentUnholyPower").parentNode.children[1].innerHTML);
+  setCookie("talentEnslaveDemon", document.getElementById("talentEnslaveDemon").parentNode.children[1].innerHTML);
+  setCookie("talentDemonicSacrifice", document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML);
+  setCookie("talentFirestone", document.getElementById("talentFirestone").parentNode.children[1].innerHTML);
+  setCookie("talentMasterDemon", document.getElementById("talentMasterDemon").parentNode.children[1].innerHTML);
+  setCookie("talentSoulLink", document.getElementById("talentSoulLink").parentNode.children[1].innerHTML);
+  setCookie("talentSpellstone", document.getElementById("talentSpellstone").parentNode.children[1].innerHTML);
+
+  setCookie("talentShadowBolt", document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML);
+  setCookie("talentCataclysm", document.getElementById("talentCataclysm").parentNode.children[1].innerHTML);
+  setCookie("talentBane", document.getElementById("talentBane").parentNode.children[1].innerHTML);
+  setCookie("talentAftermath", document.getElementById("talentAftermath").parentNode.children[1].innerHTML);
+  setCookie("talentImpFirebolt", document.getElementById("talentImpFirebolt").parentNode.children[1].innerHTML);
+  setCookie("talentImpLash", document.getElementById("talentImpLash").parentNode.children[1].innerHTML);
+  setCookie("talentDevastation", document.getElementById("talentDevastation").parentNode.children[1].innerHTML);
+  setCookie("talentShadowburn", document.getElementById("talentShadowburn").parentNode.children[1].innerHTML);
+  setCookie("talentIntensity", document.getElementById("talentIntensity").parentNode.children[1].innerHTML);
+  setCookie("talentDestructiveReach", document.getElementById("talentDestructiveReach").parentNode.children[1].innerHTML);
+  setCookie("talentSearingPain", document.getElementById("talentSearingPain").parentNode.children[1].innerHTML);
+  setCookie("talentPyroclasm", document.getElementById("talentPyroclasm").parentNode.children[1].innerHTML);
+  setCookie("talentImmolate", document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+  setCookie("talentRuin", document.getElementById("talentRuin").parentNode.children[1].innerHTML);
+  setCookie("talentEmberstorm", document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML);
+  setCookie("talentConflagrate", document.getElementById("talentConflagrate").parentNode.children[1].innerHTML);
+  
   console.timeEnd('Timer')
 } //Function
 
