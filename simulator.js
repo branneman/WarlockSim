@@ -1017,7 +1017,46 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("rotationPrimary", primary);
   setCookie("rotationFinisher", finisher);
   
-  setCookie("items", items);
+  setCookie("itemMainHand", false);
+  setCookie("itemOffHand", false);
+  setCookie("itemStaff", false);
+  if (items.length == 17) {
+    setCookie("itemMainHand", items[0].children[0].innerHTML);
+    setCookie("itemOffHand", items[1].children[0].innerHTML);
+    setCookie("itemHelmet", items[2].children[0].innerHTML);
+    setCookie("itemNeck", items[3].children[0].innerHTML);
+    setCookie("itemShoulders", items[4].children[0].innerHTML);
+    setCookie("itemBack", items[5].children[0].innerHTML);
+    setCookie("itemChest", items[6].children[0].innerHTML);
+    setCookie("itemWrists", items[7].children[0].innerHTML);
+    setCookie("itemHands", items[8].children[0].innerHTML);
+    setCookie("itemWaist", items[9].children[0].innerHTML);
+    setCookie("itemLegs", items[10].children[0].innerHTML);
+    setCookie("itemFeet", items[11].children[0].innerHTML);
+    setCookie("itemRing1", items[12].children[0].innerHTML);
+    setCookie("itemRing2", items[13].children[0].innerHTML);
+    setCookie("itemTrinket1", items[14].children[0].innerHTML);
+    setCookie("itemTrinket2", items[15].children[0].innerHTML);
+    setCookie("itemWand", items[16].children[0].innerHTML);
+  }
+  else if (items.length == 16) {
+    setCookie("itemStaff", items[0].children[0].innerHTML);
+    setCookie("itemHelmet", items[1].children[0].innerHTML);
+    setCookie("itemNeck", items[2].children[0].innerHTML);
+    setCookie("itemShoulders", items[3].children[0].innerHTML);
+    setCookie("itemBack", items[4].children[0].innerHTML);
+    setCookie("itemChest", items[5].children[0].innerHTML);
+    setCookie("itemWrists", items[6].children[0].innerHTML);
+    setCookie("itemHands", items[7].children[0].innerHTML);
+    setCookie("itemWaist", items[8].children[0].innerHTML);
+    setCookie("itemLegs", items[9].children[0].innerHTML);
+    setCookie("itemFeet", items[10].children[0].innerHTML);
+    setCookie("itemRing1", items[11].children[0].innerHTML);
+    setCookie("itemRing2", items[12].children[0].innerHTML);
+    setCookie("itemTrinket1", items[13].children[0].innerHTML);
+    setCookie("itemTrinket2", items[14].children[0].innerHTML);
+    setCookie("itemWand", items[15].children[0].innerHTML);
+  }
   
   setCookie("enchantSpellPower", document.getElementById("enchantSpellPower").checked);
   setCookie("enchantZG1", document.getElementById("enchantZG1").checked);
