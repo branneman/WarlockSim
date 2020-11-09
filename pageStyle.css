@@ -95,7 +95,10 @@ body, html {
     cursor: pointer;
     padding: 15px;
     font-size: 20px;
-    width: 25%;
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tablink:hover {
@@ -137,6 +140,7 @@ body, html {
 #buffs {background-color: #888888;}
 #talents {background-color: #888888;}
 #gear {background-color: #888888;}
+#advanced {background-color: #888888;}
 
 #gearMainHand {background-color: #888888;}
 #gearOffHand {background-color: #888888;}
