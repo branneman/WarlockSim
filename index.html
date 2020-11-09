@@ -163,6 +163,7 @@
         <button class="tablink" onclick="openPage('buffs', this, '#838383')">Buffs & Consumables</button>
         <button class="tablink" onclick="openPage('talents', this, '#838383')">Talents & Rotation</button>
         <button class="tablink" onclick="openPage('gear', this, '#838383')">Gear</button><br>
+        <button class="tablink" onclick="openPage('advanced', this, '#838383')">Advanced (WIP)</button><br>
 
         <div id="main" class="tabcontent" name="main" oninput="runSim();">
           <div class="row">
@@ -220,9 +221,6 @@
               <label style=color:#F58CBA> <input type="checkbox" id="blessingOfKings" checked>  Blessing of Kings</label><br>
               <label style=color:#0070DE> <input type="checkbox" id="manaSpringTotem">          Mana Spring Totem</label><br>
               <br><br>
-
-              <h2>Extras</h2>
-              <label style=color:#9482C9> <input type="checkbox" id="disableLifeTap">    Disable Life Tap</label><br>
             </div>
           </div>
         </div> <!--Buffs tab-->
@@ -881,6 +879,10 @@
             </div>
           </div>
         </div> <!--Gear tab-->
+        <div id="main" class="tabcontent" name="main" oninput="runSim();">
+          <h3>Don't change these settings unless you know what you are doing</h3>
+          <label style=color:#9482C9> <input type="checkbox" id="disableLifeTap">    Disable Life Tap</label><br>
+        </div> <!--Main tab-->
       </div>
     </div>
   </body>
