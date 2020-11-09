@@ -48,18 +48,20 @@
         $('#'+gearTable[0].parentNode.parentNode.id).DataTable();
       }
       
-      function clickTable(tableName,element) {
+      function clickTable(tableName,element,noSim) {
         var i, tableContent
         tableContent = document.getElementById(tableName).children[1].children;
         for (i = 0; i < tableContent.length; i++) {
           document.getElementById(tableName).children[1].children[i].style.backgroundColor = "#FFF";
           document.getElementById(tableName).children[1].children[i].setAttribute('name', tableName + 'Inactive');
         }
-        if (arguments.length == 2) {
+        if (arguments.length >= 2) {
           element.style.backgroundColor = "#9482C9";
           element.setAttribute('name', 'activeItem');
         }
-        runSim();
+        if (arguments.length !== 3) {
+          runSim();
+        }
       }
       
       $.extend( $.fn.dataTable.defaults, {
