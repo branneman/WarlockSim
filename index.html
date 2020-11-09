@@ -41,8 +41,8 @@
         
         var gearTable = document.getElementById(gearName).children[0].children[0].children[1].children;
         var baseLine = runSim(gearTable[0], 0, true);
-        for (i = 0; i < gearTable.length; i++) {
-          runSim(gearTable[i], baseLine); 
+        for (let i = 0; i < gearTable.length; i++) {
+          setTimeout(function(){ runSim(gearTable[i], baseLine); }, 1);
         }
         $('#'+gearTable[0].parentNode.parentNode.id).DataTable().destroy();
         $('#'+gearTable[0].parentNode.parentNode.id).DataTable();
