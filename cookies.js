@@ -1,5 +1,5 @@
 function loadCookie() {
-  var i
+  var i, q
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
   
   if (getCookie("fightStart") !== "noCookie")
@@ -68,9 +68,13 @@ function loadCookie() {
   if (getCookie("rotationFinisher") !== "noCookie")
     document.querySelector('input[value='+getCookie("rotationFinisher")+']').checked = true
   
-  for (i=0; i<document.getElementById("tableHelmet").children[1].children.length; i++) {
-    if (getCookie("itemHelmet") == document.getElementById("tableHelmet").children[1].children[i].children[0].innerHTML)
-      clickTable("tableHelmet", document.getElementById("tableHelmet").children[1].children[i], true);
+  var itemArray = ["MainHand", "OffHand", "Staff", "Helmet", "Neck", "Shoulders", "Back", "Chest", "Wrists", "Hands", "Waist", "Legs", "Feet", "Ring1", "Ring2", "Trinket1", "Trinket2", "Wand"];
+  for (q=0; q<itemArray.length; q++) {
+    var currentTable = document.getElementById("table" + itemArray[q]).children[1].children;
+    for (i=0; i<currentTable.length; i++) {
+      if (getCookie("item" + itemArray[q]) == currentTable[i].children[0].innerHTML)
+        clickTable("table" + itemArray[q], currentTable[i], true);
+    }
   }
   
   document.getElementById("enchantSpellPower").checked = getCookie("enchantSpellPower") == "true";
