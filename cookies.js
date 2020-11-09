@@ -1,4 +1,5 @@
 function loadCookie() {
+  var i
   document.getElementById("tailoring").checked = getCookie("tailoring") == "true";
   
   if (getCookie("fightStart") !== "noCookie")
@@ -18,7 +19,6 @@ function loadCookie() {
   
   if (getCookie("race") !== "noCookie")
     document.getElementById("race").value = getCookie("race");
-  
   
   document.getElementById("curseShadow").checked = getCookie("curseShadow") == "true";
   document.getElementById("shadowWeaving").checked = getCookie("shadowWeaving") == "true";
@@ -47,9 +47,10 @@ function loadCookie() {
   document.getElementById("blessingOfWisdom").checked = getCookie("blessingOfWisdom") == "true";
   document.getElementById("blessingOfKings").checked = getCookie("blessingOfKings") == "true";
   document.getElementById("manaSpringTotem").checked = getCookie("manaSpringTotem") == "true";
+  
   document.getElementById("disableLifeTap").checked = getCookie("lifeTap") == "false";
   
-  for (var i=0; i<50; i++) {
+  for (i=0; i<50; i++) {
     var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
     var currentCookie = getCookie(currentID);
     if (currentCookie !== "noCookie")
@@ -67,7 +68,10 @@ function loadCookie() {
   if (getCookie("rotationFinisher") !== "noCookie")
     document.querySelector('input[value='+getCookie("rotationFinisher")+']').checked = true
   
-  
+  for (i=0; i<document.getElementById("tableHelmet").children[1].children.length; i++) {
+    if (getCookie("itemHelmet") == document.getElementById("tableHelmet").children[1].children[i].children[0].innerHTML)
+      clickTable("tableHelmet", document.getElementById("tableHelmet").children[1].children[i], true);
+  }
   
   document.getElementById("enchantSpellPower").checked = getCookie("enchantSpellPower") == "true";
   document.getElementById("enchantZG1").checked = getCookie("enchantZG1") == "true";
