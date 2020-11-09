@@ -44,8 +44,10 @@
         for (let i = 0; i < gearTable.length; i++) {
           setTimeout(function(){ runSim(gearTable[i], baseLine); }, 1);
         }
-        $('#'+gearTable[0].parentNode.parentNode.id).DataTable().destroy();
-        $('#'+gearTable[0].parentNode.parentNode.id).DataTable();
+        setTimeout(function(){
+          $('#'+gearTable[0].parentNode.parentNode.id).DataTable().destroy();
+          $('#'+gearTable[0].parentNode.parentNode.id).DataTable();
+        }, 100);
       }
       
       function clickTable(tableName,element,noSim) {
