@@ -734,7 +734,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           SBC++;}
         
         else if (primary == "searingPain" && GCD <= timeLeft) {
-          damage += (avgSearing*critSearing*critMultiplier + avgSearing*regularHit)/100;
+          damage += (avgSearing*critSearing*critMultiplier + avgSearing*regularHit)/100; console.log(time + ": " + (avgSearing*critSearing*critMultiplier + avgSearing*regularHit)/100)
           mana -= searingCost;
           time += GCD;}
         
