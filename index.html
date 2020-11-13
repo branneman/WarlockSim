@@ -119,14 +119,6 @@
         <div id="statWeights"></div>
         
         <h2>Settings</h2>
-        <!--<b>Gear Stats</b><br>
-        <label style=color:#9482C9> <input type="number" id="spellPower" value="642">   Spell Power</label><br>
-        <label style=color:#9482C9> <input type="number" id="spellCrit" value="8">      Spell Crit</label><br>
-        <label style=color:#9482C9> <input type="number" id="spellHit" value="9">       Spell Hit</label><br>
-        <label style=color:#9482C9> <input type="number" id="intellect" value="282">    Intellect</label><br>
-        <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
-        <label style=color:#9482C9> <input type="number" id="spellPen" value="0">       Spell Penetration</label><br>
-        <br>-->
         <label style=color:#9482C9> <input type="checkbox" id="tailoring" checked>      300 Tailoring</label><br><br>
 
         <b>Fight Info</b><br>
@@ -360,7 +352,7 @@
                 </tr>
               </table>
             </div>
-            <div class="column talents">
+            <div style="width:20px">
             </div>
             <div class="column rotation" style="background-color:#555555;">
               <h2>Rotation</h2>
@@ -882,6 +874,15 @@
         <div id="advanced" class="tabcontent" name="advanced" oninput="runSim();">
           <h3>Don't change these settings unless you know what you are doing</h3>
           <label> <input type="checkbox" id="disableLifeTap">    Disable Life Tap</label><br>
+          
+          <b>Custom Stats Modifications</b><br>
+          <label style=color:#9482C9> <input type="number" id="spellPower" value="0">     Spell Power</label><br>
+          <label style=color:#9482C9> <input type="number" id="spellCrit" value="0">      Spell Crit</label><br>
+          <label style=color:#9482C9> <input type="number" id="spellHit" value="0">       Spell Hit</label><br>
+          <label style=color:#9482C9> <input type="number" id="intellect" value="0">      Intellect</label><br>
+          <label style=color:#9482C9> <input type="number" id="mp5" value="0">            Mana per 5</label><br>
+          <label style=color:#9482C9> <input type="number" id="spellPen" value="0">       Spell Penetration</label><br>
+          <br>
         </div> <!--Advanced tab-->
       </div>
     </div>
