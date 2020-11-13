@@ -1,13 +1,13 @@
 function runSim(gearTable, baseLine, makeBaseLine) {
   console.time('Timer')
-  var SP   = 0 + 30*document.getElementById("enchantSpellPower").checked + 8*document.getElementById("enchantFocus1").checked + 8*document.getElementById("enchantFocus2").checked + 18*document.getElementById("enchantZG1").checked + 18*document.getElementById("enchantZG2").checked + 18*document.getElementById("enchantZGShoulder").checked + 15*document.getElementById("enchantPowerScourge").checked;
-  var ShP  = 0 + 20*document.getElementById("enchantShadow").checked;
-  var FiP  = 0 + 20*document.getElementById("enchantFire").checked;
-  var crit = 0 + 1*document.getElementById("enchantPowerScourge").checked;
-  var hit  = 0;
-  var int  = 0 + 7*document.getElementById("enchantIntellect").checked + 3*document.getElementById("enchantStats").checked + 4*document.getElementById("enchantGreaterStats").checked;
-  var pen  = 0;
-  var mp5  = 0;
+  var SP   = Number(document.getElementById("spellPower").value) + 30*document.getElementById("enchantSpellPower").checked + 8*document.getElementById("enchantFocus1").checked + 8*document.getElementById("enchantFocus2").checked + 18*document.getElementById("enchantZG1").checked + 18*document.getElementById("enchantZG2").checked + 18*document.getElementById("enchantZGShoulder").checked + 15*document.getElementById("enchantPowerScourge").checked;
+  var ShP  = Number(document.getElementById("shadowPower").value) + 20*document.getElementById("enchantShadow").checked;
+  var FiP  = Number(document.getElementById("firePower").value) + 20*document.getElementById("enchantFire").checked;
+  var crit = Number(document.getElementById("spellCrit").value) + 1*document.getElementById("enchantPowerScourge").checked;
+  var hit  = Number(document.getElementById("spellHit").value);
+  var int  = Number(document.getElementById("intellect").value) + 7*document.getElementById("enchantIntellect").checked + 3*document.getElementById("enchantStats").checked + 4*document.getElementById("enchantGreaterStats").checked;
+  var pen  = Number(document.getElementById("spellPen").value);
+  var mp5  = Number(document.getElementById("mp5").value);
   var tailoring = document.getElementById("tailoring").checked;
   
   var classList = new Array;
