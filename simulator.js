@@ -231,7 +231,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var usePI = false;
   if (numPI > 0)
     usePI = true;
-  console.log("Use PI: " + usePI)
+
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
   if (bossLevel == 63)
@@ -688,7 +688,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         }
         
         if (usePI == true && piTime <= 0 && piCD <= 0) {
+          console.log("First if")
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
+            console.log("Seccond if")
             piBonus = true;
             piTime = 15.1*numPI;
             piCD = 180;
