@@ -227,6 +227,11 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var useSiphon = document.getElementById("rotationSiphonLife").checked;
   var lifeTap = document.getElementById("disableLifeTap").checked == false;
   
+  var numPI = Number(document.getElementById("fightEnd").value);
+  var usePI = false;
+  if (numPI > 0)
+    usePI = true;
+  
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
   if (bossLevel == 63)
@@ -371,7 +376,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var manaLeft = new Array;
     var ShPOld = ShP, FiPOld = FiP, critOld = crit, hitOld = hit, penOld = pen;
     for (var i=0; i<timeVec.length; i++) {
-      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinketTime = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0, ZHCStacks = 0;
+      var doom = false, agony = false, corruption = false, immolate = false, siphon = false, time = threatTime, damage = 0, mana = manaMain, timePast = 0, SBC = 0, trinketTime = 0, trinket2Time, trinket1CD = 0, trinket2CD = 0, trinket1Bonus = false, trinket2Bonus = false, piTime = 0, piCD = 0, ZHCStacks = 0, piBonus = false;
       ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld, pen = penOld;
       if (useDoom == true)
         var doomUse = 0;
@@ -538,6 +543,18 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
         }
         
+        if (piBonus == true && piTime >= 0) {
+          piBonus = false;
+          shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+          fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+          avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
+          avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+          avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
+          avgSearing = (226+(FiP*3/7)) * fireMultiplier;
+          avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+          avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+        }
+        
         if (TREOS+ZHC+TOEP+HCOD+REEL+EOM > 0 && trinketTime <= 0 && trinket1CD <= 0) {
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
             if (trinket1 == "TREOS") {
@@ -667,6 +684,22 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
             regularHit = 100-miss-critFinal;
             shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
+          }
+        }
+        
+        if (usePI == true && piTime >= 0 && piCD >= 0) {
+          if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
+            piBonus = true;
+            piTime = 15.1*numPI;
+            piCD = 180;
+            shadowMultiplier = 1.20 * shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
+            fireMultiplier = 1.20 * fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
+            avgNonCrit = (510+(ShP*6/7)) * shadowMultiplier;
+            avgBurn = (488+(ShP*3/7)) * shadowMultiplier * document.getElementById("talentShadowburn").parentNode.children[1].innerHTML;
+            avgDeathCoil = (476+(ShP*1.5/7)) * shadowMultiplier;
+            avgSearing = (226+(FiP*3/7)) * fireMultiplier;
+            avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
+            avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           }
         }
         
