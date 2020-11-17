@@ -231,7 +231,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var usePI = false;
   if (numPI > 0)
     usePI = true;
-  
+  console.log("Use PI: " + usePI)
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
   if (bossLevel == 63)
@@ -543,7 +543,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
         }
         
-        if (piBonus == true && piTime >= 0) {
+        if (piBonus == true && piTime <= 0) {
           piBonus = false;
           shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
           fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
@@ -687,7 +687,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           }
         }
         
-        if (usePI == true && piTime >= 0 && piCD >= 0) {
+        if (usePI == true && piTime <= 0 && piCD <= 0) {
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
             piBonus = true;
             piTime = 15.1*numPI;
