@@ -227,7 +227,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var useSiphon = document.getElementById("rotationSiphonLife").checked;
   var lifeTap = document.getElementById("disableLifeTap").checked == false;
   
-  var numPI = Number(document.getElementById("fightEnd").value);
+  var numPI = Number(document.getElementById("powerInfusion").value);
   var usePI = false;
   if (numPI > 0)
     usePI = true;
