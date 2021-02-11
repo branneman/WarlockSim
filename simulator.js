@@ -769,7 +769,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           SBC++;}
         
         else if (primary == "searingPain" && GCD <= timeLeft) {
-          damage += (avgSearing*critSearing*critMultiplier + avgSearing*regularHit)/100;
+          damage += (avgSearing*critSearing*critMultiplier + avgSearing*(100-miss-critSearing))/100;
           mana -= searingCost;
           time += GCD;}
         
@@ -802,7 +802,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           time += GCD*2;}
         
         else if (finisher == "searingPain" && sbTime > timeLeft && GCD <= timeLeft) {
-          damage += (avgSearing*critSearing*critMultiplier + avgSearing*regularHit)/100;
+          damage += (avgSearing*critSearing*critMultiplier + avgSearing*(100-miss-critSearing))/100;
           mana -= searingCost;
           time += GCD*2;}
         
