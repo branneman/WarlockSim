@@ -366,7 +366,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     
     var miss = Math.max(1, 100 - baseHit - hit);
     var critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
-    var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+    var critFinal = critChance * (100-miss)/100;
     var critSearing = Math.min(100, (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML)) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
     var shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
@@ -485,7 +485,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           miss = Math.max(1, 100 - baseHit - hit);
           critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
-          critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+          critFinal = critChance * (100-miss)/100;
           critSearing = Math.min(100, (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML)) * (100-miss)/100;
           regularHit = 100-miss-critFinal;
           shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
@@ -537,7 +537,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           miss = Math.max(1, 100 - baseHit - hit);
           critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
-          critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+          critFinal = critChance * (100-miss)/100;
           critSearing = Math.min(100, (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML)) * (100-miss)/100;
           regularHit = 100-miss-critFinal;
           shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
@@ -614,7 +614,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             miss = Math.max(1, 100 - baseHit - hit);
             critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
-            critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+            critFinal = critChance * (100-miss)/100;
             critSearing = Math.min(100, (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML)) * (100-miss)/100;
             regularHit = 100-miss-critFinal;
             shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
@@ -680,7 +680,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             miss = Math.max(1, 100 - baseHit - hit);
             critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
-            critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
+            critFinal = critChance * (100-miss)/100;
             critSearing = Math.min(100, (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML)) * (100-miss)/100;
             regularHit = 100-miss-critFinal;
             shadowVuln = (1 - Math.pow(1 - critFinal/100*(1-miss/100), 4/(1-miss/100))) * 0.2*document.getElementById("talentShadowBolt").parentNode.children[1].innerHTML * (primary == "shadowBolt");
