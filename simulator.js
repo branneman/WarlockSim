@@ -365,7 +365,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
     
     var miss = Math.max(1, 100 - baseHit - hit);
-    var critChance = (1.7 + crit + (intel/60.6));
+    var critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
     var critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
     var critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
     var regularHit = 100-miss-critFinal;
@@ -484,7 +484,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           miss = Math.max(1, 100 - baseHit - hit);
-          critChance = (1.7 + crit + (intel/60.6));
+          critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
           critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
           critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
           regularHit = 100-miss-critFinal;
@@ -536,7 +536,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
           avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
           miss = Math.max(1, 100 - baseHit - hit);
-          critChance = (1.7 + crit + (intel/60.6));
+          critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
           critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
           critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
           regularHit = 100-miss-critFinal;
@@ -613,7 +613,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             miss = Math.max(1, 100 - baseHit - hit);
-            critChance = (1.7 + crit + (intel/60.6));
+            critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
             critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
             critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
             regularHit = 100-miss-critFinal;
@@ -679,7 +679,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             avgImmo = (279*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             avgImmoR7 = (258*(1+0.05*bonusImmolateDMG) + (FiP*0.2)) * fireMultiplier * (1 + 0.05*document.getElementById("talentImmolate").parentNode.children[1].innerHTML);
             miss = Math.max(1, 100 - baseHit - hit);
-            critChance = (1.7 + crit + (intel/60.6));
+            critChance = Math.min(100, (1.7 + crit + (intel/60.6)));
             critFinal = (1.7 + crit + (intel/60.6)) * (100-miss)/100;
             critSearing = (1.7 + crit + (intel/60.6) + 2*document.getElementById("talentSearingPain").parentNode.children[1].innerHTML) * (100-miss)/100;
             regularHit = 100-miss-critFinal;
