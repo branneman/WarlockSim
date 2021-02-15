@@ -106,7 +106,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   }
   //console.log("TREOS:"+TREOS+" ZHC:"+ZHC+" TEOP:"+TOEP+" HCOD:"+HCOD+" REEL:"+REEL+" EOM:"+EOM); 
   //console.log(trinket1); console.log(trinket2)
-  var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0;
+  var setT05 = 0, setT1 = 0, setT2 = 0, setT25 = 0, setT3 = 0, setZGRing = 0, setZG = 0, setAQ20 = 0, setPvPRare = 0, setPvPEpic = 0, setBV = 0, setUDC = 0;
   for (i=0; i<classList.length; i++) {
     if (classList[i] == "setT05")
       setT05++
@@ -130,8 +130,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
       setPvPEpic++
     else if (classList[i] == "setBV")
       setBV++
+    else if (classList[i] == "setUDC")
+      setUDC++
   }
-  var bonusList = "", bonusDrainLife = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false;
+  var bonusList = "", bonusDrainLife = false, bonusShadowCost = false, bonusImmolateDMG = false, bonusShadowBoltCost = false, bonusCorruption = false, bonusCorruptionZG = false, bonusImmolatePvP = false, UDC = false;
   if (setT05 >= 6) {
     SP += 23;
     bonusList += "<tr><td>Tier 0.5: 6-set</td></tr>";}
@@ -177,6 +179,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   if (setBV >= 3 && tailoring == true) {
     crit += 2;
     bonusList += "<tr><td>Bloodvine Set</td></tr>";}
+  if (setUDC >= 3) {
+    UDC = true;
+    bonusList += "<tr><td>Undead Cleansing Set</td></tr>";}
   
   if (arguments.length == 0)
     document.getElementById("setBonuses").innerHTML = "<table class='finalStats' style=text-align:left><tr><th>Set Bonuses Active</th></tr>" + bonusList + "</table>";
@@ -352,7 +357,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var fireReduction = 1 - fireRes/400;
     var shadowMultiplier = shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
     var fireMultiplier = fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
-    var critMultiplier = 1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML;
+    var critMultiplier = (1.5 + 0.5*document.getElementById("talentRuin").parentNode.children[1].innerHTML) * (1 + 0.02*UDC);
     
     var intel = Math.round(int*(1 + 0.1*document.getElementById("blessingOfKings").checked)*(1 + 0.05*gnome)*(1 + 0.15*hakkarBuff));
     var manaMain = 1093 + intel*15 + manaExtra;
@@ -809,6 +814,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         else
           time += 0.5;
       }
+      damage = damage * (1 + 0.02*UDC);
       ShP = ShPOld, FiP = FiPOld, crit = critOld, hit = hitOld, pen = penOld;
       DPS[i] = damage/timeVec[i];
       manaLeft[i] = mana;
