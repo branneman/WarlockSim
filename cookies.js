@@ -78,8 +78,9 @@ function loadCookie() {
   
   var itemArray = ["MainHand", "OffHand", "Staff", "Helmet", "Neck", "Shoulders", "Back", "Chest", "Wrists", 
                    "Hands", "Waist", "Legs", "Feet", "Ring1", "Ring2", "Trinket1", "Trinket2", "Wand"];
-  if (getCookie("itemStaff") == false)
-    clickTable("tableStaff");
+  if (getCookie("itemStaff") == false) {
+    clickTable("tableStaff"); console.log("I was here")
+  }
   for (q=0; q<itemArray.length; q++) {
     var currentTable = document.getElementById("table" + itemArray[q]).children[1].children;
     for (i=0; i<currentTable.length; i++) {
