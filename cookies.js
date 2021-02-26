@@ -78,7 +78,7 @@ function loadCookie() {
   
   var itemArray = ["MainHand", "OffHand", "Staff", "Helmet", "Neck", "Shoulders", "Back", "Chest", "Wrists", 
                    "Hands", "Waist", "Legs", "Feet", "Ring1", "Ring2", "Trinket1", "Trinket2", "Wand"];
-  if (getCookie("itemStaff") == false) {
+  if (getCookie("itemStaff") == "false") {
     clickTable("tableStaff"); console.log("I was here")
   }
   for (q=0; q<itemArray.length; q++) {
