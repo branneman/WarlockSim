@@ -78,15 +78,15 @@ function loadCookie() {
   
   var itemArray = ["MainHand", "OffHand", "Staff", "Helmet", "Neck", "Shoulders", "Back", "Chest", "Wrists", 
                    "Hands", "Waist", "Legs", "Feet", "Ring1", "Ring2", "Trinket1", "Trinket2", "Wand"];
-  if (getCookie("itemStaff") == "false") {
-    console.log("I was here")
-  }
   for (q=0; q<itemArray.length; q++) {
     var currentTable = document.getElementById("table" + itemArray[q]).children[1].children;
     for (i=0; i<currentTable.length; i++) {
       if (getCookie("item" + itemArray[q]) == currentTable[i].children[0].innerHTML)
         clickTable("table" + itemArray[q], currentTable[i], true);
     }
+  }
+  if (getCookie("itemStaff") == "false") {
+    clickTable("tableStaff"); console.log("I was here")
   }
   
   var enchantArray = ["enchantSpellPower", "enchantZG1", "enchantFocus1", "enchantPowerScourge", "enchantZGShoulder", "enchantThreat", "enchantGreaterStats", "enchantStats", 
