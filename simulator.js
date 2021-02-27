@@ -52,7 +52,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = tempItem;
     var itemName3 = items[15].children[0].innerHTML;}
-  else if (arguments.length > 0 && iIndex==14) {
+  else if (arguments.length > 0 && iIndex==15) {
     var itemName1 = items[13].children[0].innerHTML;
     var itemName2 = items[14].children[0].innerHTML;
     var itemName3 = tempItem;}
