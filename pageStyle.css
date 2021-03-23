@@ -254,7 +254,7 @@ input[type=number]{
 .tooltiptext {
     visibility: hidden;
     width: 240px;
-    background-color: gray;
+    background-color: #444;
     text-align: left;
     border-radius: 6px;
     padding: 5px 5px;
@@ -263,6 +263,7 @@ input[type=number]{
     left: 100%;
     color: #ffff00;
     font-size: 14px;
+    font-weight: bold;
     z-index: 9999;
 }
 .tooltipheader {
