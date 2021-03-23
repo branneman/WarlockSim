@@ -203,6 +203,7 @@ input[type=number]{
     text-align: center;
     color: orange;
     filter: grayscale(100%);
+    z-index: 1;
 }
 .centered {
     position: absolute;
@@ -260,6 +261,7 @@ input[type=number]{
   position: absolute;
   top: -5px;
   left: 110%;
+  z-index: 1;
 }
 .tooltiptext {
   color: #ffff00;
@@ -275,4 +277,5 @@ input[type=number]{
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  z-index: 2;
 }
