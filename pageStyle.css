@@ -264,6 +264,7 @@ input[type=number]{
     color: #ffff00;
     font-size: 14px;
     filter: grayscale(0%);
+    z-index: 9999;
 }
 .tooltipheader {
     font-size: 18px;
@@ -274,5 +275,4 @@ input[type=number]{
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
-    z-index: 9999;
 }
