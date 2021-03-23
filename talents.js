@@ -14,9 +14,9 @@ function talentFunc(click,element) {
       for (var i=1; i<tree.length; i++) {
         for (var j=0; j<4; j++) {
           try {
-            var element = tree[i].children[j].children[0];
-            var text = tree[i].children[j].children[0].children[1];
-            var talent = tree[i].children[j].children[0].children[0];
+            var element = tree[i].children[j].children[0].children[0];
+            var text = tree[i].children[j].children[0].children[0].children[1];
+            var talent = tree[i].children[j].children[0].children[0].children[0];
           }
           catch(err) {}
           if (element !== undefined && text !== undefined && talent !== undefined) {
