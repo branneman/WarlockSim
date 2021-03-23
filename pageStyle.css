@@ -261,7 +261,6 @@ input[type=number]{
   position: absolute;
   top: -5px;
   left: 110%;
-  z-index: 1;
 }
 .tooltiptext {
   color: #ffff00;
