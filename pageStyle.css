@@ -263,15 +263,13 @@ input[type=number]{
     left: 110%;
     color: #ffff00;
     font-size: 14px;
-    filter: grayscale(0%);
-    z-index: 9999;
 }
 .tooltipheader {
     font-size: 18px;
-    color: #eee;
+    color: #fff;
 }
 .tooltipinfo {
-    color: #ddd;
+    color: #7cfc00;
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
