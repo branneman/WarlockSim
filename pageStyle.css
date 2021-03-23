@@ -274,5 +274,5 @@ input[type=number]{
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;
-    z-index: 2;
+    z-index: 9999;
 }
