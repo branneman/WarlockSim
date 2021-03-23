@@ -250,7 +250,6 @@ input[type=number]{
   display: inline-block;
   border-bottom: 1px dotted black;
 }
-
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 240px;
@@ -271,9 +270,6 @@ input[type=number]{
 }
 .tooltipinfo {
   color: #ddd;
-}
-.tooltipend {
-  color: #7cfc00;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
