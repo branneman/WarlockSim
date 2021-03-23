@@ -255,7 +255,7 @@ input[type=number]{
     visibility: hidden;
     width: 240px;
     background-color: #222;
-    opacity: 0.9;
+    opacity: 0.95;
     text-align: left;
     border-radius: 6px;
     padding: 10px 10px;
