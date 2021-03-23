@@ -263,11 +263,11 @@ input[type=number]{
     left: 100%;
     color: #ffff00;
     font-size: 14px;
-    font-weight: bold;
     z-index: 9999;
 }
 .tooltipheader {
     font-size: 18px;
+    font-weight: bold;
     color: #fff;
 }
 .tooltipinfo {
