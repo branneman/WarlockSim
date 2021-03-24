@@ -259,8 +259,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
   var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked + 100*document.getElementById("enchantMana").checked;
-  ShP += SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
-  FiP += SP + 150*document.getElementById("supremeFlask").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
+  ShP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
+  FiP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
   var afflictionHit = hit + 2*document.getElementById("talentSuppression").parentNode.children[1].innerHTML;
   var afflictionChance = Math.min(99, baseHit+afflictionHit);
   crit += 10*onyxiaBuff + 5*songflower + 3*diremaulBuff + 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked + 1*document.getElementById("talentDevastation").parentNode.children[1].innerHTML;
@@ -974,6 +974,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("curseElements", document.getElementById("curseElements").checked);
   setCookie("Scorch", document.getElementById("Scorch").checked);
   setCookie("supremeFlask", document.getElementById("supremeFlask").checked);
+  setCookie("blessedOil", document.getElementById("blessedOil").checked);
   setCookie("brilliantOil", document.getElementById("brilliantOil").checked);
   setCookie("arcaneElixir", document.getElementById("arcaneElixir").checked);
   setCookie("shadowElixir", document.getElementById("shadowElixir").checked);
@@ -996,6 +997,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("blessingOfWisdom", document.getElementById("blessingOfWisdom").checked);
   setCookie("blessingOfKings", document.getElementById("blessingOfKings").checked);
   setCookie("manaSpringTotem", document.getElementById("manaSpringTotem").checked);
+  setCookie("powerInfusion", Number(document.getElementById("powerInfusion").value));
   setCookie("lifeTap", lifeTap);
   
   setCookie("talentSuppression", document.getElementById("talentSuppression").parentNode.children[1].innerHTML);
