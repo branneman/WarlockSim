@@ -276,22 +276,10 @@ input[type=number]{
     color: #66ff00;
 }
 .tooltipgeneric {
-    visibility: hidden;
-    width: 100%;
-    background-color: #222;
-    opacity: 0.95;
-    text-align: left;
-    border-radius: 6px;
-    padding: 10px 10px;
-    position: relative;
-    bottom: 100%;
-    left: 100%;
-    z-index: 9999;
-    color: #fff;
     font-size: 16px;
-    overflow: hidden;
+    color: #fff;
 }
-.tooltip:hover .tooltiptext .tooltipgeneric{
+.tooltip:hover .tooltiptext{
     visibility: visible;
 }
 
