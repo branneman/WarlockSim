@@ -21,7 +21,10 @@ function loadCookie() {
   if (getCookie("race") !== "noCookie")
     document.getElementById("race").value = getCookie("race");
   
-  var buffArray = ["curseShadow", "shadowWeaving", "curseElements", "Scorch", "supremeFlask", "brilliantOil", "arcaneElixir", "shadowElixir", "holiday", "fireElixir", 
+  if (getCookie("powerInfusion") !== "noCookie")
+    document.getElementById("powerInfusion").value = getCookie("powerInfusion");
+  
+  var buffArray = ["curseShadow", "shadowWeaving", "curseElements", "Scorch", "supremeFlask", "blessedOil", "brilliantOil", "arcaneElixir", "shadowElixir", "holiday", "fireElixir", 
                    "manaPotion", "demonicRune", "runnTumTuber", "nightfinSoup", "magebloodPotion", "hakkarBuff", "onyxiaBuff", "songflower", "diremaulBuff", 
                    "tracesOfSilithus", "arcaneIntellect", "markOfTheWild", "moonkinAura", "blessingOfWisdom", "blessingOfKings", "manaSpringTotem"];
   for (i=0; i<buffArray.length; i++) {
