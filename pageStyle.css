@@ -275,6 +275,11 @@ input[type=number]{
 .tooltipinfo {
     color: #66ff00;
 }
+.tooltipgeneric {
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+}
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
