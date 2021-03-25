@@ -252,8 +252,14 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   
   var timeVec = new Array;
   timeVec[0] = fightStart;
-  for (var i=fightStart+0.5; i<=fightEnd; i=i+0.5)
-    timeVec[timeVec.length] = i;
+  if (arguments.length > 0) {
+    for (var i=fightStart+5; i<=fightEnd; i=i+5)
+      timeVec[timeVec.length] = i;
+  }
+  else {
+    for (var i=fightStart+0.5; i<=fightEnd; i=i+0.5)
+      timeVec[timeVec.length] = i;
+  }
 
   var hakkarBuff = document.getElementById("hakkarBuff").checked;
   var onyxiaBuff = document.getElementById("onyxiaBuff").checked;
@@ -695,11 +701,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         }
         
         if (usePI == true && piTime <= 0 && piCD <= 0) {
-          //console.log("First if")
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
-            //console.log("Seccond if")
             piBonus = true;
-            piTime = 15.1*numPI; console.log(time + " - " + piTime)
+            piTime = 15.1*numPI;
             piCD = 180;
             shadowMultiplier = (1 + piBonus*0.20) * shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
             fireMultiplier = (1 + piBonus*0.20) * fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
