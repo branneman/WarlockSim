@@ -236,6 +236,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var usePI = false;
   if (numPI > 0)
     usePI = true;
+  
+  var warlockCount = Number(document.getElementById("warlockCount").value);
 
   var bossLevel = Number(document.getElementById("bossLevel").value);
   var levelRes = (bossLevel-60)*8;
@@ -771,7 +773,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
             damage += (avgNonCrit*critFinal*critMultiplier + avgNonCrit*regularHit)/100 * ((shadowVuln)*0.2);
           mana -= sbCost;
           time += sbTime;
-          SBC++;}
+          SBC += warlockCount;}
         
         else if (primary == "searingPain" && GCD <= timeLeft) {
           damage += (avgSearing*critSearing*critMultiplier + avgSearing*(100-miss-critSearing))/100;
@@ -1118,6 +1120,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("enchantFocus2", document.getElementById("enchantFocus2").checked);
   setCookie("enchantMinorSpeed", document.getElementById("enchantMinorSpeed").checked);
   setCookie("enchantStaminaFeet", document.getElementById("enchantStaminaFeet").checked);
+  
+  setCookie("warlockCount", warlockCount);
   
   console.timeEnd('Timer')
 } //Function
