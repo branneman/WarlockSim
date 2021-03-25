@@ -23,6 +23,15 @@ function loadCookie() {
   
   if (getCookie("powerInfusion") !== "noCookie")
     document.getElementById("powerInfusion").value = getCookie("powerInfusion");
+  
+  if (getCookie("warlockAtiesh") !== "noCookie")
+    document.getElementById("warlockAtiesh").value = getCookie("warlockAtiesh");
+  
+  if (getCookie("mageAtiesh") !== "noCookie")
+    document.getElementById("mageAtiesh").value = getCookie("mageAtiesh");
+  
+  if (getCookie("druidAtiesh") !== "noCookie")
+    document.getElementById("powerInfusion").value = getCookie("druidAtiesh");
     
   if (getCookie("warlockCount") !== "noCookie")
     document.getElementById("warlockCount").value = getCookie("warlockCount");
