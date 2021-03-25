@@ -237,6 +237,10 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   if (numPI > 0)
     usePI = true;
   
+  var warlockAtiesh = Number(document.getElementById("warlockAtiesh").value);
+  var mageAtiesh = Number(document.getElementById("mageAtiesh").value);
+  var druidAtiesh = Number(document.getElementById("druidAtiesh").value);
+  
   var warlockCount = Number(document.getElementById("warlockCount").value);
 
   var bossLevel = Number(document.getElementById("bossLevel").value);
@@ -267,13 +271,13 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var diremaulBuff = document.getElementById("diremaulBuff").checked;
   
   var manaExtra = 1800*document.getElementById("manaPotion").checked + 1200*document.getElementById("demonicRune").checked + 100*document.getElementById("enchantMana").checked;
-  ShP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked;
-  FiP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked;
+  ShP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("shadowElixir").checked + 23*document.getElementById("holiday").checked + 33*warlockAtiesh;
+  FiP += SP + 150*document.getElementById("supremeFlask").checked + 60*document.getElementById("blessedOil").checked + 36*document.getElementById("brilliantOil").checked + 35*document.getElementById("arcaneElixir").checked + 40*document.getElementById("fireElixir").checked + 23*document.getElementById("holiday").checked + 33*warlockAtiesh;
   var afflictionHit = hit + 2*document.getElementById("talentSuppression").parentNode.children[1].innerHTML;
   var afflictionChance = Math.min(99, baseHit+afflictionHit);
-  crit += 10*onyxiaBuff + 5*songflower + 3*diremaulBuff + 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked + 1*document.getElementById("talentDevastation").parentNode.children[1].innerHTML;
+  crit += 10*onyxiaBuff + 5*songflower + 3*diremaulBuff + 1*document.getElementById("brilliantOil").checked + 3*document.getElementById("moonkinAura").checked + 1*document.getElementById("talentDevastation").parentNode.children[1].innerHTML + 2*mageAtiesh;
   int  += 31*document.getElementById("arcaneIntellect").checked + 16*document.getElementById("markOfTheWild").checked + 10*document.getElementById("runnTumTuber").checked + 15*songflower;
-  mp5  += 8*document.getElementById("nightfinSoup").checked + 12*document.getElementById("magebloodPotion").checked + 42*document.getElementById("blessingOfWisdom").checked + 25*document.getElementById("manaSpringTotem").checked;
+  mp5  += 8*document.getElementById("nightfinSoup").checked + 12*document.getElementById("magebloodPotion").checked + 42*document.getElementById("blessingOfWisdom").checked + 25*document.getElementById("manaSpringTotem").checked + 11*druidAtiesh;
   
   var sbCost = 380 * (1 - 0.01*document.getElementById("talentCataclysm").parentNode.children[1].innerHTML) * (1-0.15*bonusShadowBoltCost) * (1-0.15*bonusShadowCost);
   var sbTime = 3 - 0.1*document.getElementById("talentBane").parentNode.children[1].innerHTML;
@@ -1004,6 +1008,9 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   setCookie("blessingOfKings", document.getElementById("blessingOfKings").checked);
   setCookie("manaSpringTotem", document.getElementById("manaSpringTotem").checked);
   setCookie("powerInfusion", Number(document.getElementById("powerInfusion").value));
+  setCookie("warlockAtiesh", warlockAtiesh);
+  setCookie("mageAtiesh", mageAtiesh);
+  setCookie("druidAtiesh", druidAtiesh);
   setCookie("lifeTap", lifeTap);
   
   setCookie("talentSuppression", document.getElementById("talentSuppression").parentNode.children[1].innerHTML);
