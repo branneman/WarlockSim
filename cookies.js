@@ -31,7 +31,7 @@ function loadCookie() {
     document.getElementById("mageAtiesh").value = getCookie("mageAtiesh");
   
   if (getCookie("druidAtiesh") !== "noCookie")
-    document.getElementById("powerInfusion").value = getCookie("druidAtiesh");
+    document.getElementById("druidAtiesh").value = getCookie("druidAtiesh");
     
   if (getCookie("warlockCount") !== "noCookie")
     document.getElementById("warlockCount").value = getCookie("warlockCount");
