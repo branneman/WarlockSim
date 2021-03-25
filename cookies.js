@@ -43,37 +43,9 @@ function loadCookie() {
     if (getCookie(buffArray[i]) !== "noCookie")
       document.getElementById(buffArray[i]).checked = getCookie(buffArray[i]) == "true";
   }
-  /*document.getElementById("curseShadow").checked = getCookie("curseShadow") == "true";
-  document.getElementById("shadowWeaving").checked = getCookie("shadowWeaving") == "true";
-  document.getElementById("curseElements").checked = getCookie("curseElements") == "true";
-  document.getElementById("Scorch").checked = getCookie("Scorch") == "true";
-  document.getElementById("supremeFlask").checked = getCookie("supremeFlask") == "true";
-  document.getElementById("brilliantOil").checked = getCookie("brilliantOil") == "true";
-  document.getElementById("arcaneElixir").checked = getCookie("arcaneElixir") == "true";
-  document.getElementById("shadowElixir").checked = getCookie("shadowElixir") == "true";
-  document.getElementById("holiday").checked = getCookie("holiday") == "true";
-  document.getElementById("fireElixir").checked = getCookie("fireElixir") == "true";
-  document.getElementById("manaPotion").checked = getCookie("manaPotion") == "true";
-  document.getElementById("demonicRune").checked = getCookie("demonicRune") == "true";
-  document.getElementById("runnTumTuber").checked = getCookie("runnTumTuber") == "true";
-  document.getElementById("nightfinSoup").checked = getCookie("nightfinSoup") == "true";
-  document.getElementById("magebloodPotion").checked = getCookie("magebloodPotion") == "true";
-  document.getElementById("hakkarBuff").checked = getCookie("hakkarBuff") == "true";
-  document.getElementById("onyxiaBuff").checked = getCookie("onyxiaBuff") == "true";
-  document.getElementById("songflower").checked = getCookie("songflower") == "true";
-  document.getElementById("diremaulBuff").checked = getCookie("diremaulBuff") == "true";
-  document.getElementById("darkMoonFaire").checked = getCookie("darkMoonFaire") == "true";
-  document.getElementById("tracesOfSilithus").checked = getCookie("tracesOfSilithus") == "true";
-  document.getElementById("arcaneIntellect").checked = getCookie("arcaneIntellect") == "true";
-  document.getElementById("markOfTheWild").checked = getCookie("markOfTheWild") == "true";
-  document.getElementById("moonkinAura").checked = getCookie("moonkinAura") == "true";
-  document.getElementById("blessingOfWisdom").checked = getCookie("blessingOfWisdom") == "true";
-  document.getElementById("blessingOfKings").checked = getCookie("blessingOfKings") == "true";
-  document.getElementById("manaSpringTotem").checked = getCookie("manaSpringTotem") == "true";*/
-  
   document.getElementById("disableLifeTap").checked = getCookie("lifeTap") == "false";
   
-  for (i=0; i<50; i++) {
+  for (i=0; i<100; i++) {
     var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
     var currentCookie = getCookie(currentID);
     if (currentCookie !== "noCookie")
@@ -100,33 +72,16 @@ function loadCookie() {
         clickTable("table" + itemArray[q], currentTable[i], true);
     }
   }
-  if (getCookie("itemStaff") == "false") {
-    clickTable("tableStaff"); console.log("I was here")
-  }
-  
   var enchantArray = ["enchantSpellPower", "enchantZG1", "enchantFocus1", "enchantPowerScourge", "enchantZGShoulder", "enchantThreat", "enchantGreaterStats", "enchantStats", 
                       "enchantIntellect", "enchantStaminaWrists", "enchantShadow", "enchantFire", "enchantZG2", "enchantFocus2", "enchantMinorSpeed", "enchantStaminaFeet"];
   for (i=0; i<enchantArray.length; i++) {
     if (getCookie(enchantArray[i]) !== "noCookie")
       document.getElementById(enchantArray[i]).checked = getCookie(enchantArray[i]) == "true";
   }
-  /*document.getElementById("enchantSpellPower").checked = getCookie("enchantSpellPower") == "true";
-  document.getElementById("enchantZG1").checked = getCookie("enchantZG1") == "true";
-  document.getElementById("enchantFocus1").checked = getCookie("enchantFocus1") == "true";
-  document.getElementById("enchantPowerScourge").checked = getCookie("enchantPowerScourge") == "true";
-  document.getElementById("enchantZGShoulder").checked = getCookie("enchantZGShoulder") == "true";
-  document.getElementById("enchantThreat").checked = getCookie("enchantThreat") == "true";
-  document.getElementById("enchantGreaterStats").checked = getCookie("enchantGreaterStats") == "true";
-  document.getElementById("enchantStats").checked = getCookie("enchantStats") == "true";
-  document.getElementById("enchantIntellect").checked = getCookie("enchantIntellect") == "true";
-  document.getElementById("enchantStaminaWrists").checked = getCookie("enchantStaminaWrists") == "true";
-  document.getElementById("enchantShadow").checked = getCookie("enchantShadow") == "true";
-  document.getElementById("enchantFire").checked = getCookie("enchantFire") == "true";
-  document.getElementById("enchantZG2").checked = getCookie("enchantZG2") == "true";
-  document.getElementById("enchantFocus2").checked = getCookie("enchantFocus2") == "true";
-  document.getElementById("enchantMinorSpeed").checked = getCookie("enchantMinorSpeed") == "true";
-  document.getElementById("enchantStaminaFeet").checked = getCookie("enchantStaminaFeet") == "true";*/
   
+  if (getCookie("itemStaff") == "false") {
+    clickTable("tableStaff"); console.log("I was here")
+  }
   console.log('Cookies Loaded')
 }
 
