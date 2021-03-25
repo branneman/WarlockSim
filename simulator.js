@@ -693,11 +693,11 @@ function runSim(gearTable, baseLine, makeBaseLine) {
         }
         
         if (usePI == true && piTime <= 0 && piCD <= 0) {
-          console.log("First if")
+          //console.log("First if")
           if ((primary == "shadowBolt")+(SBC > 4) == 2 || primary !== "shadowBolt") {
-            console.log("Seccond if")
+            //console.log("Seccond if")
             piBonus = true;
-            piTime = 15.1*numPI;
+            piTime = 15.1*numPI; console.log(piTime)
             piCD = 180;
             shadowMultiplier = 1.20 * shadowReduction * (1 + shadowDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseShadow").checked) * (1 + 0.15*document.getElementById("shadowWeaving").checked) * (1 + 0.02*document.getElementById("talentShadowMastery").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked); //DS, CoS, Weaving, SM
             fireMultiplier = 1.20 * fireReduction * (1 + fireDS*0.15*document.getElementById("talentDemonicSacrifice").parentNode.children[1].innerHTML) * (1 + 0.1*document.getElementById("curseElements").checked) * (1 + 0.15*document.getElementById("Scorch").checked) * (1 + 0.02*document.getElementById("talentEmberstorm").parentNode.children[1].innerHTML) * (1 + 0.10*document.getElementById("darkMoonFaire").checked) * (1 + 0.05*document.getElementById("tracesOfSilithus").checked);; //DS, CoE, Scorch, Emberstorm
