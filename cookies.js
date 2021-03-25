@@ -23,6 +23,9 @@ function loadCookie() {
   
   if (getCookie("powerInfusion") !== "noCookie")
     document.getElementById("powerInfusion").value = getCookie("powerInfusion");
+    
+  if (getCookie("warlockCount") !== "noCookie")
+    document.getElementById("warlockCount").value = getCookie("warlockCount");
   
   var buffArray = ["curseShadow", "shadowWeaving", "curseElements", "Scorch", "supremeFlask", "blessedOil", "brilliantOil", "arcaneElixir", "shadowElixir", "holiday", "fireElixir", 
                    "manaPotion", "demonicRune", "runnTumTuber", "nightfinSoup", "magebloodPotion", "hakkarBuff", "onyxiaBuff", "songflower", "diremaulBuff", 
