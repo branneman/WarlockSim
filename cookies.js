@@ -45,7 +45,7 @@ function loadCookie() {
   }
   document.getElementById("disableLifeTap").checked = getCookie("lifeTap") == "false";
   
-  for (i=0; i<50; i++) {
+  for (i=0; i<document.getElementsByClassName('wrapper').length; i++) {
     var currentID = document.getElementsByClassName('wrapper')[i].children[0].id;
     var currentCookie = getCookie(currentID);
     if (currentCookie !== "noCookie")
