@@ -341,7 +341,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var finisherTime = 0;}
   
   for (var q=1; q<=7; q++) {
-    if (arguments.length > 0 && q>1) {
+    if (arguments.length > 10 && q>1) {
       q = 99;
       ShP = ShP - 1;
       FiP = FiP - 1;
