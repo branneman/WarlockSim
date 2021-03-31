@@ -257,7 +257,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var timeVec = new Array;
   timeVec[0] = fightStart;
   if (arguments.length > 0) {
-    for (var i=fightStart+5; i<=fightEnd; i=i+5)
+    for (var i=fightStart+0.5; i<=fightEnd; i=i+5)
       timeVec[timeVec.length] = i;
   }
   else {
@@ -341,6 +341,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var finisherTime = 0;}
   
   for (var q=1; q<=7; q++) {
+    if (arguments.length > 0)
+      q = Infinity;
     if (q==1) {
       ShP = ShP + 1;
       FiP = FiP + 1;}
