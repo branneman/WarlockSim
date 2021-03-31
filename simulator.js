@@ -850,7 +850,7 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     else if (q==6) {
       var penDPS  = math.sum(DPS)/DPS.length;
       var penVec  = DPS;}
-    else if (q==7) {
+    else {
       var baseDPS = math.sum(DPS)/DPS.length;
       var baseVec = DPS;}
   } //Loop with q
@@ -862,11 +862,12 @@ function runSim(gearTable, baseLine, makeBaseLine) {
   var mp5Val  = (mp5DPS-baseDPS)/3;
 
   var dpsOutput = "<br><br><b><span style='font-size:22px'>&nbsp;" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " <span style='font-size:14px'>DPS</span></b>";
-  var statWeightOutput = "<br><b><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span><br><span style='font-size:18px'>Hit &nbsp;= " + formatNumber(hitVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span></b>";
   if (arguments.length == 3) {
     console.timeEnd('Timer')
     return formatNumber(math.sum(baseVec)/baseVec.length,2);
   }
+  var statWeightOutput = "<br><b><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span><br><span style='font-size:18px'>Hit &nbsp;= " + formatNumber(hitVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span></b>";
+  
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
     //var valueSP = Number(gearTable.children[4].innerHTML) + Number(gearTable.children[5].innerHTML)*shadowDS + Number(gearTable.children[6].innerHTML)*fireDS + Number(gearTable.children[8].innerHTML.slice(0,1))*critVal/SPVal + Number(gearTable.children[7].innerHTML.slice(0,1))*hitVal/SPVal + Number(gearTable.children[3].innerHTML)*intVal/SPVal + Number(gearTable.children[9].innerHTML)*penVal/SPVal + Number(gearTable.children[10].innerHTML)*mp5Val/SPVal;
