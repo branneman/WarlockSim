@@ -341,8 +341,11 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     var finisherTime = 0;}
   
   for (var q=1; q<=7; q++) {
-    if (arguments.length > 0)
-      q = Infinity;
+    if (arguments.length > 0 && q>1) {
+      q = 99;
+      ShP = ShP - 1;
+      FiP = FiP - 1;
+    }
     if (q==1) {
       ShP = ShP + 1;
       FiP = FiP + 1;}
@@ -866,7 +869,6 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     console.timeEnd('Timer')
     return formatNumber(math.sum(baseVec)/baseVec.length,2);
   }
-  var statWeightOutput = "<br><b><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span><br><span style='font-size:18px'>Hit &nbsp;= " + formatNumber(hitVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span></b>";
   
   if (arguments.length == 2) {
     gearTable.children[12].innerHTML = Number(formatNumber(math.sum(baseVec)/baseVec.length,2));
@@ -876,7 +878,8 @@ function runSim(gearTable, baseLine, makeBaseLine) {
     console.timeEnd('Timer');
     return
   }
-
+  
+  var statWeightOutput = "<br><b><span style='font-size:18px'>Crit = " + formatNumber(critVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span><br><span style='font-size:18px'>Hit &nbsp;= " + formatNumber(hitVal/SPVal,2) + " </span><span style='font-size:14px'>SP</span></b>";
   document.getElementById("dps").innerHTML = dpsOutput;
   //document.getElementById('defaultOpen').innerHTML = "Main: " + "<b><span style='font-size:20px'>" + formatNumber(math.sum(baseVec)/baseVec.length,2) + " </span><span style='font-size:14px'>DPS</span></b>";;
   document.getElementById("statWeights").innerHTML = statWeightOutput;
