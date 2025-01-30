@@ -10,15 +10,6 @@
     <script src="/WarlockSim/simulator.js"></script>
     <script src="/WarlockSim/talents.js"></script>
     <script src="/WarlockSim/cookies.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FQXTFVJSS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-1FQXTFVJSS');
-    </script>
     <script type="text/javascript">
       function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
@@ -124,7 +115,11 @@
   <body style="background-color:#888888;">
     <div class="row">
       <div class="column info" oninput="runSim()">
-        <div style="text-align:center"><b style="font-size:32px">Warlock Simulator</b><br><b style="font-size:24px">WoW Classic</b></div>
+        <div style="text-align:center">
+          <b style="font-size:32px">Warlock Simulator</b><br>
+          <b style="font-size:24px">WoW Classic</b><br>
+          <b style="font-size:14px"><a href="https://github.com/branneman/WarlockSim">branneman's fork</a> of <a href="https://maarslet.github.io/WarlockSim/">maarslet</a></b>
+        </div>
         
         <div id="dps"></div>
         <div id="statWeights"></div>
